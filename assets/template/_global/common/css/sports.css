@@ -1,0 +1,5088 @@
+@charset "UTF-8";
+a,
+article,
+aside,
+b,
+body,
+div,
+em,
+embed,
+fieldset,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+i,
+iframe,
+img,
+label,
+li,
+nav,
+object,
+ol,
+p,
+span,
+strong,
+table,
+tbody,
+td,
+th,
+thead,
+tr,
+tt,
+ul,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: inherit;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  height: 100%;
+  font-weight: normal;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+img {
+  color: transparent;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td,
+caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left;
+}
+
+q {
+  quotes: none;
+}
+
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+sub,
+sup,
+small {
+  font-size: 75%;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+svg {
+  overflow: hidden;
+}
+
+a:active {
+  background-color: transparent;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+textarea::-moz-focus-inner,
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes oddsChangeColor-transparent {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: transparent;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes oddsChangeColor-transparent {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: transparent;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@-webkit-keyframes oddsChangeColor-quickBet {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: #ffffff;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+
+@keyframes oddsChangeColor-quickBet {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: #ffffff;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+
+@-webkit-keyframes oddsChangeColor-betSlip {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: #ececec;
+  }
+  100% {
+    background: #ececec;
+  }
+}
+
+@keyframes oddsChangeColor-betSlip {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: #ececec;
+  }
+  100% {
+    background: #ececec;
+  }
+}
+
+@-webkit-keyframes oddsChangeColor-betSlipLive {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: #fce7d7;
+  }
+  100% {
+    background: #fce7d7;
+  }
+}
+
+@keyframes oddsChangeColor-betSlipLive {
+  0% {
+    background: #ffaf96;
+  }
+  70% {
+    background: #ffaf96;
+  }
+  71% {
+    background: #fce7d7;
+  }
+  100% {
+    background: #fce7d7;
+  }
+}
+
+@-webkit-keyframes FadeInOut {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes FadeInOut {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotateScale {
+  0% {
+    transform: rotate(0deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.3);
+  }
+}
+
+@keyframes rotateScale {
+  0% {
+    transform: rotate(0deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.3);
+  }
+}
+
+@-webkit-keyframes rotateScale-large {
+  0% {
+    transform: rotate(0deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.4);
+  }
+}
+
+@keyframes rotateScale-large {
+  0% {
+    transform: rotate(0deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.4);
+  }
+}
+
+@-webkit-keyframes loading-a {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.3);
+    opacity: .2;
+  }
+}
+
+@keyframes loading-a {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.3);
+    opacity: .2;
+  }
+}
+
+@-moz-document url-prefix() {
+}
+
+@-moz-document url-prefix() {
+}
+
+.oddsTable .odds, .oddsTable .others, .oddsTable .no, .oddsTable .photo, .oddsTable .info, .oddsTable .unit, .ADBoard .listArea .listHeader, .ADBoard .listArea .listContent .listRow, .ADBoard .listArea .listContent .listRow-link {
+  box-sizing: border-box;
+}
+
+.oddsTable .photo img {
+  border: 1px solid #97c3df;
+  background: #ffffff;
+  width: 2.6em;
+  height: auto;
+  padding: 0.18em 0.15em;
+}
+
+.ADBoard .listArea .listHeader, .ADBoard .listArea .listContent .listRow, .ADBoard .listArea .listContent .listRow-link {
+  width: 100%;
+  display: table;
+  border-collapse: separate;
+}
+
+.oddsTable .odds, .oddsTable .others, .oddsTable .no, .oddsTable .photo, .oddsTable .info, .oddsTable .unit {
+  padding: 2px 4px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.oddsBet-circle {
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  padding: 0 1px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.text-center.oddsBet-circle {
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.oddsBet-circle:hover {
+  background: #ffffff;
+  color: #00121f;
+}
+
+.underdog.oddsBet-circle, .underdog.oddsBet-circle .oddsBet {
+  color: #EB6307 !important;
+}
+
+.disable.oddsBet-circle {
+  cursor: default;
+}
+
+.selected.oddsBet-circle {
+  background: #ffffff;
+  color: #00121f;
+  color: #00121f;
+  box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 16;
+}
+
+.mainTitle::before,
+.sportName::before,
+.liveScore::before,
+.streamingList .sportTitle::before,
+.sportsIcon,
+.miniOdds-oddstable .status::before,
+.heading[class*="icon-sport"]::before,
+.heading-noMoving [class*="icon-sport"]::before {
+  background-image: url(../Images/icon-ui.svg);
+  background-size: 100% auto;
+}
+
+.mainTitle::before,
+.sportName::before,
+.liveScore::before,
+.streamingList .sportTitle::before,
+.heading[class*="icon-sport"]::before,
+.heading-noMoving [class*="icon-sport"]::before {
+  content: "";
+}
+
+.sportName::before,
+.mini .sportsMenu .sportName::before {
+  position: absolute;
+}
+
+.mainTitle::before,
+.sportName::before {
+  width: 20px;
+  height: 20px;
+}
+
+.sportName::before {
+  top: -.3em;
+  left: -.1em;
+}
+
+.filter .sportName::before {
+  top: -.2em;
+  left: 1.4em;
+}
+
+.miniOdds-oddstable .status::before {
+  width: 9em;
+  height: 9em;
+}
+
+.sportsIcon {
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+}
+
+.matchArea .sportsIcon {
+  font-size: 1.15em;
+}
+
+.myScore .sportsIcon {
+  font-size: .85em;
+}
+
+.mini .sportsMenu .sportName::before,
+.heading-noMoving [class*="icon-sport"]::before {
+  width: 2em;
+  height: 2em;
+}
+
+.mini .sportsMenu .sportName::before {
+  left: 0.1em;
+}
+
+.liveScore::before {
+  top: 50%;
+  margin-left: -75px;
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  opacity: .5;
+  position: absolute;
+}
+
+.streamingList .sportTitle::before {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.heading[class*="icon-sport"]::before {
+  position: relative;
+  top: -0.3em;
+  left: -0.5em;
+  margin-right: -.8em;
+  width: 25px;
+  height: 25px;
+}
+
+.heading-noMoving [class*="icon-sport"] {
+  display: block;
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.heading-noMoving [class*="icon-sport"]::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1em;
+  margin-left: -1em;
+}
+
+.icon-sport1 .sportName::before,
+.sport1 .mainTitle::before {
+  background-position: 0 0px;
+}
+
+.sport1 .sportsIcon {
+  background-position: 0 0em;
+}
+
+.mini .sportsMenu .icon-sport1 .sportName::before,
+.heading-noMoving .icon-sport1::before {
+  background-position: 0 0em;
+}
+
+.sport1 .liveScore::before {
+  background-position: 0 0px;
+}
+
+.icon-sport1 .streamingList .sportTitle::before,
+.streamingList .icon-sport1 .sportTitle::before {
+  background-position: 0 0px;
+}
+
+.heading.icon-sport1::before {
+  background-position: 0 0px;
+}
+
+.miniOdds-1 .status::before {
+  background-position: 0 0em;
+}
+
+.icon-sport2 .sportName::before,
+.sport2 .mainTitle::before {
+  background-position: 0 -20px;
+}
+
+.sport2 .sportsIcon {
+  background-position: 0 -2em;
+}
+
+.mini .sportsMenu .icon-sport2 .sportName::before,
+.heading-noMoving .icon-sport2::before {
+  background-position: 0 -2em;
+}
+
+.sport2 .liveScore::before {
+  background-position: 0 -100px;
+}
+
+.icon-sport2 .streamingList .sportTitle::before,
+.streamingList .icon-sport2 .sportTitle::before {
+  background-position: 0 -32px;
+}
+
+.heading.icon-sport2::before {
+  background-position: 0 -25px;
+}
+
+.miniOdds-2 .status::before {
+  background-position: 0 -9em;
+}
+
+.icon-sport3 .sportName::before,
+.sport3 .mainTitle::before {
+  background-position: 0 -40px;
+}
+
+.sport3 .sportsIcon {
+  background-position: 0 -4em;
+}
+
+.mini .sportsMenu .icon-sport3 .sportName::before,
+.heading-noMoving .icon-sport3::before {
+  background-position: 0 -4em;
+}
+
+.sport3 .liveScore::before {
+  background-position: 0 -200px;
+}
+
+.icon-sport3 .streamingList .sportTitle::before,
+.streamingList .icon-sport3 .sportTitle::before {
+  background-position: 0 -64px;
+}
+
+.heading.icon-sport3::before {
+  background-position: 0 -50px;
+}
+
+.miniOdds-3 .status::before {
+  background-position: 0 -18em;
+}
+
+.icon-sport4 .sportName::before,
+.sport4 .mainTitle::before {
+  background-position: 0 -60px;
+}
+
+.sport4 .sportsIcon {
+  background-position: 0 -6em;
+}
+
+.mini .sportsMenu .icon-sport4 .sportName::before,
+.heading-noMoving .icon-sport4::before {
+  background-position: 0 -6em;
+}
+
+.sport4 .liveScore::before {
+  background-position: 0 -300px;
+}
+
+.icon-sport4 .streamingList .sportTitle::before,
+.streamingList .icon-sport4 .sportTitle::before {
+  background-position: 0 -96px;
+}
+
+.heading.icon-sport4::before {
+  background-position: 0 -75px;
+}
+
+.miniOdds-4 .status::before {
+  background-position: 0 -27em;
+}
+
+.icon-sport5 .sportName::before,
+.sport5 .mainTitle::before {
+  background-position: 0 -80px;
+}
+
+.sport5 .sportsIcon {
+  background-position: 0 -8em;
+}
+
+.mini .sportsMenu .icon-sport5 .sportName::before,
+.heading-noMoving .icon-sport5::before {
+  background-position: 0 -8em;
+}
+
+.sport5 .liveScore::before {
+  background-position: 0 -400px;
+}
+
+.icon-sport5 .streamingList .sportTitle::before,
+.streamingList .icon-sport5 .sportTitle::before {
+  background-position: 0 -128px;
+}
+
+.heading.icon-sport5::before {
+  background-position: 0 -100px;
+}
+
+.miniOdds-5 .status::before {
+  background-position: 0 -36em;
+}
+
+.icon-sport6 .sportName::before,
+.sport6 .mainTitle::before {
+  background-position: 0 -100px;
+}
+
+.sport6 .sportsIcon {
+  background-position: 0 -10em;
+}
+
+.mini .sportsMenu .icon-sport6 .sportName::before,
+.heading-noMoving .icon-sport6::before {
+  background-position: 0 -10em;
+}
+
+.sport6 .liveScore::before {
+  background-position: 0 -500px;
+}
+
+.icon-sport6 .streamingList .sportTitle::before,
+.streamingList .icon-sport6 .sportTitle::before {
+  background-position: 0 -160px;
+}
+
+.heading.icon-sport6::before {
+  background-position: 0 -125px;
+}
+
+.miniOdds-6 .status::before {
+  background-position: 0 -45em;
+}
+
+.icon-sport7 .sportName::before,
+.sport7 .mainTitle::before {
+  background-position: 0 -120px;
+}
+
+.sport7 .sportsIcon {
+  background-position: 0 -12em;
+}
+
+.mini .sportsMenu .icon-sport7 .sportName::before,
+.heading-noMoving .icon-sport7::before {
+  background-position: 0 -12em;
+}
+
+.sport7 .liveScore::before {
+  background-position: 0 -600px;
+}
+
+.icon-sport7 .streamingList .sportTitle::before,
+.streamingList .icon-sport7 .sportTitle::before {
+  background-position: 0 -192px;
+}
+
+.heading.icon-sport7::before {
+  background-position: 0 -150px;
+}
+
+.miniOdds-7 .status::before {
+  background-position: 0 -54em;
+}
+
+.icon-sport8 .sportName::before,
+.sport8 .mainTitle::before {
+  background-position: 0 -140px;
+}
+
+.sport8 .sportsIcon {
+  background-position: 0 -14em;
+}
+
+.mini .sportsMenu .icon-sport8 .sportName::before,
+.heading-noMoving .icon-sport8::before {
+  background-position: 0 -14em;
+}
+
+.sport8 .liveScore::before {
+  background-position: 0 -700px;
+}
+
+.icon-sport8 .streamingList .sportTitle::before,
+.streamingList .icon-sport8 .sportTitle::before {
+  background-position: 0 -224px;
+}
+
+.heading.icon-sport8::before {
+  background-position: 0 -175px;
+}
+
+.miniOdds-8 .status::before {
+  background-position: 0 -63em;
+}
+
+.icon-sport9 .sportName::before,
+.sport9 .mainTitle::before {
+  background-position: 0 -160px;
+}
+
+.sport9 .sportsIcon {
+  background-position: 0 -16em;
+}
+
+.mini .sportsMenu .icon-sport9 .sportName::before,
+.heading-noMoving .icon-sport9::before {
+  background-position: 0 -16em;
+}
+
+.sport9 .liveScore::before {
+  background-position: 0 -800px;
+}
+
+.icon-sport9 .streamingList .sportTitle::before,
+.streamingList .icon-sport9 .sportTitle::before {
+  background-position: 0 -256px;
+}
+
+.heading.icon-sport9::before {
+  background-position: 0 -200px;
+}
+
+.miniOdds-9 .status::before {
+  background-position: 0 -72em;
+}
+
+.icon-sport10 .sportName::before,
+.sport10 .mainTitle::before {
+  background-position: 0 -180px;
+}
+
+.sport10 .sportsIcon {
+  background-position: 0 -18em;
+}
+
+.mini .sportsMenu .icon-sport10 .sportName::before,
+.heading-noMoving .icon-sport10::before {
+  background-position: 0 -18em;
+}
+
+.sport10 .liveScore::before {
+  background-position: 0 -900px;
+}
+
+.icon-sport10 .streamingList .sportTitle::before,
+.streamingList .icon-sport10 .sportTitle::before {
+  background-position: 0 -288px;
+}
+
+.heading.icon-sport10::before {
+  background-position: 0 -225px;
+}
+
+.miniOdds-10 .status::before {
+  background-position: 0 -81em;
+}
+
+.icon-sport11 .sportName::before,
+.sport11 .mainTitle::before {
+  background-position: 0 -200px;
+}
+
+.sport11 .sportsIcon {
+  background-position: 0 -20em;
+}
+
+.mini .sportsMenu .icon-sport11 .sportName::before,
+.heading-noMoving .icon-sport11::before {
+  background-position: 0 -20em;
+}
+
+.sport11 .liveScore::before {
+  background-position: 0 -1000px;
+}
+
+.icon-sport11 .streamingList .sportTitle::before,
+.streamingList .icon-sport11 .sportTitle::before {
+  background-position: 0 -320px;
+}
+
+.heading.icon-sport11::before {
+  background-position: 0 -250px;
+}
+
+.miniOdds-11 .status::before {
+  background-position: 0 -90em;
+}
+
+.icon-sport12 .sportName::before,
+.sport12 .mainTitle::before {
+  background-position: 0 -220px;
+}
+
+.sport12 .sportsIcon {
+  background-position: 0 -22em;
+}
+
+.mini .sportsMenu .icon-sport12 .sportName::before,
+.heading-noMoving .icon-sport12::before {
+  background-position: 0 -22em;
+}
+
+.sport12 .liveScore::before {
+  background-position: 0 -1100px;
+}
+
+.icon-sport12 .streamingList .sportTitle::before,
+.streamingList .icon-sport12 .sportTitle::before {
+  background-position: 0 -352px;
+}
+
+.heading.icon-sport12::before {
+  background-position: 0 -275px;
+}
+
+.miniOdds-12 .status::before {
+  background-position: 0 -99em;
+}
+
+.icon-sport13 .sportName::before,
+.sport13 .mainTitle::before {
+  background-position: 0 -240px;
+}
+
+.sport13 .sportsIcon {
+  background-position: 0 -24em;
+}
+
+.mini .sportsMenu .icon-sport13 .sportName::before,
+.heading-noMoving .icon-sport13::before {
+  background-position: 0 -24em;
+}
+
+.sport13 .liveScore::before {
+  background-position: 0 -1200px;
+}
+
+.icon-sport13 .streamingList .sportTitle::before,
+.streamingList .icon-sport13 .sportTitle::before {
+  background-position: 0 -384px;
+}
+
+.heading.icon-sport13::before {
+  background-position: 0 -300px;
+}
+
+.miniOdds-13 .status::before {
+  background-position: 0 -108em;
+}
+
+.icon-sport14 .sportName::before,
+.sport14 .mainTitle::before {
+  background-position: 0 -260px;
+}
+
+.sport14 .sportsIcon {
+  background-position: 0 -26em;
+}
+
+.mini .sportsMenu .icon-sport14 .sportName::before,
+.heading-noMoving .icon-sport14::before {
+  background-position: 0 -26em;
+}
+
+.sport14 .liveScore::before {
+  background-position: 0 -1300px;
+}
+
+.icon-sport14 .streamingList .sportTitle::before,
+.streamingList .icon-sport14 .sportTitle::before {
+  background-position: 0 -416px;
+}
+
+.heading.icon-sport14::before {
+  background-position: 0 -325px;
+}
+
+.miniOdds-14 .status::before {
+  background-position: 0 -117em;
+}
+
+.icon-sport15 .sportName::before,
+.sport15 .mainTitle::before {
+  background-position: 0 -280px;
+}
+
+.sport15 .sportsIcon {
+  background-position: 0 -28em;
+}
+
+.mini .sportsMenu .icon-sport15 .sportName::before,
+.heading-noMoving .icon-sport15::before {
+  background-position: 0 -28em;
+}
+
+.sport15 .liveScore::before {
+  background-position: 0 -1400px;
+}
+
+.icon-sport15 .streamingList .sportTitle::before,
+.streamingList .icon-sport15 .sportTitle::before {
+  background-position: 0 -448px;
+}
+
+.heading.icon-sport15::before {
+  background-position: 0 -350px;
+}
+
+.miniOdds-15 .status::before {
+  background-position: 0 -126em;
+}
+
+.icon-sport16 .sportName::before,
+.sport16 .mainTitle::before {
+  background-position: 0 -300px;
+}
+
+.sport16 .sportsIcon {
+  background-position: 0 -30em;
+}
+
+.mini .sportsMenu .icon-sport16 .sportName::before,
+.heading-noMoving .icon-sport16::before {
+  background-position: 0 -30em;
+}
+
+.sport16 .liveScore::before {
+  background-position: 0 -1500px;
+}
+
+.icon-sport16 .streamingList .sportTitle::before,
+.streamingList .icon-sport16 .sportTitle::before {
+  background-position: 0 -480px;
+}
+
+.heading.icon-sport16::before {
+  background-position: 0 -375px;
+}
+
+.miniOdds-16 .status::before {
+  background-position: 0 -135em;
+}
+
+.icon-sport17 .sportName::before,
+.sport17 .mainTitle::before {
+  background-position: 0 -320px;
+}
+
+.sport17 .sportsIcon {
+  background-position: 0 -32em;
+}
+
+.mini .sportsMenu .icon-sport17 .sportName::before,
+.heading-noMoving .icon-sport17::before {
+  background-position: 0 -32em;
+}
+
+.sport17 .liveScore::before {
+  background-position: 0 -1600px;
+}
+
+.icon-sport17 .streamingList .sportTitle::before,
+.streamingList .icon-sport17 .sportTitle::before {
+  background-position: 0 -512px;
+}
+
+.heading.icon-sport17::before {
+  background-position: 0 -400px;
+}
+
+.miniOdds-17 .status::before {
+  background-position: 0 -144em;
+}
+
+.icon-sport18 .sportName::before,
+.sport18 .mainTitle::before {
+  background-position: 0 -340px;
+}
+
+.sport18 .sportsIcon {
+  background-position: 0 -34em;
+}
+
+.mini .sportsMenu .icon-sport18 .sportName::before,
+.heading-noMoving .icon-sport18::before {
+  background-position: 0 -34em;
+}
+
+.sport18 .liveScore::before {
+  background-position: 0 -1700px;
+}
+
+.icon-sport18 .streamingList .sportTitle::before,
+.streamingList .icon-sport18 .sportTitle::before {
+  background-position: 0 -544px;
+}
+
+.heading.icon-sport18::before {
+  background-position: 0 -425px;
+}
+
+.miniOdds-18 .status::before {
+  background-position: 0 -153em;
+}
+
+.icon-sport19 .sportName::before,
+.sport19 .mainTitle::before {
+  background-position: 0 -360px;
+}
+
+.sport19 .sportsIcon {
+  background-position: 0 -36em;
+}
+
+.mini .sportsMenu .icon-sport19 .sportName::before,
+.heading-noMoving .icon-sport19::before {
+  background-position: 0 -36em;
+}
+
+.sport19 .liveScore::before {
+  background-position: 0 -1800px;
+}
+
+.icon-sport19 .streamingList .sportTitle::before,
+.streamingList .icon-sport19 .sportTitle::before {
+  background-position: 0 -576px;
+}
+
+.heading.icon-sport19::before {
+  background-position: 0 -450px;
+}
+
+.miniOdds-19 .status::before {
+  background-position: 0 -162em;
+}
+
+.icon-sport20 .sportName::before,
+.sport20 .mainTitle::before {
+  background-position: 0 -380px;
+}
+
+.sport20 .sportsIcon {
+  background-position: 0 -38em;
+}
+
+.mini .sportsMenu .icon-sport20 .sportName::before,
+.heading-noMoving .icon-sport20::before {
+  background-position: 0 -38em;
+}
+
+.sport20 .liveScore::before {
+  background-position: 0 -1900px;
+}
+
+.icon-sport20 .streamingList .sportTitle::before,
+.streamingList .icon-sport20 .sportTitle::before {
+  background-position: 0 -608px;
+}
+
+.heading.icon-sport20::before {
+  background-position: 0 -475px;
+}
+
+.miniOdds-20 .status::before {
+  background-position: 0 -171em;
+}
+
+.icon-sport21 .sportName::before,
+.sport21 .mainTitle::before {
+  background-position: 0 -400px;
+}
+
+.sport21 .sportsIcon {
+  background-position: 0 -40em;
+}
+
+.mini .sportsMenu .icon-sport21 .sportName::before,
+.heading-noMoving .icon-sport21::before {
+  background-position: 0 -40em;
+}
+
+.sport21 .liveScore::before {
+  background-position: 0 -2000px;
+}
+
+.icon-sport21 .streamingList .sportTitle::before,
+.streamingList .icon-sport21 .sportTitle::before {
+  background-position: 0 -640px;
+}
+
+.heading.icon-sport21::before {
+  background-position: 0 -500px;
+}
+
+.miniOdds-21 .status::before {
+  background-position: 0 -180em;
+}
+
+.icon-sport22 .sportName::before,
+.sport22 .mainTitle::before {
+  background-position: 0 -420px;
+}
+
+.sport22 .sportsIcon {
+  background-position: 0 -42em;
+}
+
+.mini .sportsMenu .icon-sport22 .sportName::before,
+.heading-noMoving .icon-sport22::before {
+  background-position: 0 -42em;
+}
+
+.sport22 .liveScore::before {
+  background-position: 0 -2100px;
+}
+
+.icon-sport22 .streamingList .sportTitle::before,
+.streamingList .icon-sport22 .sportTitle::before {
+  background-position: 0 -672px;
+}
+
+.heading.icon-sport22::before {
+  background-position: 0 -525px;
+}
+
+.miniOdds-22 .status::before {
+  background-position: 0 -189em;
+}
+
+.icon-sport23 .sportName::before,
+.sport23 .mainTitle::before {
+  background-position: 0 -440px;
+}
+
+.sport23 .sportsIcon {
+  background-position: 0 -44em;
+}
+
+.mini .sportsMenu .icon-sport23 .sportName::before,
+.heading-noMoving .icon-sport23::before {
+  background-position: 0 -44em;
+}
+
+.sport23 .liveScore::before {
+  background-position: 0 -2200px;
+}
+
+.icon-sport23 .streamingList .sportTitle::before,
+.streamingList .icon-sport23 .sportTitle::before {
+  background-position: 0 -704px;
+}
+
+.heading.icon-sport23::before {
+  background-position: 0 -550px;
+}
+
+.miniOdds-23 .status::before {
+  background-position: 0 -198em;
+}
+
+.icon-sport24 .sportName::before,
+.sport24 .mainTitle::before {
+  background-position: 0 -460px;
+}
+
+.sport24 .sportsIcon {
+  background-position: 0 -46em;
+}
+
+.mini .sportsMenu .icon-sport24 .sportName::before,
+.heading-noMoving .icon-sport24::before {
+  background-position: 0 -46em;
+}
+
+.sport24 .liveScore::before {
+  background-position: 0 -2300px;
+}
+
+.icon-sport24 .streamingList .sportTitle::before,
+.streamingList .icon-sport24 .sportTitle::before {
+  background-position: 0 -736px;
+}
+
+.heading.icon-sport24::before {
+  background-position: 0 -575px;
+}
+
+.miniOdds-24 .status::before {
+  background-position: 0 -207em;
+}
+
+.icon-sport25 .sportName::before,
+.sport25 .mainTitle::before {
+  background-position: 0 -480px;
+}
+
+.sport25 .sportsIcon {
+  background-position: 0 -48em;
+}
+
+.mini .sportsMenu .icon-sport25 .sportName::before,
+.heading-noMoving .icon-sport25::before {
+  background-position: 0 -48em;
+}
+
+.sport25 .liveScore::before {
+  background-position: 0 -2400px;
+}
+
+.icon-sport25 .streamingList .sportTitle::before,
+.streamingList .icon-sport25 .sportTitle::before {
+  background-position: 0 -768px;
+}
+
+.heading.icon-sport25::before {
+  background-position: 0 -600px;
+}
+
+.miniOdds-25 .status::before {
+  background-position: 0 -216em;
+}
+
+.icon-sport26 .sportName::before,
+.sport26 .mainTitle::before {
+  background-position: 0 -500px;
+}
+
+.sport26 .sportsIcon {
+  background-position: 0 -50em;
+}
+
+.mini .sportsMenu .icon-sport26 .sportName::before,
+.heading-noMoving .icon-sport26::before {
+  background-position: 0 -50em;
+}
+
+.sport26 .liveScore::before {
+  background-position: 0 -2500px;
+}
+
+.icon-sport26 .streamingList .sportTitle::before,
+.streamingList .icon-sport26 .sportTitle::before {
+  background-position: 0 -800px;
+}
+
+.heading.icon-sport26::before {
+  background-position: 0 -625px;
+}
+
+.miniOdds-26 .status::before {
+  background-position: 0 -225em;
+}
+
+.icon-sport27 .sportName::before,
+.sport27 .mainTitle::before {
+  background-position: 0 -520px;
+}
+
+.sport27 .sportsIcon {
+  background-position: 0 -52em;
+}
+
+.mini .sportsMenu .icon-sport27 .sportName::before,
+.heading-noMoving .icon-sport27::before {
+  background-position: 0 -52em;
+}
+
+.sport27 .liveScore::before {
+  background-position: 0 -2600px;
+}
+
+.icon-sport27 .streamingList .sportTitle::before,
+.streamingList .icon-sport27 .sportTitle::before {
+  background-position: 0 -832px;
+}
+
+.heading.icon-sport27::before {
+  background-position: 0 -650px;
+}
+
+.miniOdds-27 .status::before {
+  background-position: 0 -234em;
+}
+
+.icon-sport50 .sportName::before,
+.sport50 .mainTitle::before {
+  background-position: 0 -520px;
+}
+
+.sport50 .sportsIcon {
+  background-position: 0 -52em;
+}
+
+.mini .sportsMenu .icon-sport50 .sportName::before,
+.heading-noMoving .icon-sport27::before {
+  background-position: 0 -52em;
+}
+
+.sport50 .liveScore::before {
+  background-position: 0 -2600px;
+}
+
+.icon-sport50 .streamingList .sportTitle::before,
+.streamingList .icon-sport50 .sportTitle::before {
+  background-position: 0 -832px;
+}
+
+.heading.icon-sport50::before {
+  background-position: 0 -650px;
+}
+
+.miniOdds-50 .status::before {
+  background-position: 0 -234em;
+}
+
+.icon-sport28 .sportName::before,
+.sport28 .mainTitle::before {
+  background-position: 0 -540px;
+}
+
+.sport28 .sportsIcon {
+  background-position: 0 -54em;
+}
+
+.mini .sportsMenu .icon-sport28 .sportName::before,
+.heading-noMoving .icon-sport28::before {
+  background-position: 0 -54em;
+}
+
+.sport28 .liveScore::before {
+  background-position: 0 -2700px;
+}
+
+.icon-sport28 .streamingList .sportTitle::before,
+.streamingList .icon-sport28 .sportTitle::before {
+  background-position: 0 -864px;
+}
+
+.heading.icon-sport28::before {
+  background-position: 0 -675px;
+}
+
+.miniOdds-28 .status::before {
+  background-position: 0 -243em;
+}
+
+.icon-sport29 .sportName::before,
+.sport29 .mainTitle::before {
+  background-position: 0 -560px;
+}
+
+.sport29 .sportsIcon {
+  background-position: 0 -56em;
+}
+
+.mini .sportsMenu .icon-sport29 .sportName::before,
+.heading-noMoving .icon-sport29::before {
+  background-position: 0 -56em;
+}
+
+.sport29 .liveScore::before {
+  background-position: 0 -2800px;
+}
+
+.icon-sport29 .streamingList .sportTitle::before,
+.streamingList .icon-sport29 .sportTitle::before {
+  background-position: 0 -896px;
+}
+
+.heading.icon-sport29::before {
+  background-position: 0 -700px;
+}
+
+.miniOdds-29 .status::before {
+  background-position: 0 -252em;
+}
+
+.icon-sport30 .sportName::before,
+.sport30 .mainTitle::before {
+  background-position: 0 -580px;
+}
+
+.sport30 .sportsIcon {
+  background-position: 0 -58em;
+}
+
+.mini .sportsMenu .icon-sport30 .sportName::before,
+.heading-noMoving .icon-sport30::before {
+  background-position: 0 -58em;
+}
+
+.sport30 .liveScore::before {
+  background-position: 0 -2900px;
+}
+
+.icon-sport30 .streamingList .sportTitle::before,
+.streamingList .icon-sport30 .sportTitle::before {
+  background-position: 0 -928px;
+}
+
+.heading.icon-sport30::before {
+  background-position: 0 -725px;
+}
+
+.miniOdds-30 .status::before {
+  background-position: 0 -261em;
+}
+
+.icon-sport31 .sportName::before,
+.sport31 .mainTitle::before {
+  background-position: 0 -600px;
+}
+
+.sport31 .sportsIcon {
+  background-position: 0 -60em;
+}
+
+.mini .sportsMenu .icon-sport31 .sportName::before,
+.heading-noMoving .icon-sport31::before {
+  background-position: 0 -60em;
+}
+
+.sport31 .liveScore::before {
+  background-position: 0 -3000px;
+}
+
+.icon-sport31 .streamingList .sportTitle::before,
+.streamingList .icon-sport31 .sportTitle::before {
+  background-position: 0 -960px;
+}
+
+.heading.icon-sport31::before {
+  background-position: 0 -750px;
+}
+
+.miniOdds-31 .status::before {
+  background-position: 0 -270em;
+}
+
+.icon-sport32 .sportName::before,
+.sport32 .mainTitle::before {
+  background-position: 0 -620px;
+}
+
+.sport32 .sportsIcon {
+  background-position: 0 -62em;
+}
+
+.mini .sportsMenu .icon-sport32 .sportName::before,
+.heading-noMoving .icon-sport32::before {
+  background-position: 0 -62em;
+}
+
+.sport32 .liveScore::before {
+  background-position: 0 -3100px;
+}
+
+.icon-sport32 .streamingList .sportTitle::before,
+.streamingList .icon-sport32 .sportTitle::before {
+  background-position: 0 -992px;
+}
+
+.heading.icon-sport32::before {
+  background-position: 0 -775px;
+}
+
+.miniOdds-32 .status::before {
+  background-position: 0 -279em;
+}
+
+.icon-sport33 .sportName::before,
+.sport33 .mainTitle::before {
+  background-position: 0 -640px;
+}
+
+.sport33 .sportsIcon {
+  background-position: 0 -64em;
+}
+
+.mini .sportsMenu .icon-sport33 .sportName::before,
+.heading-noMoving .icon-sport33::before {
+  background-position: 0 -64em;
+}
+
+.sport33 .liveScore::before {
+  background-position: 0 -3200px;
+}
+
+.icon-sport33 .streamingList .sportTitle::before,
+.streamingList .icon-sport33 .sportTitle::before {
+  background-position: 0 -1024px;
+}
+
+.heading.icon-sport33::before {
+  background-position: 0 -800px;
+}
+
+.miniOdds-33 .status::before {
+  background-position: 0 -288em;
+}
+
+.icon-sport34 .sportName::before,
+.sport34 .mainTitle::before {
+  background-position: 0 -660px;
+}
+
+.sport34 .sportsIcon {
+  background-position: 0 -66em;
+}
+
+.mini .sportsMenu .icon-sport34 .sportName::before,
+.heading-noMoving .icon-sport34::before {
+  background-position: 0 -66em;
+}
+
+.sport34 .liveScore::before {
+  background-position: 0 -3300px;
+}
+
+.icon-sport34 .streamingList .sportTitle::before,
+.streamingList .icon-sport34 .sportTitle::before {
+  background-position: 0 -1056px;
+}
+
+.heading.icon-sport34::before {
+  background-position: 0 -825px;
+}
+
+.miniOdds-34 .status::before {
+  background-position: 0 -297em;
+}
+
+.icon-sport35 .sportName::before,
+.sport35 .mainTitle::before {
+  background-position: 0 -680px;
+}
+
+.sport35 .sportsIcon {
+  background-position: 0 -68em;
+}
+
+.mini .sportsMenu .icon-sport35 .sportName::before,
+.heading-noMoving .icon-sport35::before {
+  background-position: 0 -68em;
+}
+
+.sport35 .liveScore::before {
+  background-position: 0 -3400px;
+}
+
+.icon-sport35 .streamingList .sportTitle::before,
+.streamingList .icon-sport35 .sportTitle::before {
+  background-position: 0 -1088px;
+}
+
+.heading.icon-sport35::before {
+  background-position: 0 -850px;
+}
+
+.miniOdds-35 .status::before {
+  background-position: 0 -306em;
+}
+
+.icon-sport36 .sportName::before,
+.sport36 .mainTitle::before {
+  background-position: 0 -700px;
+}
+
+.sport36 .sportsIcon {
+  background-position: 0 -70em;
+}
+
+.mini .sportsMenu .icon-sport36 .sportName::before,
+.heading-noMoving .icon-sport36::before {
+  background-position: 0 -70em;
+}
+
+.sport36 .liveScore::before {
+  background-position: 0 -3500px;
+}
+
+.icon-sport36 .streamingList .sportTitle::before,
+.streamingList .icon-sport36 .sportTitle::before {
+  background-position: 0 -1120px;
+}
+
+.heading.icon-sport36::before {
+  background-position: 0 -875px;
+}
+
+.miniOdds-36 .status::before {
+  background-position: 0 -315em;
+}
+
+.icon-sport37 .sportName::before,
+.sport37 .mainTitle::before {
+  background-position: 0 -720px;
+}
+
+.sport37 .sportsIcon {
+  background-position: 0 -72em;
+}
+
+.mini .sportsMenu .icon-sport37 .sportName::before,
+.heading-noMoving .icon-sport37::before {
+  background-position: 0 -72em;
+}
+
+.sport37 .liveScore::before {
+  background-position: 0 -3600px;
+}
+
+.icon-sport37 .streamingList .sportTitle::before,
+.streamingList .icon-sport37 .sportTitle::before {
+  background-position: 0 -1152px;
+}
+
+.heading.icon-sport37::before {
+  background-position: 0 -900px;
+}
+
+.miniOdds-37 .status::before {
+  background-position: 0 -324em;
+}
+
+.icon-sport38 .sportName::before,
+.sport38 .mainTitle::before {
+  background-position: 0 -740px;
+}
+
+.sport38 .sportsIcon {
+  background-position: 0 -74em;
+}
+
+.mini .sportsMenu .icon-sport38 .sportName::before,
+.heading-noMoving .icon-sport38::before {
+  background-position: 0 -74em;
+}
+
+.sport38 .liveScore::before {
+  background-position: 0 -3700px;
+}
+
+.icon-sport38 .streamingList .sportTitle::before,
+.streamingList .icon-sport38 .sportTitle::before {
+  background-position: 0 -1184px;
+}
+
+.heading.icon-sport38::before {
+  background-position: 0 -925px;
+}
+
+.miniOdds-38 .status::before {
+  background-position: 0 -333em;
+}
+
+.icon-sport39 .sportName::before,
+.sport39 .mainTitle::before {
+  background-position: 0 -760px;
+}
+
+.sport39 .sportsIcon {
+  background-position: 0 -76em;
+}
+
+.mini .sportsMenu .icon-sport39 .sportName::before,
+.heading-noMoving .icon-sport39::before {
+  background-position: 0 -76em;
+}
+
+.sport39 .liveScore::before {
+  background-position: 0 -3800px;
+}
+
+.icon-sport39 .streamingList .sportTitle::before,
+.streamingList .icon-sport39 .sportTitle::before {
+  background-position: 0 -1216px;
+}
+
+.heading.icon-sport39::before {
+  background-position: 0 -950px;
+}
+
+.miniOdds-39 .status::before {
+  background-position: 0 -342em;
+}
+
+.icon-sport40 .sportName::before,
+.sport40 .mainTitle::before {
+  background-position: 0 -780px;
+}
+
+.sport40 .sportsIcon {
+  background-position: 0 -78em;
+}
+
+.mini .sportsMenu .icon-sport40 .sportName::before,
+.heading-noMoving .icon-sport40::before {
+  background-position: 0 -78em;
+}
+
+.sport40 .liveScore::before {
+  background-position: 0 -3900px;
+}
+
+.icon-sport40 .streamingList .sportTitle::before,
+.streamingList .icon-sport40 .sportTitle::before {
+  background-position: 0 -1248px;
+}
+
+.heading.icon-sport40::before {
+  background-position: 0 -975px;
+}
+
+.miniOdds-40 .status::before {
+  background-position: 0 -351em;
+}
+
+.icon-sport41 .sportName::before,
+.sport41 .mainTitle::before {
+  background-position: 0 -800px;
+}
+
+.sport41 .sportsIcon {
+  background-position: 0 -80em;
+}
+
+.mini .sportsMenu .icon-sport41 .sportName::before,
+.heading-noMoving .icon-sport41::before {
+  background-position: 0 -80em;
+}
+
+.sport41 .liveScore::before {
+  background-position: 0 -4000px;
+}
+
+.icon-sport41 .streamingList .sportTitle::before,
+.streamingList .icon-sport41 .sportTitle::before {
+  background-position: 0 -1280px;
+}
+
+.heading.icon-sport41::before {
+  background-position: 0 -1000px;
+}
+
+.miniOdds-41 .status::before {
+  background-position: 0 -360em;
+}
+
+.icon-sport42 .sportName::before,
+.sport42 .mainTitle::before {
+  background-position: 0 -820px;
+}
+
+.sport42 .sportsIcon {
+  background-position: 0 -82em;
+}
+
+.mini .sportsMenu .icon-sport42 .sportName::before,
+.heading-noMoving .icon-sport42::before {
+  background-position: 0 -82em;
+}
+
+.sport42 .liveScore::before {
+  background-position: 0 -4100px;
+}
+
+.icon-sport42 .streamingList .sportTitle::before,
+.streamingList .icon-sport42 .sportTitle::before {
+  background-position: 0 -1312px;
+}
+
+.heading.icon-sport42::before {
+  background-position: 0 -1025px;
+}
+
+.miniOdds-42 .status::before {
+  background-position: 0 -369em;
+}
+
+.icon-sport43 .sportName::before,
+.sport43 .mainTitle::before {
+  background-position: 0 -840px;
+}
+
+.sport43 .sportsIcon {
+  background-position: 0 -84em;
+}
+
+.mini .sportsMenu .icon-sport43 .sportName::before,
+.heading-noMoving .icon-sport43::before {
+  background-position: 0 -84em;
+}
+
+.sport43 .liveScore::before {
+  background-position: 0 -4200px;
+}
+
+.icon-sport43 .streamingList .sportTitle::before,
+.streamingList .icon-sport43 .sportTitle::before {
+  background-position: 0 -1344px;
+}
+
+.heading.icon-sport43::before {
+  background-position: 0 -1050px;
+}
+
+.miniOdds-43 .status::before {
+  background-position: 0 -378em;
+}
+
+.icon-sport44 .sportName::before,
+.sport44 .mainTitle::before {
+  background-position: 0 -860px;
+}
+
+.sport44 .sportsIcon {
+  background-position: 0 -86em;
+}
+
+.mini .sportsMenu .icon-sport44 .sportName::before,
+.heading-noMoving .icon-sport44::before {
+  background-position: 0 -86em;
+}
+
+.sport44 .liveScore::before {
+  background-position: 0 -4300px;
+}
+
+.icon-sport44 .streamingList .sportTitle::before,
+.streamingList .icon-sport44 .sportTitle::before {
+  background-position: 0 -1376px;
+}
+
+.heading.icon-sport44::before {
+  background-position: 0 -1075px;
+}
+
+.miniOdds-44 .status::before {
+  background-position: 0 -387em;
+}
+
+.icon-sport99 .sportName::before,
+.sport99 .mainTitle::before {
+  background-position: 0 -880px;
+}
+
+.sport99 .sportsIcon {
+  background-position: 0 -88em;
+}
+
+.mini .sportsMenu .icon-sport99 .sportName::before,
+.heading-noMoving .icon-sport99::before {
+  background-position: 0 -88em;
+}
+
+.sport99 .liveScore::before {
+  background-position: 0 -4400px;
+}
+
+.icon-sport99 .streamingList .sportTitle::before,
+.streamingList .icon-sport99 .sportTitle::before {
+  background-position: 0 -1408px;
+}
+
+.heading.icon-sport99::before {
+  background-position: 0 -1100px;
+}
+
+.miniOdds-99 .status::before {
+  background-position: 0 -396em;
+}
+
+.icon-sport15x .sportName::before,
+.sport15x .mainTitle::before {
+  background-position: 0 -900px;
+}
+
+.sport15x .sportsIcon {
+  background-position: 0 -90em;
+}
+
+.mini .sportsMenu .icon-sport15x .sportName::before,
+.heading-noMoving .icon-sport15x::before {
+  background-position: 0 -90em;
+}
+
+.sport15x .liveScore::before {
+  background-position: 0 -4500px;
+}
+
+.icon-sport15x .streamingList .sportTitle::before,
+.streamingList .icon-sport15x .sportTitle::before {
+  background-position: 0 -1440px;
+}
+
+.heading.icon-sport15x::before {
+  background-position: 0 -1125px;
+}
+
+.miniOdds-15x .status::before {
+  background-position: 0 -405em;
+}
+
+.icon-sport151 .sportName::before,
+.sport151 .mainTitle::before {
+  background-position: 0 -920px;
+}
+
+.sport151 .sportsIcon {
+  background-position: 0 -92em;
+}
+
+.mini .sportsMenu .icon-sport151 .sportName::before,
+.heading-noMoving .icon-sport151::before {
+  background-position: 0 -92em;
+}
+
+.sport151 .liveScore::before {
+  background-position: 0 -4600px;
+}
+
+.icon-sport151 .streamingList .sportTitle::before,
+.streamingList .icon-sport151 .sportTitle::before {
+  background-position: 0 -1472px;
+}
+
+.heading.icon-sport151::before {
+  background-position: 0 -1150px;
+}
+
+.miniOdds-151 .status::before {
+  background-position: 0 -414em;
+}
+
+.icon-sport152 .sportName::before,
+.sport152 .mainTitle::before {
+  background-position: 0 -940px;
+}
+
+.sport152 .sportsIcon {
+  background-position: 0 -94em;
+}
+
+.mini .sportsMenu .icon-sport152 .sportName::before,
+.heading-noMoving .icon-sport152::before {
+  background-position: 0 -94em;
+}
+
+.sport152 .liveScore::before {
+  background-position: 0 -4700px;
+}
+
+.icon-sport152 .streamingList .sportTitle::before,
+.streamingList .icon-sport152 .sportTitle::before {
+  background-position: 0 -1504px;
+}
+
+.heading.icon-sport152::before {
+  background-position: 0 -1175px;
+}
+
+.miniOdds-152 .status::before {
+  background-position: 0 -423em;
+}
+
+.icon-sport153 .sportName::before,
+.sport153 .mainTitle::before {
+  background-position: 0 -960px;
+}
+
+.sport153 .sportsIcon {
+  background-position: 0 -96em;
+}
+
+.mini .sportsMenu .icon-sport153 .sportName::before,
+.heading-noMoving .icon-sport153::before {
+  background-position: 0 -96em;
+}
+
+.sport153 .liveScore::before {
+  background-position: 0 -4800px;
+}
+
+.icon-sport153 .streamingList .sportTitle::before,
+.streamingList .icon-sport153 .sportTitle::before {
+  background-position: 0 -1536px;
+}
+
+.heading.icon-sport153::before {
+  background-position: 0 -1200px;
+}
+
+.miniOdds-153 .status::before {
+  background-position: 0 -432em;
+}
+
+.icon-sport161 .sportName::before,
+.sport161 .mainTitle::before {
+  background-position: 0 -980px;
+}
+
+.sport161 .sportsIcon {
+  background-position: 0 -98em;
+}
+
+.mini .sportsMenu .icon-sport161 .sportName::before,
+.heading-noMoving .icon-sport161::before {
+  background-position: 0 -98em;
+}
+
+.sport161 .liveScore::before {
+  background-position: 0 -4900px;
+}
+
+.icon-sport161 .streamingList .sportTitle::before,
+.streamingList .icon-sport161 .sportTitle::before {
+  background-position: 0 -1568px;
+}
+
+.heading.icon-sport161::before {
+  background-position: 0 -1225px;
+}
+
+.miniOdds-161 .status::before {
+  background-position: 0 -441em;
+}
+
+.icon-sport162 .sportName::before,
+.sport162 .mainTitle::before {
+  background-position: 0 -1000px;
+}
+
+.sport162 .sportsIcon {
+  background-position: 0 -100em;
+}
+
+.mini .sportsMenu .icon-sport162 .sportName::before,
+.heading-noMoving .icon-sport162::before {
+  background-position: 0 -100em;
+}
+
+.sport162 .liveScore::before {
+  background-position: 0 -5000px;
+}
+
+.icon-sport162 .streamingList .sportTitle::before,
+.streamingList .icon-sport162 .sportTitle::before {
+  background-position: 0 -1600px;
+}
+
+.heading.icon-sport162::before {
+  background-position: 0 -1250px;
+}
+
+.miniOdds-162 .status::before {
+  background-position: 0 -450em;
+}
+
+.icon-sport18x .sportName::before,
+.sport18x .mainTitle::before {
+  background-position: 0 -1020px;
+}
+
+.sport18x .sportsIcon {
+  background-position: 0 -102em;
+}
+
+.mini .sportsMenu .icon-sport18x .sportName::before,
+.heading-noMoving .icon-sport18x::before {
+  background-position: 0 -102em;
+}
+
+.sport18x .liveScore::before {
+  background-position: 0 -5100px;
+}
+
+.icon-sport18x .streamingList .sportTitle::before,
+.streamingList .icon-sport18x .sportTitle::before {
+  background-position: 0 -1632px;
+}
+
+.heading.icon-sport18x::before {
+  background-position: 0 -1275px;
+}
+
+.miniOdds-18x .status::before {
+  background-position: 0 -459em;
+}
+
+.icon-sport180 .sportName::before,
+.sport180 .mainTitle::before {
+  background-position: 0 -1040px;
+}
+
+.sport180 .sportsIcon {
+  background-position: 0 -104em;
+}
+
+.mini .sportsMenu .icon-sport180 .sportName::before,
+.heading-noMoving .icon-sport180::before {
+  background-position: 0 -104em;
+}
+
+.sport180 .liveScore::before {
+  background-position: 0 -5200px;
+}
+
+.icon-sport180 .streamingList .sportTitle::before,
+.streamingList .icon-sport180 .sportTitle::before {
+  background-position: 0 -1664px;
+}
+
+.heading.icon-sport180::before {
+  background-position: 0 -1300px;
+}
+
+.miniOdds-180 .status::before {
+  background-position: 0 -468em;
+}
+
+.icon-sport181 .sportName::before,
+.sport181 .mainTitle::before {
+  background-position: 0 -1060px;
+}
+
+.sport181 .sportsIcon {
+  background-position: 0 -106em;
+}
+
+.mini .sportsMenu .icon-sport181 .sportName::before,
+.heading-noMoving .icon-sport181::before {
+  background-position: 0 -106em;
+}
+
+.sport181 .liveScore::before {
+  background-position: 0 -5300px;
+}
+
+.icon-sport181 .streamingList .sportTitle::before,
+.streamingList .icon-sport181 .sportTitle::before {
+  background-position: 0 -1696px;
+}
+
+.heading.icon-sport181::before {
+  background-position: 0 -1325px;
+}
+
+.miniOdds-181 .status::before {
+  background-position: 0 -477em;
+}
+
+.icon-sport182 .sportName::before,
+.sport182 .mainTitle::before {
+  background-position: 0 -1080px;
+}
+
+.sport182 .sportsIcon {
+  background-position: 0 -108em;
+}
+
+.mini .sportsMenu .icon-sport182 .sportName::before,
+.heading-noMoving .icon-sport182::before {
+  background-position: 0 -108em;
+}
+
+.sport182 .liveScore::before {
+  background-position: 0 -5400px;
+}
+
+.icon-sport182 .streamingList .sportTitle::before,
+.streamingList .icon-sport182 .sportTitle::before {
+  background-position: 0 -1728px;
+}
+
+.heading.icon-sport182::before {
+  background-position: 0 -1350px;
+}
+
+.miniOdds-182 .status::before {
+  background-position: 0 -486em;
+}
+
+.icon-sport183 .sportName::before,
+.sport183 .mainTitle::before {
+  background-position: 0 -1100px;
+}
+
+.sport183 .sportsIcon {
+  background-position: 0 -110em;
+}
+
+.mini .sportsMenu .icon-sport183 .sportName::before,
+.heading-noMoving .icon-sport183::before {
+  background-position: 0 -110em;
+}
+
+.sport183 .liveScore::before {
+  background-position: 0 -5500px;
+}
+
+.icon-sport183 .streamingList .sportTitle::before,
+.streamingList .icon-sport183 .sportTitle::before {
+  background-position: 0 -1760px;
+}
+
+.heading.icon-sport183::before {
+  background-position: 0 -1375px;
+}
+
+.miniOdds-183 .status::before {
+  background-position: 0 -495em;
+}
+
+.icon-sport184 .sportName::before,
+.sport184 .mainTitle::before {
+  background-position: 0 -1120px;
+}
+
+.sport184 .sportsIcon {
+  background-position: 0 -112em;
+}
+
+.mini .sportsMenu .icon-sport184 .sportName::before,
+.heading-noMoving .icon-sport184::before {
+  background-position: 0 -112em;
+}
+
+.sport184 .liveScore::before {
+  background-position: 0 -5600px;
+}
+
+.icon-sport184 .streamingList .sportTitle::before,
+.streamingList .icon-sport184 .sportTitle::before {
+  background-position: 0 -1792px;
+}
+
+.heading.icon-sport184::before {
+  background-position: 0 -1400px;
+}
+
+.miniOdds-184 .status::before {
+  background-position: 0 -504em;
+}
+
+.icon-sport185 .sportName::before,
+.sport185 .mainTitle::before {
+  background-position: 0 -1140px;
+}
+
+.sport185 .sportsIcon {
+  background-position: 0 -114em;
+}
+
+.mini .sportsMenu .icon-sport185 .sportName::before,
+.heading-noMoving .icon-sport185::before {
+  background-position: 0 -114em;
+}
+
+.sport185 .liveScore::before {
+  background-position: 0 -5700px;
+}
+
+.icon-sport185 .streamingList .sportTitle::before,
+.streamingList .icon-sport185 .sportTitle::before {
+  background-position: 0 -1824px;
+}
+
+.heading.icon-sport185::before {
+  background-position: 0 -1425px;
+}
+
+.miniOdds-185 .status::before {
+  background-position: 0 -513em;
+}
+
+.icon-sport186 .sportName::before,
+.sport186 .mainTitle::before {
+  background-position: 0 -1160px;
+}
+
+.sport186 .sportsIcon {
+  background-position: 0 -116em;
+}
+
+.mini .sportsMenu .icon-sport186 .sportName::before,
+.heading-noMoving .icon-sport186::before {
+  background-position: 0 -116em;
+}
+
+.sport186 .liveScore::before {
+  background-position: 0 -5800px;
+}
+
+.icon-sport186 .streamingList .sportTitle::before,
+.streamingList .icon-sport186 .sportTitle::before {
+  background-position: 0 -1856px;
+}
+
+.heading.icon-sport186::before {
+  background-position: 0 -1450px;
+}
+
+.miniOdds-186 .status::before {
+  background-position: 0 -522em;
+}
+
+.icon-sport201 .sportName::before,
+.sport201 .mainTitle::before {
+  background-position: 0 -1180px;
+}
+
+.sport201 .sportsIcon {
+  background-position: 0 -118em;
+}
+
+.mini .sportsMenu .icon-sport201 .sportName::before,
+.heading-noMoving .icon-sport201::before {
+  background-position: 0 -118em;
+}
+
+.sport201 .liveScore::before {
+  background-position: 0 -5900px;
+}
+
+.icon-sport201 .streamingList .sportTitle::before,
+.streamingList .icon-sport201 .sportTitle::before {
+  background-position: 0 -1888px;
+}
+
+.heading.icon-sport201::before {
+  background-position: 0 -1475px;
+}
+
+.miniOdds-201 .status::before {
+  background-position: 0 -531em;
+}
+
+.icon-sport204 .sportName::before,
+.sport204 .mainTitle::before {
+  background-position: 0 -1200px;
+}
+
+.sport204 .sportsIcon {
+  background-position: 0 -120em;
+}
+
+.mini .sportsMenu .icon-sport204 .sportName::before,
+.heading-noMoving .icon-sport204::before {
+  background-position: 0 -120em;
+}
+
+.sport204 .liveScore::before {
+  background-position: 0 -6000px;
+}
+
+.icon-sport204 .streamingList .sportTitle::before,
+.streamingList .icon-sport204 .sportTitle::before {
+  background-position: 0 -1920px;
+}
+
+.heading.icon-sport204::before {
+  background-position: 0 -1500px;
+}
+
+.miniOdds-204 .status::before {
+  background-position: 0 -540em;
+}
+
+.icon-sport251 .sportName::before,
+.sport251 .mainTitle::before {
+  background-position: 0 -1220px;
+}
+
+.sport251 .sportsIcon {
+  background-position: 0 -122em;
+}
+
+.mini .sportsMenu .icon-sport251 .sportName::before,
+.heading-noMoving .icon-sport251::before {
+  background-position: 0 -122em;
+}
+
+.sport251 .liveScore::before {
+  background-position: 0 -6100px;
+}
+
+.icon-sport251 .streamingList .sportTitle::before,
+.streamingList .icon-sport251 .sportTitle::before {
+  background-position: 0 -1952px;
+}
+
+.heading.icon-sport251::before {
+  background-position: 0 -1525px;
+}
+
+.miniOdds-251 .status::before {
+  background-position: 0 -549em;
+}
+
+.icon-sport252 .sportName::before,
+.sport252 .mainTitle::before {
+  background-position: 0 -1240px;
+}
+
+.sport252 .sportsIcon {
+  background-position: 0 -124em;
+}
+
+.mini .sportsMenu .icon-sport252 .sportName::before,
+.heading-noMoving .icon-sport252::before {
+  background-position: 0 -124em;
+}
+
+.sport252 .liveScore::before {
+  background-position: 0 -6200px;
+}
+
+.icon-sport252 .streamingList .sportTitle::before,
+.streamingList .icon-sport252 .sportTitle::before {
+  background-position: 0 -1984px;
+}
+
+.heading.icon-sport252::before {
+  background-position: 0 -1550px;
+}
+
+.miniOdds-252 .status::before {
+  background-position: 0 -558em;
+}
+
+.icon-sport253 .sportName::before,
+.sport253 .mainTitle::before {
+  background-position: 0 -1260px;
+}
+
+.sport253 .sportsIcon {
+  background-position: 0 -126em;
+}
+
+.mini .sportsMenu .icon-sport253 .sportName::before,
+.heading-noMoving .icon-sport253::before {
+  background-position: 0 -126em;
+}
+
+.sport253 .liveScore::before {
+  background-position: 0 -6300px;
+}
+
+.icon-sport253 .streamingList .sportTitle::before,
+.streamingList .icon-sport253 .sportTitle::before {
+  background-position: 0 -2016px;
+}
+
+.heading.icon-sport253::before {
+  background-position: 0 -1575px;
+}
+
+.miniOdds-253 .status::before {
+  background-position: 0 -567em;
+}
+
+.icon-sport255 .sportName::before,
+.sport255 .mainTitle::before {
+  background-position: 0 -1280px;
+}
+
+.sport255 .sportsIcon {
+  background-position: 0 -128em;
+}
+
+.mini .sportsMenu .icon-sport255 .sportName::before,
+.heading-noMoving .icon-sport255::before {
+  background-position: 0 -128em;
+}
+
+.sport255 .liveScore::before {
+  background-position: 0 -6400px;
+}
+
+.icon-sport255 .streamingList .sportTitle::before,
+.streamingList .icon-sport255 .sportTitle::before {
+  background-position: 0 -2048px;
+}
+
+.heading.icon-sport255::before {
+  background-position: 0 -1600px;
+}
+
+.miniOdds-255 .status::before {
+  background-position: 0 -576em;
+}
+
+.icon-sportOutright .sportName::before,
+.sportOutright .mainTitle::before {
+  background-position: 0 -1300px;
+}
+
+.sportOutright .sportsIcon {
+  background-position: 0 -130em;
+}
+
+.mini .sportsMenu .icon-sportOutright .sportName::before,
+.heading-noMoving .icon-sportOutright::before {
+  background-position: 0 -130em;
+}
+
+.sportOutright .liveScore::before {
+  background-position: 0 -6500px;
+}
+
+.icon-sportOutright .streamingList .sportTitle::before,
+.streamingList .icon-sportOutright .sportTitle::before {
+  background-position: 0 -2080px;
+}
+
+.heading.icon-sportOutright::before {
+  background-position: 0 -1625px;
+}
+
+.miniOdds-Outright .status::before {
+  background-position: 0 -585em;
+}
+
+.icon-sportMixparlay .sportName::before,
+.sportMixparlay .mainTitle::before {
+  background-position: 0 -1320px;
+}
+
+.sportMixparlay .sportsIcon {
+  background-position: 0 -132em;
+}
+
+.mini .sportsMenu .icon-sportMixparlay .sportName::before,
+.heading-noMoving .icon-sportMixparlay::before {
+  background-position: 0 -132em;
+}
+
+.sportMixparlay .liveScore::before {
+  background-position: 0 -6600px;
+}
+
+.icon-sportMixparlay .streamingList .sportTitle::before,
+.streamingList .icon-sportMixparlay .sportTitle::before {
+  background-position: 0 -2112px;
+}
+
+.heading.icon-sportMixparlay::before {
+  background-position: 0 -1650px;
+}
+
+.miniOdds-Mixparlay .status::before {
+  background-position: 0 -594em;
+}
+
+.icon-sportLive .sportName::before,
+.sportLive .mainTitle::before {
+  background-position: 0 -1340px;
+}
+
+.sportLive .sportsIcon {
+  background-position: 0 -134em;
+}
+
+.mini .sportsMenu .icon-sportLive .sportName::before,
+.heading-noMoving .icon-sportLive::before {
+  background-position: 0 -134em;
+}
+
+.sportLive .liveScore::before {
+  background-position: 0 -6700px;
+}
+
+.icon-sportLive .streamingList .sportTitle::before,
+.streamingList .icon-sportLive .sportTitle::before {
+  background-position: 0 -2144px;
+}
+
+.heading.icon-sportLive::before {
+  background-position: 0 -1675px;
+}
+
+.miniOdds-Live .status::before {
+  background-position: 0 -603em;
+}
+
+.icon-sportFavorite .sportName::before,
+.sportFavorite .mainTitle::before {
+  background-position: 0 -1360px;
+}
+
+.sportFavorite .sportsIcon {
+  background-position: 0 -136em;
+}
+
+.mini .sportsMenu .icon-sportFavorite .sportName::before,
+.heading-noMoving .icon-sportFavorite::before {
+  background-position: 0 -136em;
+}
+
+.sportFavorite .liveScore::before {
+  background-position: 0 -6800px;
+}
+
+.icon-sportFavorite .streamingList .sportTitle::before,
+.streamingList .icon-sportFavorite .sportTitle::before {
+  background-position: 0 -2176px;
+}
+
+.heading.icon-sportFavorite::before {
+  background-position: 0 -1700px;
+}
+
+.miniOdds-Favorite .status::before {
+  background-position: 0 -612em;
+}
+
+.icon-sportSearchResult .sportName::before,
+.sportSearchResult .mainTitle::before {
+  background-position: 0 -1380px;
+}
+
+.sportSearchResult .sportsIcon {
+  background-position: 0 -138em;
+}
+
+.mini .sportsMenu .icon-sportSearchResult .sportName::before,
+.heading-noMoving .icon-sportSearchResult::before {
+  background-position: 0 -138em;
+}
+
+.sportSearchResult .liveScore::before {
+  background-position: 0 -6900px;
+}
+
+.icon-sportSearchResult .streamingList .sportTitle::before,
+.streamingList .icon-sportSearchResult .sportTitle::before {
+  background-position: 0 -2208px;
+}
+
+.heading.icon-sportSearchResult::before {
+  background-position: 0 -1725px;
+}
+
+.miniOdds-SearchResult .status::before {
+  background-position: 0 -621em;
+}
+
+.icon-sportAll .sportName::before,
+.sportAll .mainTitle::before {
+  background-position: 0 -1400px;
+}
+
+.sportAll .sportsIcon {
+  background-position: 0 -140em;
+}
+
+.mini .sportsMenu .icon-sportAll .sportName::before,
+.heading-noMoving .icon-sportAll::before {
+  background-position: 0 -140em;
+}
+
+.sportAll .liveScore::before {
+  background-position: 0 -7000px;
+}
+
+.icon-sportAll .streamingList .sportTitle::before,
+.streamingList .icon-sportAll .sportTitle::before {
+  background-position: 0 -2240px;
+}
+
+.heading.icon-sportAll::before {
+  background-position: 0 -1750px;
+}
+
+.miniOdds-All .status::before {
+  background-position: 0 -630em;
+}
+
+.icon-sportCrossSelling .sportName::before,
+.sportCrossSelling .mainTitle::before {
+  background-position: 0 -1420px;
+}
+
+.sportCrossSelling .sportsIcon {
+  background-position: 0 -142em;
+}
+
+.mini .sportsMenu .icon-sportCrossSelling .sportName::before,
+.heading-noMoving .icon-sportCrossSelling::before {
+  background-position: 0 -142em;
+}
+
+.sportCrossSelling .liveScore::before {
+  background-position: 0 -7100px;
+}
+
+.icon-sportCrossSelling .streamingList .sportTitle::before,
+.streamingList .icon-sportCrossSelling .sportTitle::before {
+  background-position: 0 -2272px;
+}
+
+.heading.icon-sportCrossSelling::before {
+  background-position: 0 -1775px;
+}
+
+.miniOdds-CrossSelling .status::before {
+  background-position: 0 -639em;
+}
+
+.icon-sportCup .sportName::before,
+.sportCup .mainTitle::before {
+  background-position: 0 -1440px;
+}
+
+.sportCup .sportsIcon {
+  background-position: 0 -144em;
+}
+
+.mini .sportsMenu .icon-sportCup .sportName::before,
+.heading-noMoving .icon-sportCup::before {
+  background-position: 0 -144em;
+}
+
+.sportCup .liveScore::before {
+  background-position: 0 -7200px;
+}
+
+.icon-sportCup .streamingList .sportTitle::before,
+.streamingList .icon-sportCup .sportTitle::before {
+  background-position: 0 -2304px;
+}
+
+.heading.icon-sportCup::before {
+  background-position: 0 -1800px;
+}
+
+.miniOdds-Cup .status::before {
+  background-position: 0 -648em;
+}
+
+.icon-sportOlympics .sportName::before,
+.sportOlympics .mainTitle::before {
+  background-position: 0 -1460px;
+}
+
+.sportOlympics .sportsIcon {
+  background-position: 0 -146em;
+}
+
+.mini .sportsMenu .icon-sportOlympics .sportName::before,
+.heading-noMoving .icon-sportOlympics::before {
+  background-position: 0 -146em;
+}
+
+.sportOlympics .liveScore::before {
+  background-position: 0 -7300px;
+}
+
+.icon-sportOlympics .streamingList .sportTitle::before,
+.streamingList .icon-sportOlympics .sportTitle::before {
+  background-position: 0 -2336px;
+}
+
+.heading.icon-sportOlympics::before {
+  background-position: 0 -1825px;
+}
+
+.miniOdds-Olympics .status::before {
+  background-position: 0 -657em;
+}
+
+.icon-sportis-deadball .sportName::before,
+.sportis-deadball .mainTitle::before {
+  background-position: 0 -1480px;
+}
+
+.sportis-deadball .sportsIcon {
+  background-position: 0 -148em;
+}
+
+.mini .sportsMenu .icon-sportis-deadball .sportName::before,
+.heading-noMoving .icon-sportis-deadball::before {
+  background-position: 0 -148em;
+}
+
+.sportis-deadball .liveScore::before {
+  background-position: 0 -7400px;
+}
+
+.icon-sportis-deadball .streamingList .sportTitle::before,
+.streamingList .icon-sportis-deadball .sportTitle::before {
+  background-position: 0 -2368px;
+}
+
+.heading.icon-sportis-deadball::before {
+  background-position: 0 -1850px;
+}
+
+.miniOdds-is-deadball .status::before {
+  background-position: 0 -666em;
+}
+
+.icon-sportis-live .sportName::before,
+.sportis-live .mainTitle::before {
+  background-position: 0 -1500px;
+}
+
+.sportis-live .sportsIcon {
+  background-position: 0 -150em;
+}
+
+.mini .sportsMenu .icon-sportis-live .sportName::before,
+.heading-noMoving .icon-sportis-live::before {
+  background-position: 0 -150em;
+}
+
+.sportis-live .liveScore::before {
+  background-position: 0 -7500px;
+}
+
+.icon-sportis-live .streamingList .sportTitle::before,
+.streamingList .icon-sportis-live .sportTitle::before {
+  background-position: 0 -2400px;
+}
+
+.heading.icon-sportis-live::before {
+  background-position: 0 -1875px;
+}
+
+.miniOdds-is-live .status::before {
+  background-position: 0 -675em;
+}
+
+.icon-sportLiveMatch .sportName::before,
+.sportLiveMatch .mainTitle::before {
+  background-position: 0 -1520px;
+}
+
+.sportLiveMatch .sportsIcon {
+  background-position: 0 -152em;
+}
+
+.mini .sportsMenu .icon-sportLiveMatch .sportName::before,
+.heading-noMoving .icon-sportLiveMatch::before {
+  background-position: 0 -152em;
+}
+
+.sportLiveMatch .liveScore::before {
+  background-position: 0 -7600px;
+}
+
+.icon-sportLiveMatch .streamingList .sportTitle::before,
+.streamingList .icon-sportLiveMatch .sportTitle::before {
+  background-position: 0 -2432px;
+}
+
+.heading.icon-sportLiveMatch::before {
+  background-position: 0 -1900px;
+}
+
+.miniOdds-LiveMatch .status::before {
+  background-position: 0 -684em;
+}
+
+.icon-sport160 .sportName::before,
+.sport160 .mainTitle::before {
+  background-position: 0 -1540px;
+}
+
+.sport160 .sportsIcon {
+  background-position: 0 -154em;
+}
+
+.mini .sportsMenu .icon-sport160 .sportName::before,
+.heading-noMoving .icon-sport160::before {
+  background-position: 0 -154em;
+}
+
+.sport160 .liveScore::before {
+  background-position: 0 -7700px;
+}
+
+.icon-sport160 .streamingList .sportTitle::before,
+.streamingList .icon-sport160 .sportTitle::before {
+  background-position: 0 -2464px;
+}
+
+.heading.icon-sport160::before {
+  background-position: 0 -1925px;
+}
+
+.miniOdds-160 .status::before {
+  background-position: 0 -693em;
+}
+
+.icon-sport190 .sportName::before,
+.sport190 .mainTitle::before {
+  background-position: 0 -1560px;
+}
+
+.sport190 .sportsIcon {
+  background-position: 0 -156em;
+}
+
+.mini .sportsMenu .icon-sport190 .sportName::before,
+.heading-noMoving .icon-sport190::before {
+  background-position: 0 -156em;
+}
+
+.sport190 .liveScore::before {
+  background-position: 0 -7800px;
+}
+
+.icon-sport190 .streamingList .sportTitle::before,
+.streamingList .icon-sport190 .sportTitle::before {
+  background-position: 0 -2496px;
+}
+
+.heading.icon-sport190::before {
+  background-position: 0 -1950px;
+}
+
+.miniOdds-190 .status::before {
+  background-position: 0 -702em;
+}
+
+.icon-sport191 .sportName::before,
+.sport191 .mainTitle::before {
+  background-position: 0 -1580px;
+}
+
+.sport191 .sportsIcon {
+  background-position: 0 -158em;
+}
+
+.mini .sportsMenu .icon-sport191 .sportName::before,
+.heading-noMoving .icon-sport191::before {
+  background-position: 0 -158em;
+}
+
+.sport191 .liveScore::before {
+  background-position: 0 -7900px;
+}
+
+.icon-sport191 .streamingList .sportTitle::before,
+.streamingList .icon-sport191 .sportTitle::before {
+  background-position: 0 -2528px;
+}
+
+.heading.icon-sport191::before {
+  background-position: 0 -1975px;
+}
+
+.miniOdds-191 .status::before {
+  background-position: 0 -711em;
+}
+
+.icon-sport193 .sportName::before,
+.sport193 .mainTitle::before {
+  background-position: 0 -1600px;
+}
+
+.sport193 .sportsIcon {
+  background-position: 0 -160em;
+}
+
+.mini .sportsMenu .icon-sport193 .sportName::before,
+.heading-noMoving .icon-sport193::before {
+  background-position: 0 -160em;
+}
+
+.sport193 .liveScore::before {
+  background-position: 0 -8000px;
+}
+
+.icon-sport193 .streamingList .sportTitle::before,
+.streamingList .icon-sport193 .sportTitle::before {
+  background-position: 0 -2560px;
+}
+
+.heading.icon-sport193::before {
+  background-position: 0 -2000px;
+}
+
+.miniOdds-193 .status::before {
+  background-position: 0 -720em;
+}
+
+.icon-pin::before {
+  content: "";
+}
+
+.icon-setting-filter::before {
+  content: "";
+}
+
+.icon-plus::before {
+  content: "";
+}
+
+.icon-allMarkets::before {
+  content: "";
+}
+
+.icon-minus::before {
+  content: "";
+}
+
+.icon-mainMarkets::before {
+  content: "";
+}
+
+.icon-clear::before {
+  content: "";
+}
+
+.icon-close::before {
+  content: "";
+}
+
+.icon-tick::before {
+  content: "";
+}
+
+.icon-selectLeague::before {
+  content: "";
+}
+
+.icon-link::before {
+  content: "";
+}
+
+.icon-print::before {
+  content: "";
+}
+
+.icon-backtoTop::before {
+  content: "";
+}
+
+.icon-arrowSolid-up::before {
+  content: "";
+}
+
+.icon-moreCollapse::before {
+  content: "";
+}
+
+.icon-arrowSolid-down::before {
+  content: "";
+}
+
+.icon-moreExpand::before {
+  content: "";
+}
+
+.icon-arrow-up::before {
+  content: "";
+}
+
+.icon-arrow-up-line::before {
+  content: "";
+}
+
+.icon-arrow-down::before {
+  content: "";
+}
+
+.icon-arrow-down-line::before {
+  content: "";
+}
+
+.icon-arrow-left::before {
+  content: "";
+}
+
+.icon-widgetCollapse::before {
+  content: "";
+}
+
+.icon-arrow-right::before {
+  content: "";
+}
+
+.icon-next::before {
+  content: "";
+}
+
+.icon-arrowDouble-right::before {
+  content: "";
+}
+
+.icon-arrowCircle-up::before {
+  content: "";
+}
+
+.icon-arrowCircle-down::before {
+  content: "";
+}
+
+.icon-streaming::before {
+  content: "";
+}
+
+.icon-liveMatch::before {
+  content: "";
+}
+
+.icon-scoreMap::before {
+  content: "";
+}
+
+.icon-statistic::before {
+  content: "";
+}
+
+.icon-liveChart::before {
+  content: "";
+}
+
+.icon-info::before {
+  content: "";
+}
+
+.icon-help::before {
+  content: "";
+}
+
+.icon-warning::before {
+  content: "";
+}
+
+.icon-live::before {
+  content: "";
+}
+
+.icon-favorite::before {
+  content: "";
+}
+
+.icon-goal1First::before {
+  content: "";
+}
+
+.icon-goal1Last::before {
+  content: "";
+}
+
+.icon-goal2First::before {
+  content: "";
+}
+
+.icon-goal2Last::before {
+  content: "";
+}
+
+.icon-goalFirst::before {
+  content: "";
+}
+
+.icon-goalLast::before {
+  content: "";
+}
+
+.icon-corner1First::before {
+  content: "";
+}
+
+.icon-corner1Last::before {
+  content: "";
+}
+
+.icon-cornerFirst::before {
+  content: "";
+}
+
+.icon-cornerLast::before {
+  content: "";
+}
+
+.icon-fastMarket::before {
+  content: "";
+}
+
+.icon-refresh::before {
+  content: "";
+}
+
+.icon-logout::before {
+  content: "";
+}
+
+.icon-messagePopup::before {
+  content: "";
+}
+
+.icon-message::before {
+  content: "";
+}
+
+.icon-mail::before {
+  content: "";
+}
+
+.icon-search::before {
+  content: "";
+}
+
+.icon-customizeLayout::before {
+  content: "";
+}
+
+.icon-news::before {
+  content: "";
+}
+
+.icon-supports::before {
+  content: "";
+}
+
+.icon-headerCollapse::before {
+  content: "";
+}
+
+.icon-headerExpand::before {
+  content: "";
+}
+
+.icon-setting::before {
+  content: "";
+}
+
+.icon-setting-verticalExpand::before {
+  content: "";
+}
+
+.icon-setting-verticalCollapse::before {
+  content: "";
+}
+
+.icon-setting-horizontalExpand::before {
+  content: "";
+}
+
+.icon-setting-horizontalCollapse::before {
+  content: "";
+}
+
+.icon-betList::before {
+  content: "";
+}
+
+.icon-betList-bets::before {
+  content: "";
+}
+
+.icon-betList-waiting::before {
+  content: "";
+}
+
+.icon-betList-void::before {
+  content: "";
+}
+
+.icon-betSlip::before {
+  content: "";
+}
+
+.icon-betSlip-single::before {
+  content: "";
+}
+
+.icon-betSlip-parlay::before {
+  content: "";
+}
+
+.icon-sportsMenu-early::before {
+  content: "";
+}
+
+.icon-sportsMenu-today::before {
+  content: "";
+}
+
+.icon-sportsMenu-live::before {
+  content: "";
+}
+
+.icon-showingNow::before {
+  content: "";
+}
+
+.icon-myScore::before {
+  content: "";
+}
+
+.icon-miniOdds::before {
+  content: "";
+}
+
+.icon-account::before {
+  content: "";
+}
+
+.icon-powerPlayer::before {
+  content: "";
+}
+
+.icon-balance::before {
+  content: "";
+}
+
+.icon-statement::before {
+  content: "";
+}
+
+.icon-result::before {
+  content: "";
+}
+
+.icon-preferences::before {
+  content: "";
+}
+
+.icon-rain::before {
+  content: "";
+}
+
+.icon-coffee::before {
+  content: "";
+}
+
+.icon-redCross::before {
+  content: "";
+}
+
+.icon-baseballBat::before {
+  content: "";
+}
+
+.icon-football::before {
+  content: "";
+}
+
+.icon-powerPlay::before {
+  content: "";
+}
+
+.icon-phone::before {
+  content: "";
+}
+
+.icon-qq::before {
+  content: "";
+}
+
+.icon-skype::before {
+  content: "";
+}
+
+.icon-liveChat::before {
+  content: "";
+}
+
+.icon-weChat::before {
+  content: "";
+}
+
+.icon-lineApp::before {
+  content: "";
+}
+
+.icon-whatsApp::before {
+  content: "";
+}
+
+.icon-normalSorting::before {
+  content: "";
+}
+
+.icon-sortByTime::before {
+  content: "";
+}
+
+.icon-singleLine::before {
+  content: "";
+}
+
+.icon-doubleLine::before {
+  content: "";
+}
+
+.icon-fullTimes::before {
+  content: "";
+}
+
+.icon-halfTime::before {
+  content: "";
+}
+
+.icon-2halfTime::before {
+  content: "";
+}
+
+.icon-decimalOdds::before {
+  content: "";
+}
+
+.icon-myanmarOdds::before {
+  content: "";
+}
+
+.icon-switchMMR::before {
+  content: "";
+}
+
+.icon-malayOdds::before {
+  content: "";
+}
+
+.icon-hongKongOdds::before {
+  content: "";
+}
+
+.icon-fontLarge::before {
+  content: "";
+}
+
+.icon-fontSmall::before {
+  content: "";
+}
+
+.icon-oddsTableStatus::before {
+  content: "";
+}
+
+.icon-oddsTableStatus-offline::before {
+  content: "";
+}
+
+.icon-americanOdds::before {
+  content: "";
+}
+
+.icon-indonesianOdds::before {
+  content: "";
+}
+
+.icon-switchOn::before {
+  content: "";
+}
+
+.icon-switchOff::before {
+  content: "";
+}
+
+.icon-alarmClock::before {
+  content: "";
+}
+
+.icon-flag::before {
+  content: "";
+}
+
+.icon-horseRacing::before {
+  content: "";
+}
+
+.icon-numberGame::before {
+  content: "";
+}
+
+.icon-newWindow::before {
+  content: "";
+}
+
+.icon-arrowLong_left::before {
+  content: "";
+}
+
+.icon-arrowLong_right::before {
+  content: "";
+}
+
+.icon-arrowLong_down::before {
+  content: "";
+}
+
+.icon-arrowLong_up::before {
+  content: "";
+}
+
+.icon-streamlingExpand::before {
+  content: "";
+}
+
+.icon-streamlingCollapse::before {
+  content: "";
+}
+
+.icon-keypadEnter::before {
+  content: "";
+}
+
+.icon-keypadDelet::before {
+  content: "";
+}
+
+.icon-messageInfo::before {
+  content: "";
+}
+
+.icon-messageWarning::before {
+  content: "";
+}
+
+.icon-messageError::before {
+  content: "";
+}
+
+.icon-wrench::before {
+  content: "";
+}
+
+.icon-cones::before {
+  content: "";
+}
+
+.icon-download::before {
+  content: "";
+}
+
+.icon-earth::before {
+  content: "";
+}
+
+.icon-lock::before {
+  content: "";
+}
+
+.icon-turbo::before {
+  content: "";
+}
+
+.icon-clock::before {
+  content: "";
+}
+
+.icon-edit::before {
+  content: "";
+}
+
+.icon-clock-thunder::before {
+  content: "";
+}
+
+.icon-colossusbet::before {
+  content: "";
+}
+
+.icon-confirm::before {
+  content: "";
+}
+
+.icon-flashCrash::before {
+  content: "";
+}
+
+.icon-liveCasino::before {
+  content: "";
+}
+
+.icon-miniCasino::before {
+  content: "";
+}
+
+.icon-switch::before {
+  content: "";
+}
+
+.icon-colossusbetJackpot::before {
+  content: "";
+}
+
+.icon-lotto::before {
+  content: "";
+}
+
+.icon-filter::before {
+  content: "";
+}
+
+.icon-unfilter::before {
+  content: "";
+}
+
+.icon-trend::before {
+  content: "";
+}
+
+.icon-cashout::before {
+  content: "";
+}
+
+.icon-bonus::before {
+  content: "";
+}
+
+.icon-trophy::before {
+  content: "";
+}
+
+.icon-badminton::before {
+  content: "";
+}
+
+.icon-baseball::before {
+  content: "";
+}
+
+.icon-basketball::before {
+  content: "";
+}
+
+.icon-tennis::before {
+  content: "";
+}
+
+.icon-soccer::before {
+  content: "";
+}
+
+.scroll-panel {
+  overflow: visible;
+  height: 100%;
+  position: relative;
+}
+
+.scroll-panel.active {
+  pointer-events: auto;
+}
+
+.scroll-panel.active .v-scrollbar-track {
+  transition: all 0.1s ease-in;
+  opacity: 100;
+}
+
+.scroll-panel.active .scroll-panel .v-scrollbar-track {
+  opacity: 0;
+}
+
+.scroll-panel.active .scroll-panel.active .v-scrollbar-track {
+  opacity: 100;
+}
+
+.scroll-content {
+  overflow: hidden;
+  height: 100%;
+  pointer-events: none;
+}
+
+.scroll-content > div {
+  pointer-events: auto;
+}
+
+.v-scrollbar-track {
+  position: absolute;
+  transition: all 0.1s ease-in;
+  opacity: 0;
+  z-index: 22;
+}
+
+.v-scrollbar-track > div {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  height: 1em;
+  width: 0.3em;
+  position: absolute;
+}
+
+.v-scrollbar-track:hover {
+  transition: all 0.1s ease-in;
+}
+
+.v-scrollbar-track:hover > div {
+  box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.8);
+}
+
+.v-scrollbar-track:hover > div, .scroll-panel.active-pressV .v-scrollbar-track > div {
+  width: 1em;
+}
+
+.v-scrollbar-track {
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: 100%;
+}
+
+.v-scrollbar-track > div {
+  right: 0;
+}
+
+.selected.oddsBet-circle.panelActive, .selected.oddsBet-circle.panelActive-bottomRight, .selected.oddsBet-circle.panelActive-upperRight, .selected.oddsBet-circle.panelActive-upperLeft {
+  border-radius: 3px;
+}
+
+.selected.oddsBet-circle.panelActive::after, .selected.oddsBet-circle.panelActive-bottomRight::after, .selected.oddsBet-circle.panelActive-upperRight::after, .selected.oddsBet-circle.panelActive-upperLeft::after {
+  height: 0.2rem;
+}
+
+.oddsBet-circle {
+  padding: 0.25em;
+}
+
+.oddsBet-circle:hover {
+  border-radius: 100%;
+}
+
+.oddsBet-circle::before {
+  display: none;
+}
+
+.oddsBet-circle.disable:hover {
+  background: transparent;
+}
+
+.oddsBet-circle.selected {
+  border-radius: 100%;
+}
+
+.oddsBet-circle.drawn {
+  cursor: default;
+}
+
+.oddsBet-circle.drawn:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.oddsBet-circle.panelActive .quickBetPanel, .oddsBet-circle.panelActive-bottomRight .quickBetPanel {
+  margin-top: 0.25em;
+}
+
+.oddsBet-circle.panelActive-upperRight .quickBetPanel, .oddsBet-circle.panelActive-upperLeft .quickBetPanel {
+  bottom: 3.1em;
+}
+
+@media screen and (min-width: 0\0) {
+  .oddsBet-circle.panelActive-upperRight .quickBetPanel, .oddsBet-circle.panelActive-upperLeft .quickBetPanel {
+    bottom: 3em;
+  }
+}
+
+.fixed-viewport-bottom .heading {
+  border-radius: 3px 3px 0 0;
+}
+
+.collapse .heading {
+  border-radius: 3px;
+}
+
+.collapse.fixed-viewport-bottom .heading {
+  border-radius: 3px 3px 0 0;
+}
+
+.collapse.group .heading.current {
+  border-radius: 3px;
+}
+
+.multiple .heading.icon-sportCup, .multiple .heading.icon-sportOlympics {
+  border-radius: 0;
+}
+
+.mini .widgetPanel .heading {
+  border-radius: 0;
+}
+
+.mini .widgetPanel .heading:hover {
+  border-radius: 3px;
+}
+
+.mini .widgetPanel.personalAccount .heading {
+  border-radius: 3px 3px 0 0;
+}
+
+.mini .widgetPanel.multiple .heading.current, .mini .widgetPanel.multiple .heading.currentMain {
+  border-radius: 3px;
+}
+
+.mini .widgetPanel.multiple .heading.showNav {
+  border-radius: 3px 0 0 3px;
+}
+
+.mini.sidebar-first .active .heading {
+  border-radius: 0 3px 0 0;
+}
+
+.mini.sidebar-second .active .heading {
+  border-radius: 3px 0 0 0;
+}
+
+.mini .active.widgetPanel.fixed-viewport-bottom .heading {
+  border-radius: 3px 3px 0 0;
+}
+
+.mini .widgetPanel.bonus .heading {
+  display: block;
+  background-color: #f2be00;
+}
+
+.favorite {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.favorite::after {
+  display: none;
+}
+
+.miniCasino iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.mainArea .mainSection {
+  margin-bottom: 0.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainArea .mainSection .section-two {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.mainArea .mainSection .section-two + .section-two {
+  margin-left: 0.5em;
+}
+
+.mainArea .mainSection .section-two.fixed {
+  -webkit-box-flex: 0 0 50.67em;
+  -webkit-flex: 0 0 50.67em;
+  -ms-flex: 0 0 50.67em;
+  flex: 0 0 50.67em;
+}
+
+.mainArea .mainSection .section-two.fixed-small {
+  -webkit-box-flex: 0 0 22em;
+  -webkit-flex: 0 0 22em;
+  -ms-flex: 0 0 22em;
+  flex: 0 0 22em;
+}
+
+.mainArea .mainSection .section-two.fixed-auto {
+  overflow: hidden;
+}
+
+.matchList {
+  margin-top: 0.5em;
+}
+
+.mainSection .matchList {
+  margin-top: 0;
+}
+
+.matchList .list-block .filter {
+  height: 3.81em !important;
+}
+
+.matchList .list-block .filter.active-live .smallBtn {
+  margin-top: .2em;
+}
+
+.matchList .listGroup-5 .filter {
+  height: auto !important;
+}
+
+.oddsTable {
+  font-family: "Tahoma", "Arial", "pmingliu", "新細明體";
+  position: relative;
+}
+
+.oddsTable.sport153.maskActive::before {
+  background: url(../Images/hc_run.png) no-repeat 0 0;
+  -webkit-animation: playHC 1s steps(18) infinite normal;
+  -moz-animation: playHC 1s steps(18) infinite normal;
+  -ms-animation: playHC 1s steps(18) infinite normal;
+  animation: playHC 1s steps(18) infinite normal;
+}
+
+@-ms-keyframes playHC {
+  .oddsTable.sport153.maskActive from {
+    background-position: 0px;
+  }
+  .oddsTable.sport153.maskActive to {
+    background-position: -4230px;
+  }
+}
+
+@-moz-keyframes playHC {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -4230px;
+  }
+}
+
+@-webkit-keyframes playHC {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -4230px;
+  }
+}
+
+@keyframes playHC {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -4230px;
+  }
+}
+
+.oddsTable.sport151.maskActive::before {
+  background: url(../Images/h_run.png) no-repeat 0 0;
+  -webkit-animation: play 1s steps(12) infinite normal;
+  -moz-animation: play 1s steps(12) infinite normal;
+  -ms-animation: play 1s steps(12) infinite normal;
+  animation: play 1s steps(12) infinite normal;
+}
+
+@-ms-keyframes play {
+  .oddsTable.sport151.maskActive from {
+    background-position: 0px;
+  }
+  .oddsTable.sport151.maskActive to {
+    background-position: -2820px;
+  }
+}
+
+@-moz-keyframes play {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2820px;
+  }
+}
+
+@-webkit-keyframes play {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2820px;
+  }
+}
+
+@keyframes play {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2820px;
+  }
+}
+
+.oddsTable.sport152.maskActive::before {
+  background: url(../Images/dog_run.png) no-repeat 0 0;
+  -webkit-animation: play 1s steps(12) infinite normal;
+  -moz-animation: play 1s steps(12) infinite normal;
+  -ms-animation: play 1s steps(12) infinite normal;
+  animation: play 1s steps(12) infinite normal;
+}
+
+@-ms-keyframes play {
+  .oddsTable.sport152.maskActive from {
+    background-position: 0px;
+  }
+  .oddsTable.sport152.maskActive to {
+    background-position: -2820px;
+  }
+}
+
+@-moz-keyframes play {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2820px;
+  }
+}
+
+@-webkit-keyframes play {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2820px;
+  }
+}
+
+@keyframes play {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2820px;
+  }
+}
+
+.oddsTable .multiOdds {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.oddsTable .multiOdds > div {
+  vertical-align: top;
+}
+
+.oddsGroup {
+  display: inline-block;
+}
+
+.oddsTable .time {
+  width: 4.5em;
+  max-width: 4.5em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.oddsTable .time .smallBtn {
+  float: none;
+  cursor: default;
+  vertical-align: middle;
+}
+
+.oddsTable .time .binding {
+  word-spacing: 10em;
+}
+
+.oddsTable .time .binding font[color="red"] {
+  display: block;
+}
+
+.oddsTable .normal-a .time, .oddsTable .normal-b .time, .oddsTable.hdpou-e .normal-a .time, .oddsTable.hdpou-e .normal-b .time, .oddsTable.hdpou-e .live-a .time, .oddsTable.hdpou-e .live-b .time, html:lang(vn) .oddsTable .normal-a .time, html:lang(vn) .oddsTable .normal-b .time, .oddsTable.numberGame-d .live-a .time, .oddsTable.numberGame-d .live-b .time {
+  width: 6.4em;
+  max-width: 6.4em;
+}
+
+html:lang(vn) .oddsTable .time {
+  width: 5em;
+  max-width: 5em;
+}
+
+.oddsTable .no {
+  width: 5%;
+  text-align: center;
+}
+
+.oddsTable .photo {
+  width: 7%;
+  text-align: center;
+}
+
+.oddsTable .info {
+  width: 5%;
+}
+
+.oddsTable .info.large {
+  width: 11%;
+}
+
+.oddsTable .unit {
+  width: 9%;
+  text-align: right;
+}
+
+.oddsTable .others {
+  width: 4.5em;
+  max-width: 4.5em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.oddsTable .others [class*="smallBtn"] {
+  float: none;
+  margin-left: 0;
+}
+
+.oddsTable .others [class*="smallBtn"] + [class*="smallBtn"] {
+  margin-top: 0.25em;
+}
+
+.oddsTable .others [class*="smallBtn"].icon-arrow-down {
+  width: 1.25em;
+}
+
+.oddsTable .cross-allCols {
+  text-align: center;
+}
+
+.hdpouSingle-a .matchArea .time, .hdpouFullHalf-a .matchArea .time, .onextwo-a .matchArea .time, .correctScore-a .matchArea .time, .correctScore-b .matchArea .time, .correctScore-c .matchArea .time, .correctScore-d .matchArea .time, .oddEven-a .matchArea .time, .totalGoal-a .matchArea .time, .totalGoal-b .matchArea .time, .halfTimeFullTime-a .matchArea .time, .htFtOddEven-a .matchArea .time, .firstGoalLastGoal-a .matchArea .time, .racing-a .matchArea .time, .racing-b .matchArea .time, .racing-c .matchArea .time, .racing-d .matchArea .time, .hdpouSingle-a .matchArea [class*="odds"], .hdpouFullHalf-a .matchArea [class*="odds"], .onextwo-a .matchArea [class*="odds"], .correctScore-a .matchArea [class*="odds"], .correctScore-b .matchArea [class*="odds"], .correctScore-c .matchArea [class*="odds"], .correctScore-d .matchArea [class*="odds"], .oddEven-a .matchArea [class*="odds"], .totalGoal-a .matchArea [class*="odds"], .totalGoal-b .matchArea [class*="odds"], .halfTimeFullTime-a .matchArea [class*="odds"], .htFtOddEven-a .matchArea [class*="odds"], .firstGoalLastGoal-a .matchArea [class*="odds"], .racing-a .matchArea [class*="odds"], .racing-b .matchArea [class*="odds"], .racing-c .matchArea [class*="odds"], .racing-d .matchArea [class*="odds"], .hdpouSingle-a .matchArea .others, .hdpouFullHalf-a .matchArea .others, .onextwo-a .matchArea .others, .correctScore-a .matchArea .others, .correctScore-b .matchArea .others, .correctScore-c .matchArea .others, .correctScore-d .matchArea .others, .oddEven-a .matchArea .others, .totalGoal-a .matchArea .others, .totalGoal-b .matchArea .others, .halfTimeFullTime-a .matchArea .others, .htFtOddEven-a .matchArea .others, .firstGoalLastGoal-a .matchArea .others, .racing-a .matchArea .others, .racing-b .matchArea .others, .racing-c .matchArea .others, .racing-d .matchArea .others, .hdpouSingle-a .matchArea .no, .hdpouFullHalf-a .matchArea .no, .onextwo-a .matchArea .no, .correctScore-a .matchArea .no, .correctScore-b .matchArea .no, .correctScore-c .matchArea .no, .correctScore-d .matchArea .no, .oddEven-a .matchArea .no, .totalGoal-a .matchArea .no, .totalGoal-b .matchArea .no, .halfTimeFullTime-a .matchArea .no, .htFtOddEven-a .matchArea .no, .firstGoalLastGoal-a .matchArea .no, .racing-a .matchArea .no, .racing-b .matchArea .no, .racing-c .matchArea .no, .racing-d .matchArea .no, .hdpouSingle-a .matchArea .photo, .hdpouFullHalf-a .matchArea .photo, .onextwo-a .matchArea .photo, .correctScore-a .matchArea .photo, .correctScore-b .matchArea .photo, .correctScore-c .matchArea .photo, .correctScore-d .matchArea .photo, .oddEven-a .matchArea .photo, .totalGoal-a .matchArea .photo, .totalGoal-b .matchArea .photo, .halfTimeFullTime-a .matchArea .photo, .htFtOddEven-a .matchArea .photo, .firstGoalLastGoal-a .matchArea .photo, .racing-a .matchArea .photo, .racing-b .matchArea .photo, .racing-c .matchArea .photo, .racing-d .matchArea .photo, .hdpouSingle-a .matchArea .info, .hdpouFullHalf-a .matchArea .info, .onextwo-a .matchArea .info, .correctScore-a .matchArea .info, .correctScore-b .matchArea .info, .correctScore-c .matchArea .info, .correctScore-d .matchArea .info, .oddEven-a .matchArea .info, .totalGoal-a .matchArea .info, .totalGoal-b .matchArea .info, .halfTimeFullTime-a .matchArea .info, .htFtOddEven-a .matchArea .info, .firstGoalLastGoal-a .matchArea .info, .racing-a .matchArea .info, .racing-b .matchArea .info, .racing-c .matchArea .info, .racing-d .matchArea .info, .hdpouSingle-a .matchArea .unit, .hdpouFullHalf-a .matchArea .unit, .onextwo-a .matchArea .unit, .correctScore-a .matchArea .unit, .correctScore-b .matchArea .unit, .correctScore-c .matchArea .unit, .correctScore-d .matchArea .unit, .oddEven-a .matchArea .unit, .totalGoal-a .matchArea .unit, .totalGoal-b .matchArea .unit, .halfTimeFullTime-a .matchArea .unit, .htFtOddEven-a .matchArea .unit, .firstGoalLastGoal-a .matchArea .unit, .racing-a .matchArea .unit, .racing-b .matchArea .unit, .racing-c .matchArea .unit, .racing-d .matchArea .unit, .hdpouSingle-a .matchArea .event, .hdpouFullHalf-a .matchArea .event, .onextwo-a .matchArea .event, .correctScore-a .matchArea .event, .correctScore-b .matchArea .event, .correctScore-c .matchArea .event, .correctScore-d .matchArea .event, .oddEven-a .matchArea .event, .totalGoal-a .matchArea .event, .totalGoal-b .matchArea .event, .halfTimeFullTime-a .matchArea .event, .htFtOddEven-a .matchArea .event, .firstGoalLastGoal-a .matchArea .event, .racing-a .matchArea .event, .racing-b .matchArea .event, .racing-c .matchArea .event, .racing-d .matchArea .event {
+  vertical-align: middle;
+}
+
+.numberGame-a .matchArea .time, .numberGame-b .matchArea .time, .numberGame-c .matchArea .time, .numberGame-d .matchArea .time, .numberGame-a .matchArea [class*="odds"], .numberGame-b .matchArea [class*="odds"], .numberGame-c .matchArea [class*="odds"], .numberGame-d .matchArea [class*="odds"], .numberGame-a .matchArea .others, .numberGame-b .matchArea .others, .numberGame-c .matchArea .others, .numberGame-d .matchArea .others, .numberGame-a .matchArea .no, .numberGame-b .matchArea .no, .numberGame-c .matchArea .no, .numberGame-d .matchArea .no, .numberGame-a .matchArea .photo, .numberGame-b .matchArea .photo, .numberGame-c .matchArea .photo, .numberGame-d .matchArea .photo, .numberGame-a .matchArea .info, .numberGame-b .matchArea .info, .numberGame-c .matchArea .info, .numberGame-d .matchArea .info, .numberGame-a .matchArea .unit, .numberGame-b .matchArea .unit, .numberGame-c .matchArea .unit, .numberGame-d .matchArea .unit, .numberGame-a .matchArea .event, .numberGame-b .matchArea .event, .numberGame-c .matchArea .event, .numberGame-d .matchArea .event {
+  vertical-align: top;
+}
+
+.oddsTable .odds {
+  width: 4.6em;
+  max-width: 4.6em;
+  text-align: center;
+  padding-left: 0.15em;
+  padding-right: 0.15em;
+}
+
+.oddsTable .odds.subtxt {
+  width: 8em;
+  max-width: 8em;
+}
+
+.oddsTable .matchArea .odds.subtxt {
+  text-align: right;
+}
+
+.oddsTable .txt {
+  width: 3em;
+}
+
+.oddsTable .oddsBet {
+  min-width: 3.3em;
+}
+
+.hdpouSingle-a {
+  min-width: 910px;
+}
+
+.hdpouSingle-a .oddsBet {
+  min-width: 2.7em;
+}
+
+.hdpouSingle-a .odds {
+  width: 4em;
+  max-width: 4em;
+}
+
+.hdpouSingle-a .rest.colTwo {
+  width: 4.5em;
+  max-width: 4.5em;
+}
+
+.hdpouSingle-a .main.colOne, .hdpouSingle-a .main.colTwo {
+  width: 24em;
+  max-width: 24em;
+}
+
+.hdpouFullHalf-a .rest.colTwo {
+  width: 4.5em;
+  max-width: 4.5em;
+}
+
+.hdpouFullHalf-a .main.colOne {
+  width: 27.6em;
+  max-width: 27.6em;
+}
+
+.hdpou-a {
+  min-width: 810px;
+}
+
+html:lang(ch) .hdpou-a, html:lang(cs) .hdpou-a {
+  min-width: 860px;
+}
+
+.hdpou-a.extra-a .oddsBet {
+  min-width: 2.7em;
+}
+
+.hdpou-a.extra-a .odds.subtxt {
+  width: 7em;
+  max-width: 7em;
+}
+
+.hdpou-a.extra-b .oddsBet {
+  min-width: 2.7em;
+}
+
+.hdpou-a.extra-b .odds {
+  width: 7em;
+  max-width: 7em;
+}
+
+.hdpou-a.extra-b .odds.subtxt {
+  width: 7em;
+  max-width: 7em;
+}
+
+.hdpou-a.extra-b .rest.colTwo {
+  width: 4.5em;
+  max-width: 4.5em;
+}
+
+.hdpou-a.extra-b .main.colOne {
+  width: 21em;
+  max-width: 21em;
+}
+
+html:lang(ch) .hdpou-a .odds, html:lang(cs) .hdpou-a .odds {
+  width: 7em;
+  max-width: 7em;
+}
+
+html:lang(ch) .hdpou-a .odds.subtxt, html:lang(cs) .hdpou-a .odds.subtxt {
+  width: 8em;
+  max-width: 8em;
+}
+
+html:lang(ch) .hdpou-a .main.colOne, html:lang(cs) .hdpou-a .main.colOne {
+  width: 23em;
+  max-width: 23em;
+}
+
+.hdpou-b {
+  min-width: 810px;
+}
+
+.hdpou-b .odds {
+  width: 5em;
+  max-width: 5em;
+}
+
+.hdpou-b.extra-a .odds {
+  width: 8em;
+  max-width: 8em;
+}
+
+.hdpou-c {
+  min-width: 810px;
+}
+
+.hdpou-c .odds {
+  width: 5em;
+  max-width: 5em;
+}
+
+.hdpou-d .odds {
+  width: 8em;
+  max-width: 8em;
+}
+
+.hdpou-d .odds.subtxt {
+  width: 8em;
+  max-width: 8em;
+}
+
+.onextwo-a .odds {
+  width: 5em;
+  max-width: 5em;
+}
+
+.onextwo-a .main.colOne, .onextwo-a .main.colTwo {
+  width: 15em;
+  max-width: 15em;
+}
+
+.correctScore-a {
+  min-width: 910px;
+}
+
+.correctScore-a .oddsBet, .correctScore-d .oddsBet {
+  min-width: 1.9em;
+}
+
+.correctScore-a .odds, .correctScore-d .odds {
+  width: 3em;
+  max-width: 3em;
+}
+
+.oddEven-a .odds {
+  width: 8em;
+  max-width: 8em;
+}
+
+.oddEven-a .main.colOne, .oddEven-a .main.colTwo {
+  width: 16em;
+  max-width: 16em;
+}
+
+.totalGoal-a {
+  min-width: 810px;
+}
+
+.totalGoal-a .odds {
+  width: 5em;
+  max-width: 5em;
+}
+
+.totalGoal-a .main.colOne {
+  width: 20em;
+  max-width: 20em;
+}
+
+.totalGoal-a .main.colTwo {
+  width: 15em;
+  max-width: 15em;
+}
+
+.halfTimeFullTime-a {
+  min-width: 810px;
+}
+
+.htFtOddEven-a .odds {
+  width: 8em;
+  max-width: 8em;
+}
+
+.firstGoalLastGoal-a .odds {
+  width: 5em;
+  max-width: 5em;
+}
+
+.firstGoalLastGoal-a .main.colOne, .firstGoalLastGoal-a .main.colTwo {
+  width: 15em;
+  max-width: 15em;
+}
+
+.outright-a .oddsBet {
+  min-width: 4.3em;
+}
+
+.outright-a .odds {
+  width: 8em;
+  max-width: 8em;
+}
+
+.racing-a {
+  min-width: 810px;
+}
+
+.racing-a .oddsBet.text-center, .racing-b .oddsBet.text-center, .racing-c .oddsBet.text-center, .racing-d .oddsBet.text-center {
+  min-width: 6.3em;
+  max-width: 6.3em;
+}
+
+.racing-a .odds, .racing-b .odds, .racing-c .odds, .racing-d .odds {
+  width: 8em;
+  max-width: 8em;
+}
+
+.numberGame-a .others, .numberGame-b .others, .numberGame-c .others, .numberGame-d .others {
+  width: 10%;
+}
+
+.numberGame-a {
+  min-width: 860px;
+}
+
+.numberGame-d {
+  min-width: 860px;
+}
+
+.numberGame-b [class*="oddsTitle"] {
+  table-layout: fixed;
+}
+
+.numberGame-b .txt {
+  width: 2.4em;
+}
+
+.numberGame-b .oddsBet {
+  min-width: 2.7em;
+}
+
+.numberGame-b .live-a .oddsGroup {
+  width: 47%;
+}
+
+.numberGame-b .live-a .betArea {
+  width: 100%;
+  text-align: right;
+}
+
+.numberGame-b .live-a .betArea::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.numberGame-b .live-a .txt {
+  float: left;
+  min-height: 1.5em;
+}
+
+.numberGame-b .odds.subtxt {
+  width: 20%;
+  max-width: 20%;
+}
+
+.numberGame-b .odds.subtxt-double {
+  width: 40%;
+  max-width: 40%;
+}
+
+.numberGame-c .oddsBet {
+  min-width: 3.1em;
+}
+
+.numberGame-c .betGroup-b .betArea {
+  width: 12.5%;
+}
+
+.numberGame-c .colWidth,
+.numberGame-c .betGroup-b .betArea,
+.numberGame-c .betGroup-c .betArea,
+.numberGame-c .betGroup-d .betArea {
+  width: 12.5%;
+}
+
+.numberGame-c .betGroup-a .colWidth-rest {
+  width: 37.5% !important;
+}
+
+.expandArea .numberGame-c {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.numberGame-c .betArea > div {
+  min-height: 1.5em;
+}
+
+.numberGame-d .txt {
+  width: 3em;
+}
+
+.numberGame-d .odds.subtxt {
+  width: 8em;
+  max-width: 8em;
+}
+
+.numberGame-d .odds.subtxt-double {
+  width: 16em;
+  max-width: 16em;
+}
+
+.oneSet-c, .twoSet-a, .threeSet-a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.oneSet-c .betTypeHeader, .twoSet-a .betTypeHeader, .threeSet-a .betTypeHeader {
+  -webkit-box-flex: 0 1 100%;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+}
+
+.setCol {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.twoSet-a .setCol {
+  max-width: calc(100% / 2);
+}
+
+.threeSet-a .setCol {
+  max-width: calc(100% / 3);
+}
+
+.betCol {
+  padding: 0.18em 0.5em;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.betTypeContent .betCol {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.betTypeContent .betCol .betArea {
+  -webkit-box-flex: 0 1 100%;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+}
+
+.betTypeContent .betCol .txt {
+  width: 3em;
+}
+
+.betTypeContent.alignTop .betCol {
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.betCol.match {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.oneSet-b .betCol.large {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.oneSet-c .betCol.large {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+  -ms-flex: 5;
+  flex: 5;
+}
+
+.betCol.large, .betCol.match {
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.twoSet-a .col7 .betCol,
+.col11 .betCol, .col16 .betCol {
+  padding: 0.18em 0.15em;
+}
+
+.ADBoard .listArea .listHeader, .ADBoard .listArea .listContent .listRow, .ADBoard .listArea .listContent .listRow-link {
+  padding-right: 2em;
+}
+
+.ADBoard .listArea .listHeader > div, .ADBoard .listArea .listContent .listRow > div, .ADBoard .listArea .listContent .listRow-link > div {
+  display: table-cell;
+  padding: 0 0.5em;
+}
+
+.ADBoard {
+  margin-bottom: 0.5em;
+}
+
+.ADBoard .contentArea {
+  background: url(../Images/e-sports.jpg) no-repeat;
+  text-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.8);
+  padding: 0.24em 0.833em 0.833em 264px;
+  color: #ffffff;
+}
+
+.ADBoard .contentArea > .icon-close {
+  float: right;
+}
+
+.ADBoard .ADTitle {
+  padding: 0.833em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: .8em;
+  margin-bottom: .85em;
+  overflow: hidden;
+}
+
+.ADBoard .listArea .listHeader {
+  background-color: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+}
+
+.ADBoard .listArea .listHeader > div {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.ADBoard .listArea .listContent {
+  height: 8.5em;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.ADBoard .listArea .listContent .listRow, .ADBoard .listArea .listContent .listRow-link {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #00121f;
+  line-height: 2em;
+}
+
+.ADBoard .listArea .listContent .listRow:hover, .ADBoard .listArea .listContent .listRow-link:hover {
+  background-color: rgba(80, 80, 80, 0.8);
+}
+
+.ADBoard .listArea .listContent .listRow-link {
+  cursor: pointer;
+  position: relative;
+}
+
+.ADBoard .listArea .listContent .listRow-link:after {
+  content: "";
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+  font-size: 1.3em;
+  color: #feec6e;
+}
+
+.ADBoard .listArea .game {
+  width: 20%;
+}
+
+.ADBoard .listArea .date {
+  width: 6.5em;
+  text-align: center;
+}
+
+.ADBoard .listArea .other {
+  width: 1em;
+  text-align: center;
+}
+
+.importBoard {
+  margin-bottom: 0.5em;
+}
+
+.importBoard iframe {
+  width: 100%;
+}
+
+.selectLeague {
+  width: 38em;
+}
+
+.sidebar-first .scroll-content .widgetPanel:last-child {
+  margin-bottom: 4.666em;
+}
+
+.header-showFull {
+  height: 8.1em;
+}
+
+.header-showFull .header-collapse {
+  -ms-transform: translate(0, -3.1em);
+  -webkit-transform: translate(0, -3.1em);
+  transform: translate(0, -3.1em);
+  visibility: hidden;
+}
+
+.header-showFull .header-expand {
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  visibility: visible;
+}
+
+.header-showMini {
+  height: 3.1em;
+}
+
+.header-showMini .header-expand {
+  -ms-transform: translate(0, -8.1em);
+  -webkit-transform: translate(0, -8.1em);
+  transform: translate(0, -8.1em);
+  visibility: hidden;
+}
+
+.header-showMini .header-collapse {
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  visibility: visible;
+}
+
+header {
+  position: fixed;
+  -webkit-backface-visibility: hidden;
+}
+
+.header-belt, .header-topBar {
+  min-width: calc(768px - 0.833em*2);
+  max-width: calc(1366px - 0.833em*2);
+  margin: 0 auto;
+}
+
+body {
+  min-width: 1005px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.mainLayout {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.mainArea, .wrapper {
+  padding-top: 0.5em;
+}
+
+.mainArea {
+  -webkit-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  height: 100%;
+  position: relative;
+  padding-right: 0.833em;
+  padding-bottom: 8em;
+  min-height: calc(100vh - 8.1em - 8em);
+}
+
+.mainArea .caption {
+  margin-bottom: 0.5em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.mainArea .caption .filterArea {
+  position: relative;
+  margin-right: 0.667em;
+}
+
+.mainArea .caption + .preloader {
+  background: transparent;
+  padding-top: 30vh;
+}
+
+.mainArea .promotionBoard + .preloader {
+  background: transparent;
+  padding-top: 16vh;
+}
+
+.mainArea footer {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 0.833em);
+}
+
+.sidebar-first, .sidebar-second {
+  -webkit-box-flex: 0 0 234px;
+  -webkit-flex: 0 0 234px;
+  -ms-flex: 0 0 234px;
+  flex: 0 0 234px;
+  position: relative;
+}
+
+.sidebar-first .setting, .sidebar-second .setting {
+  position: absolute;
+  z-index: 18;
+  left: auto;
+  right: -1.2em;
+  background: transparent;
+  width: 1.2em;
+  height: 3em;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.sidebar-first .setting::before, .sidebar-second .setting::before, .sidebar-first .setting::after, .sidebar-second .setting::after {
+  top: 0.3em;
+  position: absolute;
+  display: block;
+  right: auto;
+  width: 0.667em;
+  height: 2em;
+  overflow: hidden;
+}
+
+.sidebar-first .setting::before, .sidebar-second .setting::before {
+  z-index: 5;
+  padding-top: 0.25em;
+  left: -0.35em;
+}
+
+.sidebar-first .setting::after, .sidebar-second .setting::after {
+  content: "";
+  background: #cdcdcd;
+  border-radius: 0 3px 3px 0;
+  z-index: 4;
+  left: 0;
+  box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-first .setting:hover, .sidebar-second .setting:hover {
+  width: 3em;
+  right: -3em;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sidebar-first .setting:hover::before, .sidebar-second .setting:hover::before, .sidebar-first .setting:hover::after, .sidebar-second .setting:hover::after {
+  width: 2em;
+}
+
+.sidebar-first .setting:hover::before, .sidebar-second .setting:hover::before {
+  content: "";
+  left: -0.11em;
+}
+
+.sidebar-first .setting:hover::after, .sidebar-second .setting:hover::after {
+  left: 0.24em;
+  background: #7c7c7c;
+}
+
+.mini.sidebar-first, .mini.sidebar-second {
+  -webkit-box-flex: 0 0 4.166em;
+  -webkit-flex: 0 0 4.166em;
+  -ms-flex: 0 0 4.166em;
+  flex: 0 0 4.166em;
+}
+
+.mini.sidebar-first .setting:hover::before, .mini.sidebar-second .setting:hover::before {
+  content: "";
+}
+
+.sidebar-first:last-child .setting, .sidebar-second:last-child .setting {
+  left: -1.2em;
+}
+
+.sidebar-first:last-child .setting::before, .sidebar-second:last-child .setting::before, .sidebar-first:last-child .setting::after, .sidebar-second:last-child .setting::after {
+  left: auto;
+}
+
+.sidebar-first:last-child .setting::before, .sidebar-second:last-child .setting::before {
+  right: -0.35em;
+}
+
+.sidebar-first:last-child .setting:after, .sidebar-second:last-child .setting:after {
+  border-radius: 3px 0 0 3px;
+  right: 0;
+}
+
+.sidebar-first:last-child .setting:hover, .sidebar-second:last-child .setting:hover {
+  left: -3em;
+}
+
+.sidebar-first:last-child .setting:hover::before, .sidebar-second:last-child .setting:hover::before, .sidebar-first:last-child .setting:hover::after, .sidebar-second:last-child .setting:hover::after {
+  left: auto;
+}
+
+.sidebar-first:last-child .setting:hover::before, .sidebar-second:last-child .setting:hover::before {
+  content: "";
+  right: -0.11em;
+}
+
+.sidebar-first:last-child .setting:hover:after, .sidebar-second:last-child .setting:hover:after {
+  right: 0.24em;
+}
+
+.mini.sidebar-first:last-child .setting:hover::before, .mini.sidebar-second:last-child .setting:hover::before {
+  content: "";
+}
+
+.sidebar-first {
+  padding-right: 0.833em;
+}
+
+.sidebar-first-lic {
+  margin-top: -3.1em;
+}
+
+.sidebar-second .widgetArea {
+  margin-bottom: 4.666em;
+}
+
+.wrapper {
+  width: 224px;
+  height: calc(100vh - 9.1em);
+}
+
+.mini .wrapper {
+  width: 3.333em;
+}
+
+.header-showMini + .container .wrapper {
+  height: calc(100vh - 4.1em);
+}
+
+.sidebar-first .wrapper {
+  position: fixed;
+  -webkit-backface-visibility: hidden;
+  z-index: 25;
+  padding-left: 0.833em;
+  padding-right: 0.833em;
+}
+
+.wrapper.selected {
+  z-index: 19;
+  box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.4);
+  border: 0.17em solid #7c7c7c;
+  padding: 0.24em;
+  border-radius: 3px;
+  box-sizing: content-box;
+  margin-left: -0.41em;
+  margin-top: 0.09em;
+}
+
+.sidebar-first .wrapper.selected {
+  margin-left: 0.423em;
+}
+
+.widgetArea {
+  position: relative;
+}
+
+.sidebar-first .widgetArea {
+  height: inherit;
+}
+
+.scroll-panel {
+  margin-bottom: 3.666em;
+}
+
+.scroll-panel .scroll-panel {
+  margin-bottom: 0;
+}
+
+.scroll-panel.active .widgetPanel .scroll-panel .v-scrollbar-track {
+  opacity: 0;
+}
+
+.mini .widgetPanel .scroll-panel.active .v-scrollbar-track {
+  opacity: 100;
+}
+
+.widgetArea .scroll-content {
+  width: 40em;
+  padding-left: 0.4em;
+  margin-left: -0.4em;
+}
+
+.widgetArea .scroll-content .scroll-content {
+  width: 100%;
+}
+
+.mini .scroll-content .betSlip .scroll-content {
+  max-height: calc(100vh - 23em);
+}
+
+.mini .scroll-content .betList .scroll-content {
+  max-height: calc(100vh - 23em - 3.333em);
+}
+
+.selected .scroll-content {
+  overflow: hidden;
+}
+
+.scroll-content .widgetPanel {
+  width: 224px;
+}
+
+.mini .scroll-content .widgetPanel {
+  width: 3.333em;
+}
