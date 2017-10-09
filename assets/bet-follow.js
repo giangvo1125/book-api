@@ -10953,7 +10953,7 @@ var c681 = null,
             if (n.ShowTime < 5) {
               isBet681 = false;
             }
-            if (n.ShowTime <= 40 && n.ShowTime >= 10 && !isBet681) {
+            if (n.ShowTime <= 50 && n.ShowTime >= 40 && !isBet681) {
               var mapChoiceToValue = ['Chẵn', 'Lẻ'];
               var mapBetTeamToValue = ['a', 'h'];
               isBet681 = true;
