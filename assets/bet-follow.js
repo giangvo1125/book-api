@@ -10984,11 +10984,11 @@ var c681 = null,
                   }
                   //lose
                   else if(parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)){
-                     currentBalance = response || {};
-                     turnBet681++;
                     console.log('lose...................', choiceValue681);
                     console.log('currentBalance', currentBalance);
                     console.log('response balance', response);
+                     currentBalance = response || {};
+                     turnBet681++;
                     jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
                         type: "POST",
@@ -11002,8 +11002,7 @@ var c681 = null,
                       });
                   }
                   else {
-                      console.log('else.........................', response)
-                      currentBalance = response || {}
+                      currentBalance = response || {};
                       turnBet681 = 1;
                   }
                   betTeam681 = bet7759;
