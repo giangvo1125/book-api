@@ -10964,7 +10964,7 @@ var c681 = null,
                     bet7759 = 'h';
                   }
                   //win
-                  if(parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit)){
+                  if(parseFloat(currentBalance.Cas) < parseFloat(response.Cas)){
                     if(turnBet681>=turnStop681) {
                        turnBet681 = 1;
                     }
@@ -10983,7 +10983,7 @@ var c681 = null,
                       });
                   }
                   //lose
-                  else if(parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)){
+                  else if(parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)){
                     console.log('lose...................', choiceValue681);
                     console.log('currentBalance', currentBalance);
                     console.log('response balance', response);
