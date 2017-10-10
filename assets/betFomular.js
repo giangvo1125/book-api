@@ -10981,7 +10981,7 @@ var c681 = null,
                     type: "GET",
                     success: function(response) {
                       choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result : '';
-                      bet7759 = (response && response.StatusCode == 0) ? response.Data.result == 'Chẵn' ? 'a' : 'h';
+                      bet7759 = (response && response.StatusCode == 0) ? (response.Data.result == 'Chẵn' ? 'a' : 'h') : '';
                       betTeam681 = bet7759;
                       var home = "Number Game No. " + objBet681.league.MatchCode;
                       if (response && response.StatusCode == 0) {
