@@ -11,7 +11,7 @@ var placeBet681 = function() {
 var objBet681 = null;
 var turnBet681 = 0;
 var result681 = null;
-const arrMoneyBet681 = ['0', '3', '3', '3', '3', '3'];
+const arrMoneyBet681 = ['3', '3', '3', '3', '3', '3'];
 const turnStop681 = 5;
 var c681 = null,
   e681 = null,
@@ -11191,7 +11191,7 @@ var c681 = null,
                       }
                     }, 2000);
                   } else {
-                    turnBet681--;
+                    // turnBet681--;
                   }
 
                 }, function(err) {
