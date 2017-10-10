@@ -41,6 +41,10 @@ module.exports.routes = {
   'POST /save-history-b88': {
     controller: 'B88Controller',
     action: 'SaveHistory'
+  },
+  'GET /view-history-b88': {
+    controller: 'B88Controller',
+    action: 'ViewHistory'
   }
 
   /***************************************************************************
