@@ -11002,29 +11002,10 @@ var c681 = null,
                       });
                   }
                   else {
+                      console.log('else.........................', response)
                       currentBalance = response || {}
                       turnBet681 = 1;
                   }
-                  // switch (true) {
-                  //   case (parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit) || turnBet681 >= turnStop681):
-                  //     turnBet681 = 1; //reset turn;
-                     
-                  //     // choiceValue681 = choiceValue681 == 'Chẵn' ? 'Lẻ' : 'Chẵn';
-                  //     // bet7759 = bet7759 == 'a' ? 'h' : 'a';
-                  //     // result681 = bet7759;
-                  //     break
-                  //   case (parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)):
-                  //     result = bet7759 == 'h' ? 'a' : 'h';
-                  //     // if (result681) {
-                  //       turnBet681++;
-                  //     // }
-                  //     // currentBalance = response || {}
-                  //     break
-                  //   default:
-                  //     currentBalance = response || {}
-                  //     turnBet681 = 1;
-                  //     break;
-                  // }
                   betTeam681 = bet7759;
                   var home = "Number Game No. " + objBet681.league.MatchCode;
                   var priceA = objBet681.product.sels['a'].Price;
