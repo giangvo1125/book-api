@@ -10963,14 +10963,9 @@ var c681 = null,
                     choiceValue681 = 'Lẻ';
                     bet7759 = 'h';
                   }
-                  switch (true) {
-                    case (parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit) || turnBet681 >= turnStop681):
-                      turnBet681 = 1; //reset turn;
-                      currentBalance = response || {};
-                      // choiceValue681 = choiceValue681 == 'Chẵn' ? 'Lẻ' : 'Chẵn';
-                      // bet7759 = bet7759 == 'a' ? 'h' : 'a';
-                      result681 = bet7759;
-                      jQuery.ajax({
+                  //win
+                  if(parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit)){
+                    jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
                         type: "POST",
                         data: {
@@ -10981,14 +10976,10 @@ var c681 = null,
                           console.log('save history success', response)
                         }
                       });
-                      break
-                    case (parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)):
-                      result = bet7759 == 'h' ? 'a' : 'h';
-                      if (result681) {
-                        turnBet681++;
-                      }
-                      currentBalance = response || {}
-                      jQuery.ajax({
+                  }
+                  //lose
+                  else if(parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)){
+                    jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
                         type: "POST",
                         data: {
@@ -10999,6 +10990,21 @@ var c681 = null,
                           console.log('save history success', response)
                         }
                       });
+                  }
+                  switch (true) {
+                    case (parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit) || turnBet681 >= turnStop681):
+                      turnBet681 = 1; //reset turn;
+                      currentBalance = response || {};
+                      // choiceValue681 = choiceValue681 == 'Chẵn' ? 'Lẻ' : 'Chẵn';
+                      // bet7759 = bet7759 == 'a' ? 'h' : 'a';
+                      // result681 = bet7759;
+                      break
+                    case (parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)):
+                      result = bet7759 == 'h' ? 'a' : 'h';
+                      // if (result681) {
+                        turnBet681++;
+                      // }
+                      currentBalance = response || {}
                       break
                     default:
                       currentBalance = response || {}
@@ -11028,8 +11034,6 @@ var c681 = null,
                     }
                   }
                   if (priceA != priceH || 1 /*&& parseFloat(currentBalance.Cas)<200 && Math.abs(priceA - priceH)>=0.1*/ ) {
-                    count681++;
-                    console.log('count681', count681);
                     var i = {
                       "sportname": "Number Game",
                       "bettypename": "Lẻ/Chẳn kế tiếp",
