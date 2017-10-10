@@ -37,6 +37,10 @@ module.exports.routes = {
   },
   '/ProcessLogin.aspx': {
     view: 'sport'
+  },
+  'POST /save-history-b88': {
+    controller: 'B88Controller',
+    action: 'SaveHistory'
   }
 
   /***************************************************************************
