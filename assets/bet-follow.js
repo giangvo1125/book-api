@@ -10965,6 +10965,7 @@ var c681 = null,
                   }
                   //win
                   if(parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit)){
+                    console.log('win...................', choiceValue681);
                     jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
                         type: "POST",
@@ -10979,6 +10980,7 @@ var c681 = null,
                   }
                   //lose
                   else if(parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)){
+                    console.log('lose...................', choiceValue681);
                     jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
                         type: "POST",
