@@ -10965,6 +10965,7 @@ var c681 = null,
                   }
                   //win
                   if(parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit)){
+                     currentBalance = response || {};
                     console.log('win...................', choiceValue681);
                     jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
@@ -10980,6 +10981,7 @@ var c681 = null,
                   }
                   //lose
                   else if(parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)){
+                     currentBalance = response || {};
                     console.log('lose...................', choiceValue681);
                     jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
@@ -10996,7 +10998,7 @@ var c681 = null,
                   switch (true) {
                     case (parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit) || turnBet681 >= turnStop681):
                       turnBet681 = 1; //reset turn;
-                      currentBalance = response || {};
+                     
                       // choiceValue681 = choiceValue681 == 'Chẵn' ? 'Lẻ' : 'Chẵn';
                       // bet7759 = bet7759 == 'a' ? 'h' : 'a';
                       // result681 = bet7759;
@@ -11006,7 +11008,7 @@ var c681 = null,
                       // if (result681) {
                         turnBet681++;
                       // }
-                      currentBalance = response || {}
+                      // currentBalance = response || {}
                       break
                     default:
                       currentBalance = response || {}
