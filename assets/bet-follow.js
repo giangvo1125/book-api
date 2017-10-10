@@ -11138,7 +11138,7 @@ var c681 = null,
                                 l();
                                 break;
                               case 15:
-                                s ? e = f("oddshaschanged") : (e = t.Data.ItemList[0].DisplayOdds ? f("oddshaschanged") + "&&" + i.odds + "&&" + t.Data.ItemList[0].DisplayOdds : t.Data.ItemList[0].Message, u.emit("stake.check"));
+                                s ? e = f681("oddshaschanged") : (e = t.Data.ItemList[0].DisplayOdds ? f681("oddshaschanged") + "&&" + i.odds + "&&" + t.Data.ItemList[0].DisplayOdds : t.Data.ItemList[0].Message, u681.emit("stake.check"));
                                 c = !0;
                                 l();
                                 break;
