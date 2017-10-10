@@ -10958,13 +10958,13 @@ var c681 = null,
               refreshBalance681()
                 .then(function(response) {
                   switch (true) {
-                    case (parseFloat(currentBalance.BCredit) < parseFloat(response.BCredit) || turnBet681 >= turnStop681):
+                    case (parseFloat(currentBalance.Cas) < parseFloat(response.Cas) || turnBet681 >= turnStop681):
                       turnBet681 = 1; //reset turn;
                       currentBalance = response || {};
                       result681 = bet7759;
 
                       break
-                    case (parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)):
+                    case (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)):
                       result = bet7759 == 'h' ? 'a' : 'h';
                       if (result681) {
                         turnBet681++;
