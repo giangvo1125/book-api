@@ -10980,7 +10980,7 @@ var c681 = null,
                     url: "http://localhost:3939/view-history-b88",
                     type: "GET",
                     success: function(response) {
-                      choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result;
+                      choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result : '';
                       bet7759 = (response && response.StatusCode == 0) ? response.Data.result == 'Chẵn' ? 'a' : 'h';
                       betTeam681 = bet7759;
                       var home = "Number Game No. " + objBet681.league.MatchCode;
