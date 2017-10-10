@@ -10983,6 +10983,8 @@ var c681 = null,
                   else if(parseFloat(currentBalance.BCredit) >= parseFloat(response.BCredit)){
                      currentBalance = response || {};
                     console.log('lose...................', choiceValue681);
+                    console.log('currentBalance', currentBalance);
+                    console.log('response balance', response);
                     jQuery.ajax({
                         url: "http://localhost:3939/save-history-b88",
                         type: "POST",
