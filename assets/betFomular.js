@@ -10977,7 +10977,7 @@ var c681 = null,
                       break;
                   }
                   jQuery.ajax({
-                    url: "http://localhost/view-history-b88",
+                    url: "http://localhost:3939/view-history-b88",
                     type: "GET",
                     success: function(response) {
                       choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result;

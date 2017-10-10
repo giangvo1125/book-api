@@ -10971,7 +10971,7 @@ var c681 = null,
                       // bet7759 = bet7759 == 'a' ? 'h' : 'a';
                       result681 = bet7759;
                       jQuery.ajax({
-                        url: "http://localhost/save-history-b88",
+                        url: "http://localhost:3939/save-history-b88",
                         type: "POST",
                         data: {
                           result: choiceValue681,
@@ -10989,7 +10989,7 @@ var c681 = null,
                       }
                       currentBalance = response || {}
                       jQuery.ajax({
-                        url: "http://localhost/save-history-b88",
+                        url: "http://localhost:3939/save-history-b88",
                         type: "POST",
                         data: {
                           result: choiceValue681 == 'Chẵn' ? 'Lẻ' : 'Chẵn',
