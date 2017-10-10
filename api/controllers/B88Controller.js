@@ -13,7 +13,7 @@ module.exports = {
         History.findAll({
             where: {
               id: {
-                $in: [id, id - 1, id - 2]
+                $in: [id, id - 1, id - 2, id-3]
               }
             }
           })
@@ -24,14 +24,14 @@ module.exports = {
             const allLe = _.filter(his, function(o) {
               return o.result == 'Lẻ'
             });
-            if (allChan.length == 3) {
+            if (allChan.length == 4) {
               res.ok({
                 StatusCode: 0,
                 Data: {
                   result: 'Lẻ'
                 }
               });
-            } else if (allLe.length == 3) {
+            } else if (allLe.length == 4) {
               res.ok({
                 StatusCode: 0,
                 Data: {
