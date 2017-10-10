@@ -11148,7 +11148,7 @@ var c681 = null,
                           }
                         }, 2000);
                       } else {
-                        turnBet681--;
+                        // turnBet681--;
                       }
                     }
                   });
