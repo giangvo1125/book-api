@@ -4,12 +4,13 @@ var refreshBalance681 = function() {};
 var getLine681 = function() {
 
 };
+const turnInput681 = 6;
 var count681 = 0;
 var placeBet681 = function() {};
 var objBet681 = null;
 var turnBet681 = 0;
 var result681 = null;
-const arrMoneyBet681 = ['3', '3', '9', '21', '43', '90'];
+const arrMoneyBet681 = ['0', '3', '6', '12', '24', '48'];
 const turnStop681 = 5;
 var c681 = null,
   e681 = null,
@@ -10965,17 +10966,18 @@ var c681 = null,
                       break
                     case (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)):
                       result = bet7759 == 'h' ? 'a' : 'h';
-                      // if (result681) {
                       if (turnBet681 >= turnStop681) {
                         turnBet681 = 1;
                       } else {
                         turnBet681++;
                       }
-                      // }
                       currentBalance = response || {}
                       jQuery.ajax({
                         url: "http://localhost:3939/view-history-b88",
-                        type: "GET",
+                        type: "POST",
+                        data: {
+                          step: turnInput681
+                        },
                         success: function(response) {
                           choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result : '';
                           bet7759 = (response && response.StatusCode == 0) ? (response.Data.result == 'Tài' ? 'h' : 'a') : '';
@@ -11034,7 +11036,6 @@ var c681 = null,
                             var s68 = false;
                             ticket681.getNewestTicket(n68, t68, i, r68, e68, o68, h68, a68, y68);
                             setTimeout(function() {
-                              console.log('vao..........', arrMoneyBet681[turnBet681], turnBet681)
                               var w = arrMoneyBet681[turnBet681],
                                 a = { "Tickets": [], "Combi": false, "ComboData": [], "IsAnyOdds": null, "TotalStake": 0, "CanBetTicketCnt": 2, "keepParlayScroll": false },
                                 s681 = false,
@@ -11156,7 +11157,10 @@ var c681 = null,
                       turnBet681 = 1;
                       jQuery.ajax({
                         url: "http://localhost:3939/view-history-b88",
-                        type: "GET",
+                        type: "POST",
+                        data: {
+                          turn: turnInput681
+                        },
                         success: function(response) {
                           choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result : '';
                           bet7759 = (response && response.StatusCode == 0) ? (response.Data.result == 'Tài' ? 'h' : 'a') : '';

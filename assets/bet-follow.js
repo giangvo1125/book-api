@@ -5425,8 +5425,8 @@ var c681 = null,
         doPlaceBet: function(n, t) {
           console.log(n);
           var randomBet681 = Math.floor(Math.random() * (2));
-          const mapChoiceToValue = ['Chẵn', 'Lẻ'];
-          const mapBetTeamToValue = ['a', 'h'];
+          const mapChoiceToValue = ['Tài', 'Xỉu'];
+          const mapBetTeamToValue = ['h', 'a'];
           var ChoiceValue = mapChoiceToValue[randomBet681];
           var betteam = mapBetTeamToValue[randomBet681];
           var home = "Number Game No. " + objBet681.league.MatchCode;
@@ -5435,7 +5435,7 @@ var c681 = null,
             // i = this.props.singleticket,
             i = {
               "sportname": "Number Game",
-              "bettypename": "Lẻ/Chẳn kế tiếp",
+              "bettypename": "Trên/Dưới kế tiếp",
               "ChoiceValue": ChoiceValue,
               "Line": "",
               "displayHDP": "",
@@ -5451,7 +5451,7 @@ var c681 = null,
               "imgurl": "",
               "BetID": "0",
               "type": "OU",
-              "bettype": "86",
+              "bettype": "85",
               "oddsid": parseInt(objBet681.product.pid), //117734608,
               "Hscore": 0,
               "Ascore": 0,
@@ -10954,83 +10954,88 @@ var c681 = null,
               isBet681 = false;
             }
             if (n.ShowTime <= 40 && n.ShowTime >= 30 && !isBet681) {
-              var mapChoiceToValue = ['Chẵn', 'Lẻ'];
-              var mapBetTeamToValue = ['a', 'h'];
+              var mapChoiceToValue = ['Tài', 'Xỉu'];
+              var mapBetTeamToValue = ['h', 'a'];
               isBet681 = true;
               refreshBalance681()
                 .then(function(response) {
-                  if (!bet7759 && !choiceValue681) {
-                    choiceValue681 = 'Lẻ';
-                    bet7759 = 'h';
-                  }
+                  // if (!bet7759 && !choiceValue681) {
+                  //   choiceValue681 = 'Xỉu';
+                  //   bet7759 = 'a';
+                  // }
                   //win
-                  if(parseFloat(currentBalance.Cas) < parseFloat(response.Cas)){
-                    if(turnBet681>=turnStop681) {
-                       turnBet681 = 1;
-                    }
-                     currentBalance = response || {};
+                  if (parseFloat(currentBalance.Cas) < parseFloat(response.Cas)) {
+                    // if(turnBet681>=turnStop681) {
+                    turnBet681 = 1;
+                    // }
+                    currentBalance = response || {};
                     console.log('win...................', choiceValue681);
                     jQuery.ajax({
-                        url: "http://localhost:3939/save-history-b88",
-                        type: "POST",
-                        data: {
-                          result: choiceValue681,
-                          match: objBet681.match.MatchId
-                        },
-                        success: function(response) {
-                          console.log('save history success', response)
-                        }
-                      });
+                      url: "http://localhost:3939/save-history-b88",
+                      type: "POST",
+                      data: {
+                        result: choiceValue681,
+                        match: objBet681.match.MatchId
+                      },
+                      success: function(response) {
+                        console.log('save history success', response)
+                      }
+                    });
                   }
                   //lose
-                  else if(parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)){
+                  else if (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)) {
+                    // choiceValue681 = choiceValue681 == 'Tài' ? 'Xỉu' : 'Tài';
+                    // bet7759 = bet7759 == 'h' ? 'a' : 'h';
                     console.log('lose...................', choiceValue681);
                     console.log('currentBalance', currentBalance);
                     console.log('response balance', response);
-                     currentBalance = response || {};
-                     turnBet681++;
-                    jQuery.ajax({
-                        url: "http://localhost:3939/save-history-b88",
-                        type: "POST",
-                        data: {
-                          result: choiceValue681 == 'Chẵn' ? 'Lẻ' : 'Chẵn',
-                          match: objBet681.match.MatchId
-                        },
-                        success: function(response) {
-                          console.log('save history success', response)
-                        }
-                      });
-                  }
-                  else {
-                      currentBalance = response || {};
+                    currentBalance = response || {};
+                    if (turnBet681 >= turnStop681) {
                       turnBet681 = 1;
+                    } else {
+                      turnBet681++;
+                    }
+                    jQuery.ajax({
+                      url: "http://localhost:3939/save-history-b88",
+                      type: "POST",
+                      data: {
+                        result: choiceValue681 == 'Tài' ? 'Xỉu' : 'Tài',
+                        match: objBet681.match.MatchId
+                      },
+                      success: function(response) {
+                        console.log('save history success', response)
+                      }
+                    });
+                  } else {
+                    currentBalance = response || {};
+                    turnBet681 = 1;
                   }
                   betTeam681 = bet7759;
                   var home = "Number Game No. " + objBet681.league.MatchCode;
                   var priceA = objBet681.product.sels['a'].Price;
                   var priceH = objBet681.product.sels['h'].Price
                   if (priceA > 0 && priceH > 0) {
-                    if (priceA < priceH) {
+                    if (priceA > priceH) {
 
-                      choiceValue681 = 'Chẵn';
-                      bet7759 = 'a';
-                    } else {
-                      choiceValue681 = 'Lẻ';
+                      choiceValue681 = 'Tài';
                       bet7759 = 'h';
+                    } else {
+                      choiceValue681 = 'Xỉu';
+                      bet7759 = 'a';
                     }
                   } else {
-                    if (priceA > priceH) {
-                      choiceValue681 = 'Chẵn';
-                      bet7759 = 'a';
-                    } else {
-                      choiceValue681 = 'Lẻ';
+                    if (priceA < priceH) {
+                      choiceValue681 = 'Tài';
                       bet7759 = 'h';
+                    } else {
+                      choiceValue681 = 'Xỉu';
+                      bet7759 = 'a';
                     }
                   }
                   if (priceA != priceH || 1 /*&& parseFloat(currentBalance.Cas)<200 && Math.abs(priceA - priceH)>=0.1*/ ) {
                     var i = {
                       "sportname": "Number Game",
-                      "bettypename": "Lẻ/Chẳn kế tiếp",
+                      "bettypename": "Trên/Dưới kế tiếp",
                       "ChoiceValue": choiceValue681,
                       "Line": "",
                       "displayHDP": "",
@@ -11046,7 +11051,7 @@ var c681 = null,
                       "imgurl": "",
                       "BetID": "0",
                       "type": "OU",
-                      "bettype": "86",
+                      "bettype": "85",
                       "oddsid": parseInt(objBet681.product.pid), //117734608,
                       "Hscore": 0,
                       "Ascore": 0,
@@ -11080,6 +11085,7 @@ var c681 = null,
                     var s68 = false;
                     ticket681.getNewestTicket(n68, t68, i, r68, e68, o68, h68, a68, y68);
                     setTimeout(function() {
+                      console.log('on........', arrMoneyBet681[turnBet681], turnBet681);
                       var w = arrMoneyBet681[turnBet681],
                         a = { "Tickets": [], "Combi": false, "ComboData": [], "IsAnyOdds": null, "TotalStake": 0, "CanBetTicketCnt": 2, "keepParlayScroll": false },
                         s681 = false,
@@ -14507,7 +14513,7 @@ var c681 = null,
             this.props.product.selections &&
             this.props.product.selections.a &&
             this.props.product.selections.h &&
-            this.props.product.Bettype == 86 &&
+            this.props.product.Bettype == 85 &&
             this.props.league.LeagueName == 'Number Game') {
             objBet681 = this.props;
           }

@@ -9,8 +9,8 @@ var placeBet681 = function() {};
 var objBet681 = null;
 var turnBet681 = 0;
 var result681 = null;
-const arrMoneyBet681 = ['3', '3', '9', '21', '43', '90'];
-const turnStop681 = 5;
+const arrMoneyBet681 = ['0', '3', '9', '21', '45'];
+const turnStop681 = 4;
 var c681 = null,
   e681 = null,
   u681 = null,
@@ -10962,21 +10962,11 @@ var c681 = null,
                       turnBet681 = 1; //reset turn;
                       currentBalance = response || {};
                       result681 = bet7759;
-                      break
-                    case (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)):
-                      result = bet7759 == 'h' ? 'a' : 'h';
-                      // if (result681) {
-                      if (turnBet681 >= turnStop681) {
-                        turnBet681 = 1;
-                      } else {
-                        turnBet681++;
-                      }
-                      // }
-                      currentBalance = response || {}
                       jQuery.ajax({
-                        url: "http://localhost:3939/view-history-b88",
+                        url: "http://localhost:3939/bet681",
                         type: "GET",
                         success: function(response) {
+                          console.log('response......', response)
                           choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result : '';
                           bet7759 = (response && response.StatusCode == 0) ? (response.Data.result == 'Tài' ? 'h' : 'a') : '';
                           betTeam681 = bet7759;
@@ -11146,7 +11136,194 @@ var c681 = null,
                               }
                             }, 2000);
                           } else {
-                            turnBet681 = 0;
+                            turnBet681 = 1;
+                          }
+                        }
+                      });
+                      break
+                    case (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)):
+                      result = bet7759 == 'h' ? 'a' : 'h';
+                      if (turnBet681 >= turnStop681) {
+                        turnBet681 = 1;
+                      } else {
+                        turnBet681++;
+                      }
+                      currentBalance = response || {}
+                      jQuery.ajax({
+                        url: "http://localhost:3939/bet681",
+                        type: "GET",
+                        success: function(response) {
+                          console.log('response......', response)
+                          choiceValue681 = (response && response.StatusCode == 0) ? response.Data.result : '';
+                          bet7759 = (response && response.StatusCode == 0) ? (response.Data.result == 'Tài' ? 'h' : 'a') : '';
+                          betTeam681 = bet7759;
+                          var home = "Number Game No. " + objBet681.league.MatchCode;
+                          if (response && response.StatusCode == 0) {
+                            var i = {
+                              "sportname": "Number Game",
+                              "bettypename": "Trên/Dưới kế tiếp",
+                              "ChoiceValue": choiceValue681,
+                              "Line": "",
+                              "displayHDP": "",
+                              "odds": objBet681.product.sels[bet7759].Price,
+                              "home": home,
+                              "away": null,
+                              "league": "Number Game",
+                              "IsLive": true,
+                              "ProgramID": "",
+                              "RaceNum": 0,
+                              "Runner": 0,
+                              "PoolType": 1,
+                              "imgurl": "",
+                              "BetID": "0",
+                              "type": "OU",
+                              "bettype": "85",
+                              "oddsid": parseInt(objBet681.product.pid), //117734608,
+                              "Hscore": 0,
+                              "Ascore": 0,
+                              "Matchid": parseInt(objBet681.product.MatchId), //23143918,
+                              "betteam": bet7759, //"a",
+                              "stake": "",
+                              "gameid": 161,
+                              "MRPercentage": "",
+                              "OddsInfo": "",
+                              "AcceptBetterOdds": true,
+                              "AutoAcceptSec": "",
+                              "showLiveScore": false,
+                              "colorHomeTeam": "",
+                              "colorAwayTeam": "",
+                              "matchcode": null,
+                              "isQuickBet": false,
+                              "kickofftime": objBet681.match.kickofftime, //"2017-10-04T00:29:43.293",
+                              "oddsStatus": "",
+                              "min": "2",
+                              "max": "1,350",
+                              "isQuickBet": false
+                            };
+                            var n68 = { ItemList: [i] };
+                            var t68 = false;
+                            var r68 = { "Tickets": [], "Combi": false, "ComboData": [], "IsAnyOdds": null, "TotalStake": 0, "CanBetTicketCnt": 2, "keepParlayScroll": false };
+                            var e68 = null;
+                            var o68 = true;
+                            var h68 = null;
+                            var a68 = false;
+                            var y68 = null;
+                            var s68 = false;
+                            ticket681.getNewestTicket(n68, t68, i, r68, e68, o68, h68, a68, y68);
+                            setTimeout(function() {
+                              console.log('vao..........', arrMoneyBet681[turnBet681], turnBet681)
+                              var w = arrMoneyBet681[turnBet681],
+                                a = { "Tickets": [], "Combi": false, "ComboData": [], "IsAnyOdds": null, "TotalStake": 0, "CanBetTicketCnt": 2, "keepParlayScroll": false },
+                                s681 = false,
+                                b = "/Betting/ProcessBet",
+                                l;
+                              var y = {
+                                ItemList: [$.extend({}, i, {
+                                  stake: e681.parseStake(w)
+                                })]
+                              }
+                              try {
+                                c681.json(b, y, function(t) {
+                                  var p, g, nt;
+                                  try {
+                                    if (0 != t.ErrorCode) return u681.emit("betpreload.activate", !1), u681.emit("confirm.deactivate"), u681.emit("confirm.status", !1, function() {
+                                      u681.emit("betMsg.activate", t.ErrorMsg)
+                                    }), void(n681 && "function" == typeof n681 && n681());
+                                    var w = s68 ? t.Data.Code : t.Data.ItemList[0].Code,
+                                      e = s68 ? t.Data.Message : t.Data.ItemList[0].Message,
+                                      tt = s68 ? t.Data.Code : t.Data.ItemList[0].TicketStatus,
+                                      b = f681("normal"),
+                                      d = !1,
+                                      l = function() {
+                                        var u, n, f;
+                                        if (s68) {
+                                          for (n = t.Data.ItemList, u = 0; u < n.length; u++) f = "", 2 === n[u].Code ? f = "suspended" : 6 === n[u].Code ? f = "closed" : 15 === n[u].Code && (f = "statusChanged", a.Tickets[u].odds = n[u].DisplayOdds, a.Tickets[u].displayHDP = n[u].DisplayHDP), a.Tickets[u].oddsStatus = f;
+                                          r681.props.parlaytickets = a
+                                        } else n = t.Data.ItemList[0], f = "", 2 === n.Code ? f = "suspended" : 6 === n.Code ? f = "closed" : 15 === n.Code && (f = "statusChanged", n.DisplayOdds && (i.odds = n.DisplayOdds), n.DisplayHDP && (i.displayHDP = n.DisplayHDP)), i.oddsStatus = f, r681.props.singleticket = i
+                                      },
+                                      y = !1,
+                                      c = !1;
+                                    switch (w) {
+                                      case 0:
+                                      case 1:
+                                        p = "";
+                                        0 == w && 0 == tt ? (p = "waiting", b = f("notice"), e = h ? f("successbetwaiting1") : "livebetticketstatus-waiting") : (p = "bets", b = f681("info"), e = f681("successbetrunning"));
+                                        g = function() {
+                                          r681.onNavHandler("betList", p);
+                                          r681.props.triggerWidgetFrame(!0)
+                                        };
+                                        h ? ( /*window.alert(e), */ r681.setState({
+                                          stake: "",
+                                          payout: ""
+                                        }, function() {
+                                          u681.emit("betslip.deactivate", !0, g681);
+                                          r681.getBalance();
+                                          o681.RemoveBetTicket(i.oddsid, i.betteam, i.Matchid)
+                                        })) : (u681.emit("betslip.deactivate", !0, g), r681.getBalance(), d = !0, o681.RemoveBetTicket(i.oddsid, i.betteam, i.Matchid), 0 == w && (y = !0));
+                                        break;
+                                      case 2:
+                                        c = !0;
+                                        l();
+                                        break;
+                                      case 6:
+                                        s ? c = !0 : (u.emit("betslip.deactivate", !0), d = !0);
+                                        l();
+                                        break;
+                                      case 15:
+                                        s ? e = f681("oddshaschanged") : (e = t.Data.ItemList[0].DisplayOdds ? f681("oddshaschanged") + "&&" + i.odds + "&&" + t.Data.ItemList[0].DisplayOdds : t.Data.ItemList[0].Message, u681.emit("stake.check"));
+                                        c = !0;
+                                        l();
+                                        break;
+                                      default:
+                                        c = !0;
+                                        l()
+                                    }
+                                    d && (nt = k.attrs.betting, (!y || nt.hideLiveAlert) && (y || nt.hideDeadAlert) || (h ? window.alert(e) : v.open({
+                                      level: "normal",
+                                      title: b,
+                                      size: "smaller",
+                                      text: e,
+                                      btnNumber: 1,
+                                      use: y ? "hideLiveAlert" : "hideDeadAlert"
+                                    })), r.setState({
+                                      stake: "",
+                                      payout: ""
+                                    }));
+                                    u681.emit("betpreload.activate", !1);
+                                    u681.emit("confirm.deactivate");
+                                    u681.emit("confirm.status", !1, c ? function() {
+                                      u681.emit("betMsg.activate", e)
+                                    } : null);
+                                    n && "function" == typeof n && n()
+                                  } catch (it) {
+                                    console.log('catchit', it)
+                                    u681.emit("betpreload.activate", !1);
+                                    u681.emit("confirm.deactivate");
+                                    r681.setState({
+                                      confirmPhase: !1 //!0//!1
+                                    });
+                                    n681 && "function" == typeof n681 && n681()
+                                  }
+                                }, null, function() {
+                                  u681.emit("betpreload.activate", !1);
+                                  u681.emit("confirm.deactivate");
+                                  r681.setState({
+                                    confirmPhase: !1 //!0//!1
+                                  });
+                                  n681 && "function" == typeof n681 && n681()
+                                })
+                              } catch (d) {
+                                u681.emit("betpreload.activate", !1);
+                                u681.emit("confirm.deactivate");
+                                r681.setState({
+                                  confirmPhase: !1 //!0//!1
+                                });
+                                $(".overlay").remove();
+                                n681 && "function" == typeof n681 && n681()
+                              }
+                            }, 2000);
+                          } else {
+                            turnBet681--;
                           }
                         }
                       });

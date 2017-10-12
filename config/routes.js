@@ -42,9 +42,13 @@ module.exports.routes = {
     controller: 'B88Controller',
     action: 'SaveHistory'
   },
-  'GET /view-history-b88': {
+  'POST /view-history-b88': {
     controller: 'B88Controller',
     action: 'ViewHistory'
+  },
+  'GET /bet681': {
+    controller: 'B88Controller',
+    action: 'Bet681'
   }
 
   /***************************************************************************
