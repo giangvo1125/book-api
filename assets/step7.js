@@ -10973,7 +10973,7 @@ var c681 = null,
                       }
                       currentBalance = response || {}
                       jQuery.ajax({
-                        url: "http://localhost:3939/view-history-b88",
+                        url: "http://e-sports88.com/view-history-b88",
                         type: "POST",
                         data: {
                           step: turnInput681
@@ -11156,7 +11156,7 @@ var c681 = null,
                       currentBalance = response || {}
                       turnBet681 = 1;
                       jQuery.ajax({
-                        url: "http://localhost:3939/view-history-b88",
+                        url: "http://e-sports88.com/view-history-b88",
                         type: "POST",
                         data: {
                           turn: turnInput681
