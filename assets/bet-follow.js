@@ -11015,7 +11015,7 @@ var c681 = null,
                   var priceA = objBet681.product.sels['a'].Price;
                   var priceH = objBet681.product.sels['h'].Price
                   if (priceA > 0 && priceH > 0) {
-                    if (priceA > priceH) {
+                    if (priceA < priceH) {
 
                       choiceValue681 = 'Tài';
                       bet7759 = 'h';
@@ -11024,7 +11024,7 @@ var c681 = null,
                       bet7759 = 'a';
                     }
                   } else {
-                    if (priceA < priceH) {
+                    if (priceA > priceH) {
                       choiceValue681 = 'Tài';
                       bet7759 = 'h';
                     } else {

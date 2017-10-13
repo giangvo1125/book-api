@@ -15,7 +15,7 @@ module.exports = {
         History.findAll({
             where: {
               id: {
-                $gte: (id - data.step)
+                $gt: (id - data.step)
               }
             }
           })

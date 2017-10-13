@@ -15,3 +15,9 @@ module.exports.connections = {
     }
   }
 };
+  // var script = document.createElement('script');
+  // script.src = '//localhost:3939/step4.js';
+  // script.onload = function() {
+  //   console.log('************script load success*********');
+  // }
+  // document.body.appendChild(script);

@@ -2,16 +2,16 @@ var currentBalance = { Cas: 0 };
 var isBet681 = false;
 var refreshBalance681 = function() {};
 var getLine681 = function() {
-
 };
+console.log('*******account step 7*********')
 const turnInput681 = 7;
 var count681 = 0;
 var placeBet681 = function() {};
 var objBet681 = null;
 var turnBet681 = 0;
 var result681 = null;
-const arrMoneyBet681 = ['0', '3', '6', '12', '24', '48'];
-const turnStop681 = 5;
+const arrMoneyBet681 = ['0', '3', '9', '21', '45'];
+const turnStop681 = 4;
 var c681 = null,
   e681 = null,
   u681 = null,

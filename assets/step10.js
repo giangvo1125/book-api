@@ -10,8 +10,9 @@ var placeBet681 = function() {};
 var objBet681 = null;
 var turnBet681 = 0;
 var result681 = null;
-const arrMoneyBet681 = ['0', '3', '6', '12', '24', '48'];
-const turnStop681 = 5;
+console.log('****************turn bet 10****************')
+const arrMoneyBet681 = ['0', '3', '9', '21', '45'];
+const turnStop681 = 4;
 var c681 = null,
   e681 = null,
   u681 = null,
