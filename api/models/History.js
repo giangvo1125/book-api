@@ -13,11 +13,19 @@ module.exports = {
     },
     match: {
       type: Sequelize.INTEGER(255),
-      allowNull: false,
+      allowNull: true,
+    },
+    matchcode: {
+      type: Sequelize.INTEGER(255),
+      allowNull: true,
     },
     result: {
       type: Sequelize.INTEGER(20),
       allowNull: false,
+    },
+    cas: {
+      type: Sequelize.DOUBLE,
+      allowNull: true,
     },
     createdAt: {
       type: Sequelize.DATE,

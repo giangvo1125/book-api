@@ -46,7 +46,7 @@ module.exports.routes = {
     controller: 'B88Controller',
     action: 'ViewHistory'
   },
-  'GET /bet681': {
+  'POST /bet681': {
     controller: 'B88Controller',
     action: 'Bet681'
   }

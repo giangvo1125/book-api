@@ -2,7 +2,7 @@ module.exports.connections = {
   postgresql: {
     adapter: 'sails-postgresql',
     user: 'postgres',
-    password: 'Kolabs@1101681',
+    password: 'Kolabs@123456',
     // password: 'f5job@1101681',
     // database: 'postgres',
     database: 'b88',
