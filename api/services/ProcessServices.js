@@ -66,6 +66,7 @@ var obj = {
               "isQuickBet": false
             };
             console.log('bet----------- ',bet7759)
+            console.log('config ',config)
             func.getTicket(i, config['_host'], config['SessionId'])
             .then((ticket) => {
                 // console.log('ticket ',ticket)

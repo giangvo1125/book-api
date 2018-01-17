@@ -17,8 +17,40 @@ module.exports.bootstrap = function(cb) {
 	// sails.models.predict.sync();
 	// sails.models.user.sync();
 
+	// sails.models.user.create({
+	// 	username: 'TY89Z999002', 
+	// 	password: 'Nnnn2222', 
+	// 	hidubmit: '', 
+	// 	IEVerison: '0', 
+	// 	detecResTime: '167', 
+	// 	hidServerKey: 'bong88.com', 
+	// 	IsSSL: '1', 
+	// 	PF: 'Default', 
+	// })
+
+	function login(obj) {
+		var user_id = obj.id
+		delete obj['id']
+		_process.processLogin(obj)
+	    .then(function(res) {
+	    	obj.host = res['_host']
+	    	obj.sessionId = res['SessionId']
+	    	sails.models.user.update(obj, {
+	    		where: {
+	    			id: user_id
+	    		}
+	    	})
+	    	.then((logined) => {
+	    		console.log('--------logined--------');
+	    	}, (err) => {
+	    		console.log('-----------update fail --------- ',err)
+	    	})
+	    }, function(err) {
+	    	console.log('----------err login------------------------ ',err)
+	    })
+	}
+
 	sails.models.user.findAll({
-		limit: 1, 
 		raw: true
 	})
 	.then((users) => {
@@ -26,25 +58,10 @@ module.exports.bootstrap = function(cb) {
 			var obj = users[i]
 			obj['txtID'] = users[i].username
     		obj['pwd'] = users[i].password
-    		var user_id = users[i].id
-    		delete obj['id']
-    		_process.processLogin(obj)
-		    .then(function(res) {
-		    	obj.host = res['_host']
-		    	obj.sessionId = res['SessionId']
-		    	sails.models.user.update(obj, {
-		    		where: {
-		    			id: user_id
-		    		}
-		    	})
-		    	.then((logined) => {
-		    		console.log('--------logined--------');
-		    	}, (err) => {
-		    		console.log('-----------update fail --------- ',err)
-		    	})
-		    }, function(err) {
-		    	console.log('----------err login------------------------ ',err)
-		    })
+    		// var user_id = users[i].id    		
+		}
+		for(var i = 0; i < users.length; i++) {
+			login(users[i])
 		}
 	}, (err) => {
 		console.log('err get user------------------------- ',err)
