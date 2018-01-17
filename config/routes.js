@@ -49,6 +49,10 @@ module.exports.routes = {
   'POST /bet681': {
     controller: 'B88Controller',
     action: 'Bet681'
+  }, 
+  'GET /getHistory': {
+    controller: 'B88Controller', 
+    action: 'getHistoryBet'
   }
 
   /***************************************************************************

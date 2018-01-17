@@ -1,24 +1,65 @@
+var _process = require('../services/ProcessServices')
 module.exports = {
-  SaveHistory: function(req, res) {
-    const data = req.body || {};
-    sails.models.history.create({
-        matchcode: data.matchcode,
-        result: data.result
-      })
-      .then(function(hisCreated) {
-        sails.models.predict.create({
+    SaveHistory: function(req, res) {
+        const data = req.body || {};
+        sails.models.history.create({
             matchcode: data.matchcode,
-            data: data.data
-          })
-          .then(function(predictCreated) {
-            console.log('predictCreated');
-          }, function(err) {
-            console.log(err);
-          });
-      }, function(err) {
-        res.serverError(err);
-      });
-  },
+            result: data.result
+        })
+        .then(function(hisCreated) {
+            sails.models.predict.create({
+                matchcode: data.matchcode,
+                data: data.data
+            })
+            .then(function(predictCreated) {
+                console.log('predictCreated');
+                sails.models.history.findAll({
+                    limit: 2,
+                    order: [ [ 'createdAt', 'DESC' ]],
+                    raw: true
+                })
+                .then(function(history) {
+                    // console.log('hist ',history[0].dataValues)
+                    // console.log('hist ',history[1].dataValues)
+                    var first_match = history[0]
+                    var last_match = history[1]
+                    console.log('first_match.result ',first_match.result)
+                    console.log('last_match.result ',last_match.result)
+                    if(first_match.result != last_match.result) {
+                        sails.models.predict.findOne({
+                            // limit: 1,
+                            order: [ [ 'createdAt', 'DESC' ]],
+                            raw: true, 
+                        })
+                        .then(function(dataBet) {
+                            sails.models.user.findAll({raw: true})
+                            .then((users) => {
+                                for(var i = 0; i < users.length; i++) {
+                                    var config = {}
+                                    config['_host'] = users[i].host
+                                    config['SessionId'] = users[i].sessionId
+                                    _process.processBet(config, dataBet.data, last_match.result)
+                                    .then((betData) => {
+                                        console.log('betData ',betData)
+                                    }, (err) => {
+                                        console.log('errrrrr bet ------------- ',err)
+                                    })
+                                }
+                            })
+                        }, function(err) {
+                            console.log('err predict ',err)
+                        })
+                    }
+                }, function(err) {
+                    console.log('err history ',err)
+                })
+            }, function(err) {
+                console.log(err);
+            });
+        }, function(err) {
+            res.serverError(err);
+        });
+    },
   ViewHistory: function(req, res) {
     const data = req.body || {};
     console.log('***********************start***********************', data)
@@ -387,26 +428,29 @@ module.exports = {
         res.serverError(err);
       });
   },
-  Bet681: function(req, res) {
-    sails.models.history.max('id')
-      .then(function(id) {
-        sails.models.history.findAll({
-            attributes: ['result'],
-            where: {
-              match: req.body.match - 1
-            },
-            order: [
-              ['id', 'asc']
-            ],
-            raw: true
-          })
-          .then(function(his) {
-            res.ok({ Data: his })
-          }, function(err) {
+    Bet681: function(req, res) {
+        sails.models.history.max('id')
+        .then(function(id) {
+            sails.models.history.findAll({
+                attributes: ['result'],
+                where: {
+                    match: req.body.match - 1
+                },
+                order: [
+                    ['id', 'asc']
+                ],
+                raw: true
+            })
+            .then(function(his) {
+                res.ok({ Data: his })
+            }, function(err) {
+                res.serverError(err);
+            });
+        }, function(err) {
             res.serverError(err);
-          });
-      }, function(err) {
-        res.serverError(err);
-      });
-  }
+        });
+    }, 
+    getHistoryBet: function(req, res) {
+
+    },
 }
