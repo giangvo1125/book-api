@@ -1,8 +1,20 @@
 module.exports = {
   SaveHistory: function(req, res) {
-    History.create(req.body)
+    const data = req.body || {};
+    sails.models.history.create({
+        matchcode: data.matchcode,
+        result: data.result
+      })
       .then(function(hisCreated) {
-        res.ok(hisCreated);
+        sails.models.predict.create({
+            matchcode: data.matchcode,
+            data: data.data
+          })
+          .then(function(predictCreated) {
+            console.log('predictCreated');
+          }, function(err) {
+            console.log(err);
+          });
       }, function(err) {
         res.serverError(err);
       });
@@ -10,9 +22,9 @@ module.exports = {
   ViewHistory: function(req, res) {
     const data = req.body || {};
     console.log('***********************start***********************', data)
-    History.max('id')
+    sails.models.history.max('id')
       .then(function(id) {
-        History.findAll({
+        sails.models.history.findAll({
             where: {
               matchcode: {
                 $gte: data.matchcode - 2
@@ -194,9 +206,9 @@ module.exports = {
   ViewHistory4: function(req, res) {
     const data = req.body || {};
     console.log('***********************start***********************', data)
-    History.max('id')
+    sails.models.history.max('id')
       .then(function(id) {
-        History.findAll({
+        sails.models.history.findAll({
             where: {
               matchcode: {
                 $gte: data.matchcode - 2
@@ -376,10 +388,9 @@ module.exports = {
       });
   },
   Bet681: function(req, res) {
-    console.log('res', req.body)
-    History.max('id')
+    sails.models.history.max('id')
       .then(function(id) {
-        History.findAll({
+        sails.models.history.findAll({
             attributes: ['result'],
             where: {
               match: req.body.match - 1

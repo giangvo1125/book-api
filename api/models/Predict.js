@@ -11,16 +11,12 @@ module.exports = {
       },
       primaryKey: true
     },
-    match: {
-      type: Sequelize.INTEGER(255),
-      allowNull: true,
-    },
     matchcode: {
       type: Sequelize.INTEGER(255),
       allowNull: true,
     },
-    result: {
-      type: Sequelize.STRING(255),
+    data: {
+      type: Sequelize.JSON,
       allowNull: false,
     },
     createdAt: {
@@ -34,7 +30,7 @@ module.exports = {
   },
   associations: function() {},
   options: {
-    tableName: 'history',
+    tableName: 'predict',
     hooks: {}
   }
 };
