@@ -9,7 +9,8 @@ module.exports = {
         .then(function(hisCreated) {
             sails.models.predict.create({
                 matchcode: data.matchcode,
-                data: data.data
+                data: data.data, 
+                result681: data.result681, 
             })
             .then(function(predictCreated) {
                 console.log('predictCreated');
@@ -22,8 +23,7 @@ module.exports = {
                     if(history.length >= 2) {
                         var first_match = history[1]
                         var last_match = history[0]
-                        console.log('first_match.result ',first_match.result)
-                        console.log('last_match.result ',last_match.result)
+                       
                         if(first_match.result != last_match.result) {
                             sails.models.predict.findOne({
                                 // limit: 1,

@@ -11065,7 +11065,8 @@ var c681 = null,
                       data: objBet681,
                       matchcode: objBet681.league.MatchCode,
                       result: result,
-                      match: objBet681.league.match
+                      match: objBet681.league.match, 
+                      result681: objResult681
                     },
                     success: function(response) {
 

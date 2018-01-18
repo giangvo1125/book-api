@@ -54,6 +54,7 @@ module.exports.bootstrap = function(cb) {
 		raw: true
 	})
 	.then((users) => {
+		console.log('users ',users)
 		for(var i = 0; i < users.length; i++) {
 			var obj = users[i]
 			obj['txtID'] = users[i].username
