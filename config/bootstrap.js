@@ -98,7 +98,7 @@ module.exports.bootstrap = function(cb) {
 		}, (err) => {
 			console.log('err get user------------------------- ',err)
 		})
-	}, 1000 * 60 * 60 * 2)//time refresh login
+	}, 1000 * 60 * 60 * 0.8)//time refresh login
 	cb();
 };
 
