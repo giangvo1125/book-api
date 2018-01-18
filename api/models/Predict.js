@@ -19,8 +19,12 @@ module.exports = {
       type: Sequelize.JSON,
       allowNull: false,
     },
-    result681: {
-      type: Sequelize.JSON,
+    resultHome681: {
+      type: Sequelize.STRING(255),
+      allowNull: true,
+    }, 
+    resultAway681: {
+      type: Sequelize.STRING(255),
       allowNull: true,
     }, 
     createdAt: {

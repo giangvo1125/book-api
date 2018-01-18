@@ -14,7 +14,7 @@ var _process = require('../api/services/ProcessServices')
 
 module.exports.bootstrap = function(cb) {
 	// sails.models.history.sync();
-	// sails.models.predict.sync();
+	sails.models.predict.sync();
 	// sails.models.user.sync();
 
 	// sails.models.user.create({
@@ -28,78 +28,78 @@ module.exports.bootstrap = function(cb) {
 	// 	PF: 'Default', 
 	// })
 
-	function login(obj) {
-		var user_id = obj.id
-		delete obj['id']
-		_process.processLogin(obj)
-	    .then(function(res) {
-	    	obj.host = res['_host']
-	    	obj.sessionId = res['SessionId']
-	    	sails.models.user.update(obj, {
-	    		where: {
-	    			id: user_id
-	    		}
-	    	})
-	    	.then((logined) => {
-	    		console.log('--------logined--------');
-	    	}, (err) => {
-	    		console.log('-----------update fail --------- ',err)
-	    	})
-	    }, function(err) {
-	    	console.log('----------err login------------------------ ',err)
-	    })
-	}
+	// function login(obj) {
+	// 	var user_id = obj.id
+	// 	delete obj['id']
+	// 	_process.processLogin(obj)
+	//     .then(function(res) {
+	//     	obj.host = res['_host']
+	//     	obj.sessionId = res['SessionId']
+	//     	sails.models.user.update(obj, {
+	//     		where: {
+	//     			id: user_id
+	//     		}
+	//     	})
+	//     	.then((logined) => {
+	//     		console.log('--------logined--------');
+	//     	}, (err) => {
+	//     		console.log('-----------update fail --------- ',err)
+	//     	})
+	//     }, function(err) {
+	//     	console.log('----------err login------------------------ ',err)
+	//     })
+	// }
 
-	sails.models.user.findAll({
-		raw: true
-	})
-	.then((users) => {
-		console.log('users ',users)
-		for(var i = 0; i < users.length; i++) {
-			var obj = users[i]
-			obj['txtID'] = users[i].username
-    		obj['pwd'] = users[i].password
-    		// var user_id = users[i].id    		
-		}
-		var promise = []
-		for(var i = 0; i < users.length; i++) {
-			promise.push(login(users[i]))
-		}
-		Promise.all(promise)
-		.then((res) => {
+	// sails.models.user.findAll({
+	// 	raw: true
+	// })
+	// .then((users) => {
+	// 	console.log('users ',users)
+	// 	for(var i = 0; i < users.length; i++) {
+	// 		var obj = users[i]
+	// 		obj['txtID'] = users[i].username
+ //    		obj['pwd'] = users[i].password
+ //    		// var user_id = users[i].id    		
+	// 	}
+	// 	var promise = []
+	// 	for(var i = 0; i < users.length; i++) {
+	// 		promise.push(login(users[i]))
+	// 	}
+	// 	Promise.all(promise)
+	// 	.then((res) => {
 
-		}, (err) =>{
+	// 	}, (err) =>{
 
-		})
-	}, (err) => {
-		console.log('err get user------------------------- ',err)
-	})
+	// 	})
+	// }, (err) => {
+	// 	console.log('err get user------------------------- ',err)
+	// })
 
-	var autologin = setInterval(() =>{
-		sails.models.user.findAll({
-			raw: true
-		})
-		.then((users) => {
-			for(var i = 0; i < users.length; i++) {
-				var obj = users[i]
-				obj['txtID'] = users[i].username
-	    		obj['pwd'] = users[i].password
-	    		// var user_id = users[i].id    		
-			}
-			var promise = []
-			for(var i = 0; i < users.length; i++) {
-				promise.push(login(users[i]))
-			}
-			Promise.all(promise)
-			.then((res) => {
+	// var autologin = setInterval(() =>{
+	// 	sails.models.user.findAll({
+	// 		raw: true
+	// 	})
+	// 	.then((users) => {
+	// 		for(var i = 0; i < users.length; i++) {
+	// 			var obj = users[i]
+	// 			obj['txtID'] = users[i].username
+	//     		obj['pwd'] = users[i].password
+	//     		// var user_id = users[i].id    		
+	// 		}
+	// 		var promise = []
+	// 		for(var i = 0; i < users.length; i++) {
+	// 			promise.push(login(users[i]))
+	// 		}
+	// 		Promise.all(promise)
+	// 		.then((res) => {
 
-			}, (err) =>{
+	// 		}, (err) =>{
 
-			})
-		}, (err) => {
-			console.log('err get user------------------------- ',err)
-		})
-	}, 1000 * 60 * 60 * 0.8)//time refresh login
+	// 		})
+	// 	}, (err) => {
+	// 		console.log('err get user------------------------- ',err)
+	// 	})
+	// }, 1000 * 60 * 60 * 0.8)//time refresh login
 	cb();
 };
 

@@ -10,7 +10,8 @@ module.exports = {
             sails.models.predict.create({
                 matchcode: data.matchcode,
                 data: data.data, 
-                result681: data.result681, 
+                resultHome681: data.resultHome681, 
+                resultAway681: data.resultAway681, 
             })
             .then(function(predictCreated) {
                 console.log('predictCreated');
