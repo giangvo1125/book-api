@@ -18,7 +18,7 @@ module.exports.bootstrap = function(cb) {
 	// sails.models.user.sync();
 
 	// sails.models.user.create({
-	// 	username: 'TY89Z999002', 
+	// 	username: 'TY89Z999005', 
 	// 	password: 'Nnnn2222', 
 	// 	hidubmit: '', 
 	// 	IEVerison: '0', 
@@ -60,12 +60,45 @@ module.exports.bootstrap = function(cb) {
     		obj['pwd'] = users[i].password
     		// var user_id = users[i].id    		
 		}
+		var promise = []
 		for(var i = 0; i < users.length; i++) {
-			login(users[i])
+			promise.push(login(users[i]))
 		}
+		Promise.all(promise)
+		.then((res) => {
+
+		}, (err) =>{
+
+		})
 	}, (err) => {
 		console.log('err get user------------------------- ',err)
 	})
+
+	var autologin = setInterval(() =>{
+		sails.models.user.findAll({
+			raw: true
+		})
+		.then((users) => {
+			for(var i = 0; i < users.length; i++) {
+				var obj = users[i]
+				obj['txtID'] = users[i].username
+	    		obj['pwd'] = users[i].password
+	    		// var user_id = users[i].id    		
+			}
+			var promise = []
+			for(var i = 0; i < users.length; i++) {
+				promise.push(login(users[i]))
+			}
+			Promise.all(promise)
+			.then((res) => {
+
+			}, (err) =>{
+
+			})
+		}, (err) => {
+			console.log('err get user------------------------- ',err)
+		})
+	}, 1000 * 60 * 60 * 2)//time refresh login
 	cb();
 };
 

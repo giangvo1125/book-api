@@ -69,7 +69,6 @@ var obj = {
             console.log('config ',config)
             func.getTicket(i, config['_host'], config['SessionId'])
             .then((ticket) => {
-                // console.log('ticket ',ticket)
                 switch(ticket.Code) {
                     case 6:
                         b('ticket closed.');
@@ -259,6 +258,85 @@ var obj = {
         });
         return p;
     }, 
+
+    processGetTicket: (defaultConfig, data, bet7759, listConfig) => {
+    	var p = new Promise((a, b) => {
+    		var s = 'h';
+        	if(bet7759 == 'Xỉu') {
+        		s = 'a';
+        	}
+        	var home = "Number Game No. " + data.league.MatchCode;
+        	var i = {
+              "sportname": "Number Game",
+              "bettypename": "Trên/Dưới kế tiếp",
+              "ChoiceValue": bet7759,
+              "Line": "",
+              "displayHDP": "",
+              "odds": data.product.sels[s].Price,
+              "home": home,
+              "away": null,
+              "league": "Turbo Number Game",
+              "IsLive": true,
+              "ProgramID": "",
+              "RaceNum": 0,
+              "Runner": 0,
+              "PoolType": 1,
+              "imgurl": "",
+              "BetID": "0",
+              "type": "OU",
+              "bettype": "85",
+              "oddsid": parseInt(data.product.pid),
+              "Hscore": 0,
+              "Ascore": 0,
+              "Matchid": parseInt(data.product.MatchId),
+              "betteam": s,
+              "stake": "2",
+              "gameid": 161,
+              "MRPercentage": "",
+              "OddsInfo": "",
+              "AcceptBetterOdds": true,
+              "AutoAcceptSec": "",
+              "showLiveScore": false,
+              "colorHomeTeam": "",
+              "colorAwayTeam": "",
+              "matchcode": null,
+              "isQuickBet": false,
+              "kickofftime": data.match.kickofftime,
+              "oddsStatus": "",
+              "min": "2",
+              "max": "1,350",
+              "isQuickBet": false
+            };
+            console.log('bet----------- ',bet7759)
+            console.log('config ',defaultConfig)
+            func.getTicket(i, defaultConfig['_host'], defaultConfig['SessionId'])
+            .then((ticket) => {
+                // console.log('ticket ',ticket)
+                switch(ticket.Code) {
+                    case 6:
+                        b('ticket closed.');
+                    break;
+                    case 0:
+                        for(var j = 0; j < listConfig.length; j++) {
+                        	func.placeBet(i, listConfig[j]['host'], listConfig[j]['sessionId'])
+	                        .then((placeBet) => {
+	                            // a(placeBet)
+	                            console.log('placeBet ',placeBet)
+	                        }, (err) => {
+	                            b(err);
+	                        })
+                        }
+                    break;
+                    default:
+                        b('err with ticket.')
+                    break;
+                }
+            }, (err) => {
+                b(err);
+            })
+    	});
+    	return p;
+    }
 }
 
 module.exports = obj

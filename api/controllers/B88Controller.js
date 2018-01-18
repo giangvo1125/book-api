@@ -33,10 +33,26 @@ module.exports = {
                             .then(function(dataBet) {
                                 sails.models.user.findAll({raw: true})
                                 .then((users) => {
-                                    // for(var i = 0; i < users.length; i++) {
+                                   let promise = []
+                                    for(var i = 0; i <= users.length; i++) {
+                                        if(users[i]) {
+                                            var config = {}
+                                            config['_host'] = users[i].host
+                                            config['SessionId'] = users[i].sessionId
+                                            promise.push(_process.processBet(config, dataBet.data, last_match.result))
+                                        }
+                                    }
+                                    Promise.all(promise)
+                                    .then((res) => {
+                                        console.log('res ',res)
+                                    }, (err) => {
+                                        console.log('errr bet ',err)
+                                    })
+                                    // console.log('users ',users)
+                                    // if(users.length != 0) {
                                     //     var config = {}
-                                    //     config['_host'] = users[i].host
-                                    //     config['SessionId'] = users[i].sessionId
+                                    //     config['_host'] = users[0].host
+                                    //     config['SessionId'] = users[0].sessionId
                                     //     _process.processBet(config, dataBet.data, last_match.result)
                                     //     .then((betData) => {
                                     //         console.log('betData ',betData)
@@ -44,18 +60,6 @@ module.exports = {
                                     //         console.log('errrrrr bet ------------- ',err)
                                     //     })
                                     // }
-                                    console.log('users ',users)
-                                    if(users.length >= 2) {
-                                        var config = {}
-                                        config['_host'] = users[0].host
-                                        config['SessionId'] = users[0].sessionId
-                                        _process.processBet(config, dataBet.data, last_match.result)
-                                        .then((betData) => {
-                                            console.log('betData ',betData)
-                                        }, (err) => {
-                                            console.log('errrrrr bet ------------- ',err)
-                                        })
-                                    }
                                 })
                             }, function(err) {
                                 console.log('err predict ',err)

@@ -109,7 +109,7 @@ var func = {
             .then((responseGetTicket) => {
             	if(responseGetTicket.status == 200 && 
             		responseGetTicket.data.Data && 
-            		responseGetTicket.data.Data.length > 0) 
+            		responseGetTicket.data.Data.length != 0) 
             	{
             		a(responseGetTicket.data.Data[0])
             	}
