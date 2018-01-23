@@ -16,6 +16,7 @@ module.exports.bootstrap = function(cb) {
 	// sails.models.history.sync();
 	// sails.models.predict.sync();
 	// sails.models.user.sync();
+	// sails.models.ticket.sync();
 
 	// sails.models.user.create({
 	// 	username: 'TY89Z999005', 
@@ -76,6 +77,7 @@ module.exports.bootstrap = function(cb) {
 	})
 
 	var autologin = setInterval(() =>{
+		console.log('re login------------------------------')
 		sails.models.user.findAll({
 			raw: true
 		})
@@ -99,7 +101,7 @@ module.exports.bootstrap = function(cb) {
 		}, (err) => {
 			console.log('err get user------------------------- ',err)
 		})
-	}, 1000 * 60 * 60 * 0.8)//time refresh login
+	}, 1000 * 60 * 15)//time refresh login
 	cb();
 };
 

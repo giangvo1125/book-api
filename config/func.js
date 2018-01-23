@@ -267,6 +267,26 @@ var func = {
     	return p;
     }, 
 
+    returnBalance: (host, SessionId) => {
+        var p = new Promise((a, b) => {
+            let getTicketConfig = {
+                headers: getBetHeader.headers(SessionId)
+            };
+            axios.post(host + '/Customer/Balance', {}, getTicketConfig)
+            .then((balance) => {
+                if(balance.status == 200 && balance.data.Data) {
+                    a(balance.data.Data)
+                }
+                else {
+                    b('not found balance')
+                }
+            }, (err) => {
+                b(err);
+            })
+        });
+        return p;
+    }, 
+
 }
 
 module.exports = func

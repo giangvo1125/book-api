@@ -17,7 +17,7 @@ var obj = {
         return p;
     }, 
 
-    processBet: (config, data, bet7759) => {
+    processBet: (config, data, bet7759, stake) => {
         var p = new Promise((a, b) => {
         	var s = 'h';
         	if(bet7759 == 'Xỉu') {
@@ -48,7 +48,7 @@ var obj = {
               "Ascore": 0,
               "Matchid": parseInt(data.product.MatchId),
               "betteam": s,
-              "stake": "2",
+              "stake": stake,
               "gameid": 161,
               "MRPercentage": "",
               "OddsInfo": "",
@@ -76,7 +76,7 @@ var obj = {
                     case 0:
                         func.placeBet(i, config['_host'], config['SessionId'])
                         .then((placeBet) => {
-                            a(placeBet)
+                            a({placeBet: placeBet, i: i})
                         }, (err) => {
                             b(err);
                         })
@@ -336,7 +336,18 @@ var obj = {
             })
     	});
     	return p;
-    }
+    }, 
+    returnBalance: (config, id) => {
+    	var p = new Promise((a, b) => {
+    		func.returnBalance(config['_host'], config['SessionId'])
+    		.then((balance) => {
+    			a({balance: balance, id: id})
+    		},(err) => {
+    			b(err)
+    		})
+    	});
+    	return p;
+    },
 }
 
 module.exports = obj

@@ -11,54 +11,34 @@ module.exports = {
       },
       primaryKey: true
     },
-    username: {
+    ChoiceValue: {
       type: Sequelize.STRING(255),
       allowNull: true,
     },
-    password: {
+    odds: {
       type: Sequelize.STRING(255),
       allowNull: true,
     },
-    hidubmit: {
+    oddsid: {
       type: Sequelize.STRING(255),
       allowNull: true,
     },
-    IEVerison: {
+    Matchid: {
       type: Sequelize.STRING(255),
       allowNull: true,
     },
-    detecResTime: {
+    betteam: {
       type: Sequelize.STRING(255),
       allowNull: true,
     },
-    hidServerKey: {
+    kickofftime: {
       type: Sequelize.STRING(255),
       allowNull: true,
-    },
-    IsSSL: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
-    },
-    PF: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
-    },
-    sessionId: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
-    },
-    host: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
-    },
-    balance: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
-    },
-    loseticket: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
-    },
+    }, 
+    status: {
+      type: Sequelize.STRING(255), 
+      allowNull: true, 
+    }, 
     createdAt: {
       type: Sequelize.DATE,
       allowNull: true,
@@ -70,7 +50,7 @@ module.exports = {
   },
   associations: function() {},
   options: {
-    tableName: 'user',
+    tableName: 'ticket',
     hooks: {}
   }
 };

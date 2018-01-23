@@ -1,4 +1,8 @@
 var _process = require('../services/ProcessServices')
+var _ = require('lodash');
+var list_users = []
+var list_stake = [2, 4, 8, 16, 32]
+var length = 2
 module.exports = {
     SaveHistory: function(req, res) {
         const data = req.body || {};
@@ -6,74 +10,167 @@ module.exports = {
             matchcode: data.matchcode,
             result: data.result
         })
-        .then(function(hisCreated) {
+        .then((hisCreated) => {
             sails.models.predict.create({
                 matchcode: data.matchcode,
                 data: data.data, 
                 resultHome681: data.resultHome681, 
                 resultAway681: data.resultAway681, 
             })
-            .then(function(predictCreated) {
-                console.log('predictCreated');
+            .then((predictCreated) => {
                 sails.models.history.findAll({
-                    limit: 2,
+                    limit: length,
                     order: [ [ 'createdAt', 'DESC' ]],
                     raw: true
                 })
-                .then(function(history) {
-                    if(history.length >= 2) {
-                        var first_match = history[1]
-                        var last_match = history[0]
-                       
-                        if(first_match.result != last_match.result) {
-                            sails.models.predict.findOne({
-                                // limit: 1,
-                                order: [ [ 'createdAt', 'DESC' ]],
-                                raw: true, 
+                .then((histories) => {
+                    sails.models.predict.findOne({
+                        // limit: 2,
+                        order: [ [ 'createdAt', 'DESC' ]],
+                        raw: true, 
+                    })
+                    .then((predictData) => {
+                        if(predictData) {
+                            sails.models.user.findAll({
+                                raw: true
                             })
-                            .then(function(dataBet) {
-                                sails.models.user.findAll({raw: true})
-                                .then((users) => {
-                                   let promise = []
-                                    for(var i = 0; i <= users.length; i++) {
-                                        if(users[i]) {
-                                            var config = {}
-                                            config['_host'] = users[i].host
-                                            config['SessionId'] = users[i].sessionId
-                                            promise.push(_process.processBet(config, dataBet.data, last_match.result))
+                            .then((users) => {
+                                if(users) {
+                                    users.forEach((user) => {
+                                        var config = {}
+                                        config['_host'] = user.host
+                                        config['SessionId'] = user.sessionId
+                                        var stake = 0;
+                                        //trường họp mới vào hoặc là chưa có lưu loseticket
+                                        console.log('user.loseticket---------------',user.loseticket)
+                                        // console.log('histories[3].result---------------',histories[3].result)
+                                        // console.log('histories[2].result---------------',histories[2].result)
+                                        console.log('histories[1].result---------------',histories[1].result)
+                                        console.log('histories[0].result---------------',histories[0].result)
+                                        if(user.loseticket == 0 || user.loseticket == '' || user.loseticket == null) { 
+                                            //ktra kết quả 4 vé cuối, nếu 4 vé cùng là Tài hoặc Xỉu thì bắt đầu bet.
+                                            if(histories && histories.length == length) {
+                                                var condition1 = histories[0].result == histories[1].result
+                                                // var condition2 = histories[0].result == histories[2].result
+                                                // var condition3 = histories[0].result == histories[3].result
+                                                var condition2 = true
+                                                var condition3 = true
+                                                //nếu thoả điều kiện
+                                                if(condition1 && condition2 && condition3) {
+                                                    stake = list_stake[0]
+                                                    var ticketResult = histories[0].result == 'Xỉu' ? 'Tài' : 'Xỉu'
+                                                    //bet
+                                                    console.log('bet theo -----1------ ',ticketResult)
+                                                    _process.processBet(config, predictData.data, ticketResult, stake)
+                                                    .then((betData) => {
+                                                        console.log('betData ',betData.placeBet)
+                                                        //lấy balance của user sau khi bet
+                                                        _process.returnBalance(config, user.id)
+                                                        .then((balance)=> {
+                                                            //cập nhật balance sau khi bet cho user
+                                                            sails.models.user.update({
+                                                                loseticket: 1, 
+                                                                balance: balance.balance.BCredit,
+                                                            }, {
+                                                                where: {id: user.id}
+                                                            })
+                                                            //kết thúc
+                                                        },(err) => {
+                                                            console.log('err balance ',err)
+                                                        })
+                                                    }, (err) => {
+                                                        console.log('errrrrr bet ------------- ',err)
+                                                    })
+                                                }
+                                            }
                                         }
-                                    }
-                                    Promise.all(promise)
-                                    .then((res) => {
-                                        console.log('res ',res)
-                                    }, (err) => {
-                                        console.log('errr bet ',err)
+                                        //đang trong luồng theo để bet ( tối đa theo 5 lần)
+                                        else {
+                                            //nếu vẫn chưa thua tối đa 5 vé, tiếp tục theo
+                                            if(user.loseticket < 6) {
+                                                var result1 = histories[0].result
+                                                var result2 = histories[1].result
+                                                //nếu 2 kết quả giống nhau, nghĩa là vẫn đang thua, tiếp tục tăng loseticket lên
+                                                if(result1 == result2) {
+                                                    // user.loseticket++;
+                                                    stake = list_stake[user.loseticket]
+                                                    var stake_sub = list_stake[user.loseticket - 1]// tiền bet vé dằn
+                                                    var ticketResult = histories[0].result == 'Xỉu' ? 'Tài' : 'Xỉu'
+                                                    var ticketResult2 = ticketResult == 'Xỉu' ? 'Tài' : 'Xỉu'
+                                                    //bet
+                                                    var promise_bet = []
+                                                    //vé bet 
+                                                     console.log('bet theo -----2------ ',ticketResult)
+                                                    promise_bet.push(_process.processBet(config, predictData.data, ticketResult, stake))
+                                                    //vé dằn: để giảm số tiền thua mỗi lần theo, bet thêm 1 vé ngược để dằn
+                                                     console.log('bet dan ----------- ',ticketResult2)
+                                                    promise_bet.push(_process.processBet(config, predictData.data, ticketResult2, stake_sub))
+                                                    
+                                                    Promise.all(promise_bet)
+                                                    .then((betData) => {
+                                                        console.log('betData ',betData[0].placeBet)
+                                                        console.log('betData dan` ',betData[1].placeBet)
+                                                        //lấy balance của user sau khi bet
+                                                        _process.returnBalance(config, user.id)
+                                                        .then((balance)=> {
+                                                            //cập nhật balance sau khi bet cho user
+                                                            sails.models.user.update({
+                                                                loseticket: parseInt(user.loseticket) + 1, 
+                                                                balance: balance.balance.BCredit,
+                                                            }, {
+                                                                where: {id: user.id}
+                                                            })
+                                                            //kết thúc
+                                                        },(err) => {
+                                                            console.log('err balance ',err)
+                                                        })
+                                                    }, (err) => {
+                                                        console.log('errrrrr bet ------------- ',err)
+                                                    })
+                                                }
+                                                //nếu 2 kết quả khác nhau, nghĩa là đã win, reset loseticket = 0
+                                                else {
+                                                    _process.returnBalance(config, user.id)
+                                                    .then((balance)=> {
+                                                        //cập nhật balance sau khi bet cho user
+                                                        sails.models.user.update({
+                                                            loseticket: 0, 
+                                                            balance: balance.balance.BCredit,
+                                                        }, {
+                                                            where: {id: user.id}
+                                                        })
+                                                        //kết thúc
+                                                    },(err) => {
+                                                        console.log('err balance ',err)
+                                                    })
+                                                }
+                                            }
+                                            //nếu đã thua 5 vé rồi, reset loseticket về = 0
+                                            else {
+                                                sails.models.user.update({
+                                                    loseticket: 0, 
+                                                    // balance: balance.balance.BCredit,
+                                                }, {
+                                                    where: {id: user.id}
+                                                })
+                                            }
+                                        }
                                     })
-                                    // console.log('users ',users)
-                                    // if(users.length != 0) {
-                                    //     var config = {}
-                                    //     config['_host'] = users[0].host
-                                    //     config['SessionId'] = users[0].sessionId
-                                    //     _process.processBet(config, dataBet.data, last_match.result)
-                                    //     .then((betData) => {
-                                    //         console.log('betData ',betData)
-                                    //     }, (err) => {
-                                    //         console.log('errrrrr bet ------------- ',err)
-                                    //     })
-                                    // }
-                                })
-                            }, function(err) {
-                                console.log('err predict ',err)
+                                }
+                            }, (err) => {
+                                console.log('err user ',err)
                             })
                         }
-                    }
-                }, function(err) {
+                    }, (err) => {
+                        console.log('err predictData ',err)
+                    })
+                }, (err) => {
                     console.log('err history ',err)
                 })
-            }, function(err) {
-                console.log(err);
+            }, (err) => {
+                console.log('err predictCreated ', err);
             });
-        }, function(err) {
+        }, (err) => {
             res.serverError(err);
         });
     },
