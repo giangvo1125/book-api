@@ -65,8 +65,7 @@ var obj = {
               "max": "1,350",
               "isQuickBet": false
             };
-            console.log('bet----------- ',bet7759)
-            console.log('config ',config)
+            // console.log('bet----------- ',bet7759)
             func.getTicket(i, config['_host'], config['SessionId'])
             .then((ticket) => {
                 switch(ticket.Code) {

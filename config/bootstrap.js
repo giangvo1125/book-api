@@ -19,7 +19,7 @@ module.exports.bootstrap = function(cb) {
 	// sails.models.ticket.sync();
 
 	// sails.models.user.create({
-	// 	username: 'TY89Z999005', 
+	// 	username: 'DTC802204002', 
 	// 	password: 'Nnnn2222', 
 	// 	hidubmit: '', 
 	// 	IEVerison: '0', 
@@ -27,6 +27,7 @@ module.exports.bootstrap = function(cb) {
 	// 	hidServerKey: 'bong88.com', 
 	// 	IsSSL: '1', 
 	// 	PF: 'Default', 
+	// 	usertype: '1'// 0 - user bet theo, 1 - user bet dằn
 	// })
 
 	function login(obj) {

@@ -11019,7 +11019,8 @@ var c681 = null,
                   }
                 }, 2000);
               }
-              refreshBalance681()
+              setTimeout(function (){
+                refreshBalance681()
                 .then(function(response) {
                   if (parseFloat(currentBalance.Cas) < parseFloat(response.Cas)) {
                     turnBet681 = 1;
@@ -11078,6 +11079,7 @@ var c681 = null,
                 }, function(err) {
                   console.log('refresh balance error', err);
                 });
+              }, 1500)
             }
           }
         },

@@ -59,6 +59,10 @@ module.exports = {
       type: Sequelize.STRING(255),
       allowNull: true,
     },
+    usertype: {
+      type: Sequelize.STRING(255),
+      allowNull: true,
+    }, 
     createdAt: {
       type: Sequelize.DATE,
       allowNull: true,
