@@ -22,7 +22,7 @@ module.exports = {
             .then((predictCreated) => {
                 sails.models.history.findAll({
                     limit: length,
-                    order: [ [ 'createdAt', 'DESC' ]],
+                    order: [ [ 'id', 'DESC' ]],
                     raw: true
                 })
                 .then((histories) => {
