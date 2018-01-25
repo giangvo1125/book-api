@@ -6,6 +6,18 @@ var list_stake = [3, 7, 13, 25, 51]
 var subAmount = 3
 var length = 2
 module.exports = {
+    SaveTicket: function(req, res) {
+        var data = req.body || {};
+        sails.models.history.create({
+            matchcode: data.matchcode,
+            result: data.result
+        })
+        .then((hisCreated) => {
+            res.ok(hisCreated)
+        }, (err) => {
+            res.serverError(err);
+        })
+    },
     SaveHistory: function(req, res) {
         const data = req.body || {};
         sails.models.history.create({
