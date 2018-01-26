@@ -10844,7 +10844,7 @@ var c681 = null,
             if (this.nowTimeValue <= 5) {
               isBet681 = false;
             }
-            if (this.nowTimeValue <= 35 && this.nowTimeValue >= 20 && !isBet681) {
+            if (this.nowTimeValue <= 15 && this.nowTimeValue >= 8 && !isBet681) {
               var res = objResult681.split(" - ");
               var OScore = parseInt(res[0]);
               var UScore = parseInt(res[1]);
@@ -11019,66 +11019,66 @@ var c681 = null,
                   }
                 }, 2000);
               }
-              setTimeout(function (){
+              setTimeout(function() {
                 refreshBalance681()
-                .then(function(response) {
-                  if (parseFloat(currentBalance.Cas) < parseFloat(response.Cas)) {
-                    turnBet681 = 1;
-                    currentBalance = response || {};
-                    if (UScore + OScore == 0) {
-                      result = choiceValue681;
-                    }
-                  }
-                  //lose
-                  else if (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)) {
-                    currentBalance = response || {};
-                    const objUnfolow = {
-                      'Tài': 'Tài',
-                      'Xỉu': 'Tài'
-                    }
-                    if (UScore + OScore == 0) {
-                      result = objUnfolow[choiceValue681];
-                    }
-                    if (turnBet681 >= turnStop681) {
+                  .then(function(response) {
+                    if (parseFloat(currentBalance.Cas) < parseFloat(response.Cas)) {
                       turnBet681 = 1;
+                      currentBalance = response || {};
+                      if (UScore + OScore == 0) {
+                        result = choiceValue681;
+                      }
+                    }
+                    //lose
+                    else if (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)) {
+                      currentBalance = response || {};
+                      const objUnfolow = {
+                        'Tài': 'Tài',
+                        'Xỉu': 'Tài'
+                      }
+                      if (UScore + OScore == 0) {
+                        result = objUnfolow[choiceValue681];
+                      }
+                      if (turnBet681 >= turnStop681) {
+                        turnBet681 = 1;
+                      } else {
+                        turnBet681++;
+                      }
                     } else {
-                      turnBet681++;
+                      currentBalance = response || {};
+                      turnBet681 = 1;
                     }
-                  } else {
-                    currentBalance = response || {};
-                    turnBet681 = 1;
-                  }
-                  //***********************bet**************************
-                  switch (true) {
-                    case (UScore + OScore == 1):
-                      result = resultHome681 > 37 ? 'Tài' : 'Xỉu';
-                      break;
-                    case (OScore + UScore == 2):
-                      result = resultAway681 > 37 ? 'Tài' : 'Xỉu';
-                      break;
-                    default:
-                      break;
-                  }
-                  jQuery.ajax({
-                    url: "http://localhost:2019/save-history-b88",
-                    type: "POST",
-                    data: {
-                      data: objBet681,
-                      matchcode: objBet681.league.MatchCode,
-                      result: result,
-                      match: objBet681.league.match, 
-                      resultHome681: resultHome681, 
-                      resultAway681: resultAway681, 
-                    },
-                    success: function(response) {
+                    //***********************bet**************************
+                    switch (true) {
+                      case (UScore + OScore == 1):
+                        result = resultHome681 > 37 ? 'Tài' : 'Xỉu';
+                        break;
+                      case (OScore + UScore == 2):
+                        result = resultAway681 > 37 ? 'Tài' : 'Xỉu';
+                        break;
+                      default:
+                        break;
+                    }
+                    jQuery.ajax({
+                      url: "http://localhost:2019/save-history-b88",
+                      type: "POST",
+                      data: {
+                        data: objBet681,
+                        matchcode: (UScore + OScore == 0) ? objBet681.league.MatchCode - 1 : objBet681.league.MatchCode,
+                        result: result,
+                        match: objBet681.league.match,
+                        resultHome681: resultHome681,
+                        resultAway681: resultAway681,
+                      },
+                      success: function(response) {
 
-                    }
+                      }
+                    });
+                    //***********************end**************************
+
+                  }, function(err) {
+                    console.log('refresh balance error', err);
                   });
-                  //***********************end**************************
-
-                }, function(err) {
-                  console.log('refresh balance error', err);
-                });
               }, 1500)
             }
           }

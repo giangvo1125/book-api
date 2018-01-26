@@ -32,6 +32,7 @@ module.exports = {
                 resultAway681: data.resultAway681, 
             })
             .then((predictCreated) => {
+                res.ok({status: 0});
                 // sails.models.history.findAll({
                 //     limit: length,
                 //     order: [ [ 'id', 'DESC' ]],
