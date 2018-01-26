@@ -11019,6 +11019,17 @@ var c681 = null,
                   }
                 }, 2000);
               }
+              //***********************bet**************************
+              switch (true) {
+                case (UScore + OScore == 1):
+                  result = resultHome681 > 37 ? 'Tài' : 'Xỉu';
+                  break;
+                case (OScore + UScore == 2):
+                  result = resultAway681 > 37 ? 'Tài' : 'Xỉu';
+                  break;
+                default:
+                  break;
+              }
               setTimeout(function() {
                 refreshBalance681()
                   .then(function(response) {
@@ -11028,6 +11039,21 @@ var c681 = null,
                       if (UScore + OScore == 0) {
                         result = choiceValue681;
                       }
+                      jQuery.ajax({
+                        url: "http://localhost:2019/save-history-b88",
+                        type: "POST",
+                        data: {
+                          data: objBet681,
+                          matchcode: (UScore + OScore == 0) ? objBet681.league.MatchCode - 1 : objBet681.league.MatchCode,
+                          result: result,
+                          match: objBet681.league.match,
+                          resultHome681: resultHome681,
+                          resultAway681: resultAway681,
+                        },
+                        success: function(response) {
+
+                        }
+                      });
                     }
                     //lose
                     else if (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)) {
@@ -11044,36 +11070,40 @@ var c681 = null,
                       } else {
                         turnBet681++;
                       }
+                      jQuery.ajax({
+                        url: "http://localhost:2019/save-history-b88",
+                        type: "POST",
+                        data: {
+                          data: objBet681,
+                          matchcode: (UScore + OScore == 0) ? objBet681.league.MatchCode - 1 : objBet681.league.MatchCode,
+                          result: result,
+                          match: objBet681.league.match,
+                          resultHome681: resultHome681,
+                          resultAway681: resultAway681,
+                        },
+                        success: function(response) {
+
+                        }
+                      });
                     } else {
                       currentBalance = response || {};
                       turnBet681 = 1;
-                    }
-                    //***********************bet**************************
-                    switch (true) {
-                      case (UScore + OScore == 1):
-                        result = resultHome681 > 37 ? 'Tài' : 'Xỉu';
-                        break;
-                      case (OScore + UScore == 2):
-                        result = resultAway681 > 37 ? 'Tài' : 'Xỉu';
-                        break;
-                      default:
-                        break;
-                    }
-                    jQuery.ajax({
-                      url: "http://localhost:2019/save-history-b88",
-                      type: "POST",
-                      data: {
-                        data: objBet681,
-                        matchcode: (UScore + OScore == 0) ? objBet681.league.MatchCode - 1 : objBet681.league.MatchCode,
-                        result: result,
-                        match: objBet681.league.match,
-                        resultHome681: resultHome681,
-                        resultAway681: resultAway681,
-                      },
-                      success: function(response) {
+                      jQuery.ajax({
+                        url: "http://localhost:2019/save-history-b88",
+                        type: "POST",
+                        data: {
+                          data: objBet681,
+                          matchcode: (UScore + OScore == 0) ? objBet681.league.MatchCode - 1 : objBet681.league.MatchCode,
+                          result: result,
+                          match: objBet681.league.match,
+                          resultHome681: resultHome681,
+                          resultAway681: resultAway681,
+                        },
+                        success: function(response) {
 
-                      }
-                    });
+                        }
+                      });
+                    }
                     //***********************end**************************
 
                   }, function(err) {
