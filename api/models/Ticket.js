@@ -11,21 +11,33 @@ module.exports = {
       },
       primaryKey: true
     },
-    matchcode: {
-      type: Sequelize.INTEGER(255),
+    ChoiceValue: {
+      type: Sequelize.STRING(255),
       allowNull: true,
     },
-    data: {
-      type: Sequelize.JSON,
-      allowNull: false,
+    odds: {
+      type: Sequelize.STRING(255),
+      allowNull: true,
     },
-    resultHome681: {
+    oddsid: {
+      type: Sequelize.STRING(255),
+      allowNull: true,
+    },
+    Matchid: {
+      type: Sequelize.STRING(255),
+      allowNull: true,
+    },
+    betteam: {
+      type: Sequelize.STRING(255),
+      allowNull: true,
+    },
+    kickofftime: {
       type: Sequelize.STRING(255),
       allowNull: true,
     }, 
-    resultAway681: {
-      type: Sequelize.STRING(255),
-      allowNull: true,
+    status: {
+      type: Sequelize.STRING(255), 
+      allowNull: true, 
     }, 
     createdAt: {
       type: Sequelize.DATE,
@@ -38,7 +50,7 @@ module.exports = {
   },
   associations: function() {},
   options: {
-    tableName: 'predict',
+    tableName: 'ticket',
     hooks: {}
   }
 };

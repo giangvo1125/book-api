@@ -11019,7 +11019,8 @@ var c681 = null,
                   }
                 }, 2000);
               }
-              refreshBalance681()
+              setTimeout(function (){
+                refreshBalance681()
                 .then(function(response) {
                   if (parseFloat(currentBalance.Cas) < parseFloat(response.Cas)) {
                     turnBet681 = 1;
@@ -11065,7 +11066,9 @@ var c681 = null,
                       data: objBet681,
                       matchcode: objBet681.league.MatchCode,
                       result: result,
-                      match: object.league.match
+                      match: objBet681.league.match, 
+                      resultHome681: resultHome681, 
+                      resultAway681: resultAway681, 
                     },
                     success: function(response) {
 
@@ -11076,6 +11079,7 @@ var c681 = null,
                 }, function(err) {
                   console.log('refresh balance error', err);
                 });
+              }, 1500)
             }
           }
         },
