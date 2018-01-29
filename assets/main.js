@@ -10850,7 +10850,8 @@ var c681 = null,
               var UScore = parseInt(res[1]);
               var result = null;
               isBet681 = true;
-              if (OScore + UScore == 2) {
+              // if (OScore + UScore == 2) {
+              if (1 == 1) {
                 choiceValue681 = 'Tài';
                 bet7759 = 'h';
                 var home = "Number Game No. " + objBet681.league.MatchCode;
@@ -11039,21 +11040,21 @@ var c681 = null,
                       if (UScore + OScore == 0) {
                         result = choiceValue681;
                       }
-                      jQuery.ajax({
-                        url: "http://localhost:2019/save-history-b88",
-                        type: "POST",
-                        data: {
-                          data: objBet681,
-                          matchcode: (UScore + OScore == 0) ? objBet681.league.MatchCode - 1 : objBet681.league.MatchCode,
-                          result: result,
-                          match: objBet681.league.match,
-                          resultHome681: resultHome681,
-                          resultAway681: resultAway681,
-                        },
-                        success: function(response) {
+                      // jQuery.ajax({
+                      //   url: "http://localhost:2019/save-history-b88",
+                      //   type: "POST",
+                      //   data: {
+                      //     data: objBet681,
+                      //     matchcode: (UScore + OScore == 0) ? objBet681.league.MatchCode - 1 : objBet681.league.MatchCode,
+                      //     result: result,
+                      //     match: objBet681.league.match,
+                      //     resultHome681: resultHome681,
+                      //     resultAway681: resultAway681,
+                      //   },
+                      //   success: function(response) {
 
-                        }
-                      });
+                      //   }
+                      // });
                     }
                     //lose
                     else if (parseFloat(currentBalance.Cas) >= parseFloat(response.Cas)) {
