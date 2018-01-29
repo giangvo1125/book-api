@@ -202,6 +202,9 @@ module.exports = {
                         console.log('err predictData ',err)
                     })
                 }
+                else {
+                    console.log('------------server parse die----------------')
+                }
             }, (err) => {
                 console.log('err history ',err)
             })
