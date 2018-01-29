@@ -74,7 +74,7 @@ module.exports = {
                                                 //nếu thoả điều kiện
                                                 if(condition1 && condition2 && condition3) {
                                                     stake = list_stake[0]
-                                                    var ticketResult = histories[0].result == 'Xỉu' ? 'Tài' : 'Xỉu'
+                                                    var ticketResult = histories[0].result == 'Under' ? 'Over' : 'Under'
                                                     //bet
                                                     console.log('bet theo -----1------ ',ticketResult)
                                                     if(user.usertype == 0 || user.usertype == '0') {
@@ -114,8 +114,8 @@ module.exports = {
                                                     // user.loseticket++;
                                                     stake = list_stake[user.loseticket]
                                                     var stake_sub = subAmount// tiền bet vé dằn
-                                                    var ticketResult = histories[0].result == 'Xỉu' ? 'Tài' : 'Xỉu'
-                                                    var ticketResult2 = ticketResult == 'Xỉu' ? 'Tài' : 'Xỉu'
+                                                    var ticketResult = histories[0].result == 'Under' ? 'Over' : 'Under'
+                                                    var ticketResult2 = ticketResult == 'Under' ? 'Over' : 'Under'
                                                     //bet
                                                     var promise_bet = []
                                                     //vé bet 
