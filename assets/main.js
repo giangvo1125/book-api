@@ -10844,7 +10844,7 @@ var c681 = null,
             if (this.nowTimeValue <= 5) {
               isBet681 = false;
             }
-            if (this.nowTimeValue <= 15 && this.nowTimeValue >= 8 && !isBet681) {
+            if (this.nowTimeValue <= 25 && this.nowTimeValue >= 10 && !isBet681) {
               var res = objResult681.split(" - ");
               var OScore = parseInt(res[0]);
               var UScore = parseInt(res[1]);
