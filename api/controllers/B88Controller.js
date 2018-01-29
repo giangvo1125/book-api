@@ -119,7 +119,7 @@ module.exports = {
                                                         stake = list_stake[user.loseticket]
                                                         var stake_sub = subAmount// tiền bet vé dằn
                                                         var ticketResult = histories[0].result == 'Under' ? 'Tài' : 'Xỉu'
-                                                        var ticketResult2 = ticketResult == 'Under' ? 'Tài' : 'Xỉu'
+                                                        var ticketResult2 = ticketResult == 'Xỉu' ? 'Tài' : 'Xỉu'
                                                         //bet
                                                         var promise_bet = []
                                                         //vé bet 
