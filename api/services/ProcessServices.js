@@ -66,24 +66,30 @@ var obj = {
               "isQuickBet": false
             };
             // console.log('bet----------- ',bet7759)
-            func.getTicket(i, config['_host'], config['SessionId'])
-            .then((ticket) => {
-                switch(ticket.Code) {
-                    case 6:
-                        b('ticket closed.');
-                    break;
-                    case 0:
-                        func.placeBet(i, config['_host'], config['SessionId'])
-                        .then((placeBet) => {
-                            a({placeBet: placeBet, i: i})
-                        }, (err) => {
-                            b(err);
-                        })
-                    break;
-                    default:
-                        b('err with ticket.')
-                    break;
-                }
+            // func.getTicket(i, config['_host'], config['SessionId'])
+            // .then((ticket) => {
+            //     switch(ticket.Code) {
+            //         case 6:
+            //             b('ticket closed.');
+            //         break;
+            //         case 0:
+            //             func.placeBet(i, config['_host'], config['SessionId'])
+            //             .then((placeBet) => {
+            //                 a({placeBet: placeBet, i: i})
+            //             }, (err) => {
+            //                 b(err);
+            //             })
+            //         break;
+            //         default:
+            //             b('err with ticket.')
+            //         break;
+            //     }
+            // }, (err) => {
+            //     b(err);
+            // })
+            func.placeBet(i, config['_host'], config['SessionId'])
+            .then((placeBet) => {
+                a({placeBet: placeBet, i: i})
             }, (err) => {
                 b(err);
             })
