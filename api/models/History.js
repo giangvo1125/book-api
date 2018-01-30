@@ -12,7 +12,7 @@ module.exports = {
       primaryKey: true
     },
     match: {
-      type: Sequelize.INTEGER(255),
+      type: Sequelize.STRING(255),
       allowNull: true,
     },
     matchcode: {
