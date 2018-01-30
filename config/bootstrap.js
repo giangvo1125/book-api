@@ -83,15 +83,14 @@ module.exports.bootstrap = function(cb) {
 			raw: true
 		})
 		.then((users) => {
-			for(var i = 0; i < users.length; i++) {
-				var obj = users[i]
-				obj['txtID'] = users[i].username
-	    		obj['pwd'] = users[i].password
-	    		// var user_id = users[i].id    		
-			}
 			var promise = []
 			for(var i = 0; i < users.length; i++) {
-				promise.push(login(users[i]))
+				// promise.push(login(users[i]))
+				var user = users[i]
+	    		var config = {}
+                config['_host'] = user.host
+                config['SessionId'] = user.sessionId
+				promise.push(_process.returnBalance(config, user.id))
 			}
 			Promise.all(promise)
 			.then((res) => {
