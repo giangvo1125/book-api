@@ -4,7 +4,7 @@ var list_users = []
 var list_stake = [3, 7, 13, 25, 51]
 // var list_stake = [2, 5, 10, 20, 40]
 var subAmount = 3
-var length = 2
+var length = 3
 var lastHistory = {}
 module.exports = {
     SaveTicket: function(req, res) {
@@ -62,7 +62,7 @@ module.exports = {
                                            if(user.usertype == 0 || user.usertype == '0') {
                                                 console.log('user.loseticket---------------',user.loseticket)
                                                 // console.log('histories[3].result---------------',histories[3].result)
-                                                // console.log('histories[2].result---------------',histories[2].result)
+                                                console.log('histories[2].result---------------',histories[2].result)
                                                 console.log('histories[1].result---------------',histories[1].result)
                                                 console.log('histories[0].result---------------',histories[0].result)
                                             }
@@ -71,9 +71,9 @@ module.exports = {
                                                 //ktra kết quả 4 vé cuối, nếu 4 vé cùng là Tài hoặc Xỉu thì bắt đầu bet.
                                                 if(histories && histories.length == length) {
                                                     var condition1 = histories[0].result == histories[1].result
-                                                    // var condition2 = histories[0].result == histories[2].result
+                                                    var condition2 = histories[0].result == histories[2].result
                                                     // var condition3 = histories[0].result == histories[3].result
-                                                    var condition2 = true
+                                                    // var condition2 = true
                                                     var condition3 = true
                                                     //nếu thoả điều kiện
                                                     if(condition1 && condition2 && condition3) {
