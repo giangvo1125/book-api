@@ -181,7 +181,10 @@ module.exports = {
                                                 }
                                                 //nếu đã thua 5 vé rồi, reset loseticket về = 0
                                                 else {
-                                                    _process.processBet(config, predictData.data, ticketResult, list_stake[0])
+                                                    var condition1 = histories[0].result == histories[1].result
+                                                    var condition2 = histories[0].result == histories[2].result
+                                                    if(condition1 && condition2)
+                                                        _process.processBet(config, predictData.data, ticketResult, list_stake[0])
                                                     sails.models.user.update({
                                                         loseticket: 0, 
                                                         // balance: balance.balance.BCredit,
