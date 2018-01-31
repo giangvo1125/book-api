@@ -11,22 +11,18 @@ module.exports = {
       },
       primaryKey: true
     },
-    matchcode: {
-      type: Sequelize.INTEGER(255),
-      allowNull: true,
-    },
-    data: {
-      type: Sequelize.JSON,
-      allowNull: false,
-    },
-    resultHome681: {
+    link: {
       type: Sequelize.STRING(255),
       allowNull: true,
-    }, 
-    resultAway681: {
+    },
+    content: {
       type: Sequelize.STRING(255),
       allowNull: true,
-    }, 
+    },
+    type: {
+      type: Sequelize.STRING(255),
+      allowNull: true,
+    },
     createdAt: {
       type: Sequelize.DATE,
       allowNull: true,
@@ -38,7 +34,7 @@ module.exports = {
   },
   associations: function() {},
   options: {
-    tableName: 'predict',
+    tableName: 'blog',
     hooks: {}
   }
 };

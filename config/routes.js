@@ -35,28 +35,13 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  '/ProcessLogin.aspx': {
-    view: 'sport'
+  'POST /create-blog': {
+    controller: 'BlogController', 
+    action: 'createBlog'
   },
-  'POST /save-history-b88': {
-    controller: 'B88Controller',
-    action: 'SaveHistory'
-  },
-  'POST /view-history-b88': {
-    controller: 'B88Controller',
-    action: 'ViewHistory'
-  },
-  'POST /bet681': {
-    controller: 'B88Controller',
-    action: 'Bet681'
-  }, 
-  'GET /getHistory': {
-    controller: 'B88Controller', 
-    action: 'getHistoryBet'
-  }, 
-  'POST /save-ticket': {
-    controller: 'B88Controller', 
-    action: 'SaveTicket'
+  'GET /get-blog': {
+    controller: 'BlogController', 
+    action: 'getBlog'
   }
 
   /***************************************************************************

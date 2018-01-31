@@ -4,7 +4,7 @@ module.exports.connections = {
     user: 'postgres',
     password: '8468593',
     // password: 'Kolabs@123456',
-    database: 'b88',
+    database: 'book',
     dialect: 'postgres',
     options: {
       dialect: 'postgres',
