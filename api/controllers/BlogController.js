@@ -69,5 +69,28 @@ module.exports = {
 		}, (err) => {
 			res.serverError(err);
 		})
+	}, 
+	deleteTableData: (req, res) => {
+		var req = req.body || {}
+		var {model, ids} = req;
+		if(model && sails.models[model]) {
+			let obj = {}
+			if(ids && ids.length > 0) {
+				obj = {
+					where: {
+						id: ids
+					}
+				}
+			}
+			sails.models[model].destroy(obj)
+			.then((deleted) => {
+				res.ok({status: 0, message: deleted})
+			},(err) => {
+				res.serverError(err)
+			})
+		}
+		else {
+			res.ok({status: 0, message: 'no delete data'})
+		}
 	}
 }

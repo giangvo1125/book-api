@@ -42,6 +42,10 @@ module.exports.routes = {
   'GET /get-blog': {
     controller: 'BlogController', 
     action: 'getBlog'
+  }, 
+  'POST /delete-data': {
+    controller: 'BlogController', 
+    action: 'deleteTableData'
   }
 
   /***************************************************************************
