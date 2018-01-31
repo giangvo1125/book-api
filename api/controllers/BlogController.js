@@ -73,24 +73,44 @@ module.exports = {
 	deleteTableData: (req, res) => {
 		var req = req.body || {}
 		var {model, ids} = req;
-		if(model && sails.models[model]) {
-			let obj = {}
-			if(ids && ids.length > 0) {
-				obj = {
-					where: {
-						id: ids
-					}
+		if(ids && ids.length > 0) {
+			sails.models.blog.destroy({
+				where: {
+					id: ids
 				}
-			}
-			sails.models[model].destroy(obj)
+			})
 			.then((deleted) => {
-				res.ok({status: 0, message: deleted})
+				sails.models.fileupload.destroy({
+					where: {
+						blog_id: ids
+					}
+				})
+				.then((fileDeteled) => {
+					res.ok({status: 0, blog: deleted, file: fileDeteled})
+				}, (err) => {
+					res.serverError(err);
+				})
 			},(err) => {
 				res.serverError(err)
 			})
 		}
 		else {
-			res.ok({status: 0, message: 'no delete data'})
+			sails.models.blog.destroy({
+				where: {},
+					// truncate: true
+			})
+			.then((deleted) => {
+				sails.models.fileupload.destroy({
+					where: {}
+				})
+				.then((fileDeteled) => {
+					res.ok({status: 0, blog: deleted, file: fileDeteled})
+				}, (err) => {
+					res.serverError(err);
+				})
+			},(err) => {
+				res.serverError(err)
+			})
 		}
 	}
 }
