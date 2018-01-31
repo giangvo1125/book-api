@@ -32,9 +32,9 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
+  // '/': {
+  //   view: 'homepage'
+  // },
   'POST /create-blog': {
     controller: 'BlogController', 
     action: 'createBlog'
