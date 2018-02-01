@@ -51,6 +51,7 @@ module.exports = {
 						blog: {},
 						files: {}, 
 					}
+					obj.blog.id = blogs[i].dataValues.id
 					obj.blog.content = blogs[i].dataValues.content
 					obj.blog.link = blogs[i].dataValues.link
 					obj.blog.type = blogs[i].dataValues.type
