@@ -32,9 +32,7 @@ module.exports = {
 	getBlog: (req, res) => {
 		sails.models.blog.hasMany(sails.models.fileupload, { foreignKey: 'blog_id' })
 		sails.models.fileupload.belongsTo(sails.models.blog, { foreignKey: 'blog_id' })
-
-		sails.models.blog.findAll({
-			// raw: true, 
+		let option = {
 			include: [
 				{
 					model: sails.models.fileupload, 
@@ -42,7 +40,14 @@ module.exports = {
 				}
 			], 
 			order: [ [ 'id', 'DESC' ]],
-		})
+		}
+		var req = req.body || {}
+		var {limit, offset} = req;
+		if(!isNaN(limit) && !isNaN(offset)) {
+			option.limit = limit
+			option.offset = offset
+		}
+		sails.models.blog.findAll(option)
 		.then((blogs) => {
 			var returnData = []
 			if(blogs.length > 0) {
