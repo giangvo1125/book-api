@@ -47,30 +47,30 @@ module.exports = {
 			option.limit = limit
 			option.offset = offset
 		}
-		sails.models.blog.findAll(option)
+		sails.models.blog.findAndCountAll(option)
 		.then((blogs) => {
 			var returnData = []
-			if(blogs.length > 0) {
-				for(var i = 0; i < blogs.length; i++) {
+			if(blogs.rows.length > 0) {
+				for(var i = 0; i < blogs.rows.length; i++) {
 					var obj = {
 						blog: {},
 						files: {}, 
 					}
-					obj.blog.id = blogs[i].dataValues.id
-					obj.blog.content = blogs[i].dataValues.content
-					obj.blog.link = blogs[i].dataValues.link
-					obj.blog.type = blogs[i].dataValues.type
-					obj.blog.createdAt = blogs[i].dataValues.createdAt
-					obj.blog.updatedAt = blogs[i].dataValues.updatedAt
-					if(blogs[i].FileUploads &&  blogs[i].FileUploads.length > 0) {
-						obj.files = blogs[i].FileUploads
+					obj.blog.id = blogs.rows[i].dataValues.id
+					obj.blog.content = blogs.rows[i].dataValues.content
+					obj.blog.link = blogs.rows[i].dataValues.link
+					obj.blog.type = blogs.rows[i].dataValues.type
+					obj.blog.createdAt = blogs.rows[i].dataValues.createdAt
+					obj.blog.updatedAt = blogs.rows[i].dataValues.updatedAt
+					if(blogs.rows[i].FileUploads &&  blogs.rows[i].FileUploads.length > 0) {
+						obj.files = blogs.rows[i].FileUploads
 					}
 					returnData.push(obj)
 				}
-				res.ok(returnData)
+				res.ok({data: returnData, count: blogs.count})
 			}
 			else {
-				res.ok(returnData)
+				res.ok({data: returnData, count: 0})
 			}
 		}, (err) => {
 			res.serverError(err);
