@@ -39,7 +39,7 @@ module.exports.routes = {
     controller: 'BlogController', 
     action: 'createBlog'
   },
-  'GET /get-blog': {
+  'POST /get-blog': {
     controller: 'BlogController', 
     action: 'getBlog'
   }, 
