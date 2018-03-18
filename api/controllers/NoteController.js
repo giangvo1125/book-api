@@ -24,7 +24,8 @@ module.exports = {
 		var option = {
 			where: {
 				enable: '1'
-			}
+			}, 
+			attributes: ['id', 'name', 'content', 'createdAt', 'updatedAt']
 		}
 		if(!isNaN(limit) && !isNaN(offset)) {
 			option.limit = limit
