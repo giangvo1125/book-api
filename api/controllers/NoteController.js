@@ -23,7 +23,7 @@ module.exports = {
 		var {limit, offset, name} = req;
 		var option = {
 			where: {
-				enable: 1
+				enable: '1'
 			}
 		}
 		if(!isNaN(limit) && !isNaN(offset)) {
@@ -37,7 +37,7 @@ module.exports = {
 		.then((notes) => {
 			res.ok({status: 0, data: notes})
 		}, (err) => {
-			res.serverError('12312312312');
+			res.serverError(err);
 		})
 	}, 
 	getNote: (req, res) => {
@@ -87,7 +87,7 @@ module.exports = {
 		})
 		.then((note) => {
 			if(note) {
-				return note.updateAttributes({enable: 0})
+				return note.updateAttributes({enable: '0'})
 			}
 			else {
 				return;
