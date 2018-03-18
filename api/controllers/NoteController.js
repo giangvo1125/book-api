@@ -37,7 +37,7 @@ module.exports = {
 		.then((notes) => {
 			res.ok({status: 0, data: notes})
 		}, (err) => {
-			res.serverError(err);
+			res.serverError('12312312312');
 		})
 	}, 
 	getNote: (req, res) => {
