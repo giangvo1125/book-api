@@ -25,7 +25,8 @@ module.exports = {
 			where: {
 				enable: '1'
 			}, 
-			attributes: ['id', 'name', 'content', 'createdAt', 'updatedAt']
+			attributes: ['id', 'name', 'content', 'createdAt', 'updatedAt'], 
+			order: [ [ 'id', 'DESC' ]],
 		}
 		if(!isNaN(limit) && !isNaN(offset)) {
 			option.limit = limit
@@ -34,6 +35,7 @@ module.exports = {
 		if(name) {
 			option.where.name = name
 		}
+
 		sails.models.note.findAndCountAll(option)
 		.then((notes) => {
 			res.ok({status: 0, data: notes})
