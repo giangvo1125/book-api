@@ -15,6 +15,7 @@ var _process = require('../api/services/ProcessServices')
 module.exports.bootstrap = function(cb) {
 	// sails.models.blog.sync();
 	// sails.models.fileupload.sync();
+	sails.models.note.sync();
 	cb();
 };
 

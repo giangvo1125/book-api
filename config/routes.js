@@ -46,7 +46,27 @@ module.exports.routes = {
   'POST /delete-data': {
     controller: 'BlogController', 
     action: 'deleteTableData'
-  }
+  }, 
+  'POST /crete-note': {
+    controller: 'NoteController', 
+    action: 'createNote'
+  }, 
+  'POST /get-list-note': {
+    controller: 'NoteController', 
+    action: 'getListNote'
+  }, 
+  'GET /get-note/:id': {
+    controller: 'NoteController', 
+    action: 'getNote'
+  }, 
+  'POST /edit-note': {
+    controller: 'NoteController', 
+    action: 'editNote'
+  }, 
+  'GET /remove-note/:id': {
+    controller: 'NoteController', 
+    action: 'removeNote'
+  },
 
   /***************************************************************************
    *                                                                          *
