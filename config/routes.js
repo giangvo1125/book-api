@@ -47,7 +47,7 @@ module.exports.routes = {
     controller: 'BlogController', 
     action: 'deleteTableData'
   }, 
-  'POST /crete-note': {
+  'POST /create-note': {
     controller: 'NoteController', 
     action: 'createNote'
   }, 
