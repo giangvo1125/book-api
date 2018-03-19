@@ -59,7 +59,7 @@ module.exports = {
 	}, 
 	editNote: (req, res) => {
 		var req = req.body || {}
-		var {content, name, id} = req;
+		var {content, name, id, type} = req;
 		sails.models.note.find({
 			where: { id: id }
 		})
@@ -68,6 +68,7 @@ module.exports = {
 				var update = {}
 				if(content) update.content = content
 				if(name) update.name = name
+				if(type) update.type = type
 				return note.updateAttributes(update)
 			}
 			else {
