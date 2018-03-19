@@ -2,7 +2,7 @@ module.exports = {
 	createNote: (req, res) => {
 		var body = req.body || {}
 		var {name, content, type} = body;
-		if(content) {
+		if(content || type) {
 			sails.models.note.create({
 				name: name || '', 
 				content: content || '', 
