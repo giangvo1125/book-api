@@ -1,12 +1,13 @@
 module.exports = {
 	createNote: (req, res) => {
 		var body = req.body || {}
-		var {name, content} = body;
+		var {name, content, type} = body;
 		if(content) {
 			sails.models.note.create({
 				name: name || '', 
 				content: content || '', 
 				enable: 1,// 1: true, 0: false 
+				type: type || ''
 			},{raw: true})
 			.then((noteCreated) => {
 				res.ok({status: 0})
@@ -25,7 +26,7 @@ module.exports = {
 			where: {
 				enable: '1'
 			}, 
-			attributes: ['id', 'name', 'content', 'createdAt', 'updatedAt'], 
+			attributes: ['id', 'name', 'content', 'type', 'createdAt', 'updatedAt'], 
 			order: [ [ 'id', 'DESC' ]],
 		}
 		if(!isNaN(limit) && !isNaN(offset)) {
